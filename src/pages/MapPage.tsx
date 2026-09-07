@@ -3,7 +3,7 @@ import CatalogMap from '../components/CatalogMap'
 import FiltersBar, { type FilterValues } from '../components/FiltersBar'
 import MapActivityCard from '../components/MapActivityCard'
 import Navbar from '../components/Navbar'
-import { filterSchools, getSchoolName, venueBelongsToCity } from '../data/schools'
+import { filterSchools, forCatalogMap, getSchoolName, venueBelongsToCity } from '../data/schools'
 import { formatEmptyFilterMessage, formatMapCountLabel } from '../i18n/formatters'
 import { useI18n } from '../i18n/useI18n'
 import { getMapLocations } from '../utils/mapLocation'
@@ -30,7 +30,7 @@ const MapPage = () => {
   const [filters, setFilters] = useState<FilterValues>(getDefaultFilters)
   const [selectedLocationId, setSelectedLocationId] = useState<string | null>(null)
   const cardRefs = useRef<Map<string, HTMLElement>>(new Map())
-  const visibleSchools = useMemo(() => filterSchools(filters), [filters])
+  const visibleSchools = useMemo(() => forCatalogMap(filterSchools(filters)), [filters])
   const emptyMessage = useMemo(
     () => formatEmptyFilterMessage(filters, lang, false),
     [filters, lang]

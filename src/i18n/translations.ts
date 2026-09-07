@@ -57,6 +57,7 @@ export const translations = {
   filters: {
     ariaLabel: { sr: 'Pretraga aktivnosti', en: 'Search activities' },
     city: { sr: 'Grad / opština', en: 'City / municipality' },
+    allCities: { sr: 'Svi gradovi', en: 'All cities' },
     district: { sr: 'Naselje / deo grada', en: 'Settlement / neighborhood' },
     districtPlaceholder: { sr: 'Izaberite naselje / deo grada', en: 'Choose a settlement / neighborhood' },
     districtSearch: { sr: 'Pretraži naselje / deo grada...', en: 'Search settlements / neighborhoods...' },
@@ -154,12 +155,14 @@ export const translations = {
     locationFew: { sr: 'lokacije', en: 'locations' },
     locationMany: { sr: 'lokacija', en: 'locations' },
     count: { sr: '{count} {word} u {city}', en: '{count} {word} in {city}' },
+    countAll: { sr: '{count} {word}', en: '{count} {word}' },
   },
   school: {
     notFound: { sr: 'Škola nije pronađena.', en: 'School not found.' },
     contact: { sr: 'Kontakt', en: 'Contact' },
     location: { sr: 'Lokacija', en: 'Location' },
     locations: { sr: 'Lokacije', en: 'Locations' },
+    chooseArea: { sr: 'Izaberite deo grada', en: 'Choose a part of the city' },
     backHome: { sr: 'Nazad na početnu', en: 'Back to home' },
     backSearch: { sr: 'Nazad na pretragu', en: 'Back to search' },
     backMap: { sr: 'Nazad na mapu', en: 'Back to map' },

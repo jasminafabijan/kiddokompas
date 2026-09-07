@@ -206,6 +206,7 @@ const FiltersBar = ({
   }, [isActivityOpen])
 
   const partsOfCityOptions = getDistrictOptions(lang, filters.city)
+  const showDistrict = !hideDistrict && partsOfCityOptions.length > 0
 
   const handleCityChange = (value: string) => {
     setFilters((prev) => {
@@ -311,18 +312,18 @@ const FiltersBar = ({
   }
 
   const hasActiveFilters =
-    filters.age != null || filters.activities.length > 0 || filters.partsOfCity.length > 0
+    Boolean(filters.city) ||
+    filters.age != null ||
+    filters.activities.length > 0 ||
+    filters.partsOfCity.length > 0
 
   const clearFilters = () => {
-    setFilters((prev) => ({
-      ...defaultFilters,
-      city: prev.city,
-    }))
+    setFilters(getDefaultFilters())
   }
 
   return (
     <section
-      className={`search-bar${hideDistrict ? ' search-bar--no-district' : ''}`}
+      className={`search-bar${showDistrict ? '' : ' search-bar--no-district'}`}
       aria-label={t('filters.ariaLabel')}
     >
       <div className="search-bar-panel">
@@ -334,7 +335,7 @@ const FiltersBar = ({
                 {t('filters.city')}
               </span>
               <span className="search-field-select" aria-hidden="true">
-                {filters.city}
+                {filters.city || t('filters.allCities')}
               </span>
             </div>
             <select
@@ -344,6 +345,7 @@ const FiltersBar = ({
               onChange={(e) => handleCityChange(e.target.value)}
               className="search-field-native-select"
             >
+              <option value="">{t('filters.allCities')}</option>
               {cities.map((city) => (
                 <option key={city} value={city}>
                   {city}
@@ -352,7 +354,7 @@ const FiltersBar = ({
             </select>
           </div>
 
-          {!hideDistrict && (
+          {showDistrict && (
             <div
               ref={partsDropdownRef}
               className={`search-field search-field-dropdown search-field-dropdown-district ${isPartsOpen ? 'search-field-dropdown-open' : ''}`}

@@ -1,4 +1,3 @@
-import { DEFAULT_CITY } from '../data/cities'
 import type { SchoolFilters } from '../data/schools'
 
 const getArrayParam = (value: string | null) => {
@@ -20,7 +19,7 @@ const cloneFilters = (filters: SchoolFilters): SchoolFilters => ({
 })
 
 export const getDefaultFilters = (): SchoolFilters => ({
-  city: DEFAULT_CITY,
+  city: '',
   partsOfCity: [],
   age: null,
   activities: [],
@@ -32,7 +31,7 @@ export const getFiltersFromSearchParams = (searchParams: URLSearchParams): Schoo
   const city = searchParams.get('city')
 
   return {
-    city: city ?? DEFAULT_CITY,
+    city: city ?? '',
     partsOfCity: getArrayParam(searchParams.get('partsOfCity')),
     age: Number.isFinite(parsedAge) ? parsedAge : null,
     activities: getArrayParam(searchParams.get('activities')),

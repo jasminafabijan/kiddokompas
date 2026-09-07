@@ -1703,11 +1703,26 @@
     }
 
     .school-detail-contact-phones {
-        @apply min-w-0;
+        @apply flex min-w-0 flex-wrap items-baseline;
+        column-gap: 0.4rem;
+        row-gap: 0.15rem;
     }
 
     .school-detail-contact-phone {
         @apply text-sm font-semibold text-primary no-underline;
+        white-space: nowrap;
+    }
+
+    .school-detail-contact-phone:not(:last-child)::after {
+        content: ',';
+    }
+
+    .school-detail-contact-phone:nth-child(2):not(:last-child)::after {
+        content: none;
+    }
+
+    .school-detail-contact-phone:nth-child(3) {
+        flex-basis: 100%;
     }
 
     .school-detail-contact-phone:hover {
@@ -1729,6 +1744,88 @@
 
     .school-detail-contact-icon--facebook {
         @apply h-7 w-7;
+    }
+
+    .school-locations .school-detail-section-title {
+        @apply mb-5;
+    }
+
+    .school-locations-summary {
+        @apply m-0 mb-7 leading-snug;
+    }
+
+    .school-locations-summary span {
+        font-size: 14px;
+    }
+
+    .school-locations-city {
+        @apply font-bold text-primary;
+    }
+
+    .school-locations-count {
+        font-weight: 400;
+        color: var(--text-muted);
+    }
+
+    .school-locations-picker {
+        @apply mb-0;
+    }
+
+    .school-locations-label {
+        @apply mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.12em];
+        color: var(--text-gray);
+    }
+
+    .school-locations-select-wrap {
+        position: relative;
+    }
+
+    .school-locations-select-wrap::after {
+        content: '';
+        position: absolute;
+        right: 1.15rem;
+        top: 50%;
+        width: 0.45rem;
+        height: 0.45rem;
+        border-right: 2px solid var(--text-muted);
+        border-bottom: 2px solid var(--text-muted);
+        transform: translateY(-70%) rotate(45deg);
+        pointer-events: none;
+    }
+
+    .school-locations-select {
+        @apply appearance-none;
+        width: 100%;
+        margin: 0;
+        padding: 0.9rem 2.6rem 0.9rem 1.1rem;
+        border: 1px solid var(--border);
+        border-radius: 0.9rem;
+        background-color: #fff;
+        color: var(--primary);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.35;
+        cursor: pointer;
+        outline: none;
+        text-overflow: ellipsis;
+    }
+
+    .school-locations-select::-ms-expand {
+        display: none;
+    }
+
+    .school-locations-select:focus {
+        border-color: color-mix(in srgb, var(--mint) 55%, var(--border));
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--mint) 28%, transparent);
+    }
+
+    .school-locations-select option {
+        font-weight: 500;
+        color: var(--primary);
+    }
+
+    .school-locations-details {
+        @apply mt-4 flex flex-col gap-4;
     }
 
     .add-activity-modal {
@@ -2118,6 +2215,10 @@ a.school-map-popup-button:visited,
 
 .school-map-pin.is-active {
     z-index: 1000 !important;
+}
+
+.school-map-pin.is-link {
+    cursor: pointer;
 }
 
 .school-map-pin-outer {

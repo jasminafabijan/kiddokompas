@@ -1,7 +1,9 @@
 import L from 'leaflet'
 import { useEffect, useMemo, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import type { SchoolAddress } from '../data/schools'
 import { getGoogleMapsOpenHref } from '../data/schools'
+import { schoolPath } from '../i18n/routes'
 import { attachActivePinState, mapPinIcon } from '../utils/mapPin'
 import { attachMarkerOverlapZoom } from '../utils/mapOverlapZoom'
 import { MAP_TILE_OPTIONS, MAP_TILE_URL } from '../utils/mapTiles'
@@ -22,7 +24,8 @@ interface SchoolMapProps {
 const SchoolMap = ({ addresses, placeName }: SchoolMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<L.Map | null>(null)
-  const { t } = useI18n()
+  const { lang, t } = useI18n()
+  const navigate = useNavigate()
 
   const points = useMemo(
     () =>
@@ -32,6 +35,7 @@ const SchoolMap = ({ addresses, placeName }: SchoolMapProps) => {
       ),
     [addresses]
   )
+  const showGoogleMapsLink = points.length === 1 && points.some((address) => !address.schoolSlug)
 
   useEffect(() => {
     if (!mapRef.current || points.length === 0) return
@@ -47,13 +51,31 @@ const SchoolMap = ({ addresses, placeName }: SchoolMapProps) => {
 
     L.tileLayer(MAP_TILE_URL, MAP_TILE_OPTIONS).addTo(map)
 
-    const markers = points.map((address) => {
+    const markerEntries = points.map((address) => {
       const marker = L.marker([address.lat, address.lng], { icon: mapPinIcon })
       marker.addTo(map)
-      return marker
-    })
 
-    const detachOverlapZoom = attachMarkerOverlapZoom(map, markers)
+      if (address.schoolSlug) {
+        marker.getElement()?.classList.add('is-link')
+      }
+
+      return { marker, address }
+    })
+    const markers = markerEntries.map((entry) => entry.marker)
+
+    const detachOverlapZoom = attachMarkerOverlapZoom(map, markers, {
+      onIsolatedClick: (marker) => {
+        const entry = markerEntries.find((item) => item.marker === marker)
+        const slug = entry?.address.schoolSlug
+
+        if (!slug) {
+          return false
+        }
+
+        navigate(schoolPath(lang, slug))
+        return true
+      },
+    })
     const detachActivePin = attachActivePinState(map)
 
     const applyView = () => {
@@ -82,23 +104,25 @@ const SchoolMap = ({ addresses, placeName }: SchoolMapProps) => {
       map.remove()
       mapInstanceRef.current = null
     }
-  }, [points])
+  }, [lang, navigate, points])
 
   if (points.length === 0) return null
 
   return (
     <div className="school-detail-map">
       <div ref={mapRef} className="school-detail-map-canvas" />
-      <div className="school-detail-map-footer">
-        <a
-          href={getGoogleMapsOpenHref(points, placeName)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="school-detail-map-open-link"
-        >
-          {t('map.openInGoogleMaps')}
-        </a>
-      </div>
+      {showGoogleMapsLink ? (
+        <div className="school-detail-map-footer">
+          <a
+            href={getGoogleMapsOpenHref(points, placeName)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="school-detail-map-open-link"
+          >
+            {t('map.openInGoogleMaps')}
+          </a>
+        </div>
+      ) : null}
     </div>
   )
 }

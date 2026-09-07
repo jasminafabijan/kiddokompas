@@ -37,6 +37,8 @@ const STREET_LABELS: Record<string, string> = {
     'Sports Center MarUK (BINS), Novosadskog sajma 37',
   'OŠ „Prva vojvođanska brigada”, Seljačkih buna 51a':
     'Primary School “Prva vojvođanska brigada”, Seljačkih buna 51a',
+  'OŠ „Miloš Crnjanski”, Anđe Ranković 2':
+    'Primary School “Miloš Crnjanski”, Anđe Ranković 2',
   'OŠ „Dušan Radović”, Velebitska bb':
     'Primary School “Dušan Radović”, Velebitska bb',
   'OŠ „Dušan Radović 2”, Čenejska 61':
@@ -45,7 +47,7 @@ const STREET_LABELS: Record<string, string> = {
     'Primary School “Petefi Šandor”, Bore Prodanovića 15A',
   'Mileve Marić 25 (iza zgrade, atomsko sklonište)':
     'Mileve Marić 25 (behind the building, fallout shelter)',
-  'Mesna zajednica, Janošikova 1': 'Community Center, Janošikova 1',
+  'Mesna zajednica, Janošikova 1a': 'Community Center, Janošikova 1a',
   'OŠ „Branko Radičević”, Futoška 5':
     'Primary School “Branko Radičević”, Futoška 5',
   'OŠ „Jovan Jovanović Zmaj”, Školska 3':
@@ -54,6 +56,10 @@ const STREET_LABELS: Record<string, string> = {
     'Community Center, Vuka Karadžića 289',
   'OŠ „Jovan Popović”, Nikole Tesle 73':
     'Primary School “Jovan Popović”, Nikole Tesle 73',
+  'Rumenačka 35, ulaz 3': 'Rumenačka 35, entrance 3',
+  'Beograd na vodi, Quartet 1, Luke Ćelovića Trebinjca 13, ulaz B, stan 6':
+    'Beograd na vodi, Quartet 1, Luke Ćelovića Trebinjca 13, entrance B, apartment 6',
+  'Cara Dušana 145a, stan 5': 'Cara Dušana 145a, apartment 5',
 }
 
 const SERBIAN_VENUE_PHRASE =

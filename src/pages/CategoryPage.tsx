@@ -2,14 +2,13 @@ import { Navigate, useParams, useSearchParams } from 'react-router-dom'
 import BackLink from '../components/BackLink'
 import Navbar from '../components/Navbar'
 import SchoolCard from '../components/SchoolCard'
-import { getCityOptions } from '../data/cities'
 import {
   formatCategorySubtitle,
   getCategoryBySlug,
   getCategoryName,
   getCategorySlug,
 } from '../data/categories'
-import { getSchoolCities, getSchoolsByCategory } from '../data/schools'
+import { getSchoolCities, forCatalogCards, getSchoolsByCategory } from '../data/schools'
 import { categoryPath } from '../i18n/routes'
 import { useI18n } from '../i18n/useI18n'
 
@@ -27,7 +26,7 @@ const getSelectedCity = (
     return categoryCities[0]
   }
 
-  return getCityOptions()[0] ?? 'Novi Sad'
+  return ''
 }
 
 const CategoryPage = () => {
@@ -43,8 +42,11 @@ const CategoryPage = () => {
 
   const categoryCities = [...new Set(categorySchools.flatMap((school) => getSchoolCities(school)))]
   const selectedCity = getSelectedCity(searchParams, categoryCities)
-  const visibleSchools = categorySchools.filter((school) =>
-    getSchoolCities(school).includes(selectedCity)
+  const visibleSchools = forCatalogCards(
+    selectedCity
+      ? categorySchools.filter((school) => getSchoolCities(school).includes(selectedCity))
+      : categorySchools,
+    selectedCity
   )
 
   if (!category) {

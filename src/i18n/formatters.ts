@@ -58,19 +58,38 @@ export const formatSearchSubtitle = (
   return translate(lang, 'search.found', { count: label })
 }
 
-export const formatMapCountLabel = (count: number, cityName: string, lang: Lang): string => {
+const locationCountWord = (count: number, lang: Lang) => {
   const remainder10 = count % 10
   const remainder100 = count % 100
-  const word =
-    lang === 'en'
-      ? translate(lang, count === 1 ? 'map.locationOne' : 'map.locationMany')
-      : remainder100 >= 11 && remainder100 <= 14
-        ? translate(lang, 'map.locationMany')
-        : remainder10 === 1
-          ? translate(lang, 'map.locationOne')
-          : remainder10 >= 2 && remainder10 <= 4
-            ? translate(lang, 'map.locationFew')
-            : translate(lang, 'map.locationMany')
+
+  if (lang === 'en') {
+    return translate(lang, count === 1 ? 'map.locationOne' : 'map.locationMany')
+  }
+
+  if (remainder100 >= 11 && remainder100 <= 14) {
+    return translate(lang, 'map.locationMany')
+  }
+
+  if (remainder10 === 1) {
+    return translate(lang, 'map.locationOne')
+  }
+
+  if (remainder10 >= 2 && remainder10 <= 4) {
+    return translate(lang, 'map.locationFew')
+  }
+
+  return translate(lang, 'map.locationMany')
+}
+
+export const formatLocationCountLabel = (count: number, lang: Lang): string =>
+  `${count} ${locationCountWord(count, lang)}`
+
+export const formatMapCountLabel = (count: number, cityName: string, lang: Lang): string => {
+  const word = locationCountWord(count, lang)
+
+  if (!cityName) {
+    return translate(lang, 'map.countAll', { count, word })
+  }
 
   const city = lang === 'en' ? cityName : getCityLocative(cityName)
   return translate(lang, 'map.count', { count, word, city })

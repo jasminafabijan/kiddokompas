@@ -6,6 +6,7 @@ import { getCategoryNameBySlug } from '../data/categories'
 import {
   filterSchools,
   formatSchoolCategoryNames,
+  forCatalogCards,
   type School,
   type SchoolFilters,
 } from '../data/schools'
@@ -39,7 +40,7 @@ const SearchResultsPage = () => {
   const [searchParams] = useSearchParams()
   const { lang, path, t } = useI18n()
   const filters = getFiltersFromSearchParams(searchParams)
-  const results = filterSchools(filters)
+  const results = forCatalogCards(filterSchools(filters), filters.city)
   const backState: HomeLocationState = { filters }
   const emptyMessage = formatEmptyFilterMessage(filters, lang)
 

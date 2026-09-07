@@ -385,16 +385,32 @@ export const getCategoryNameAccusative = (category: Category, lang: Lang) => {
 }
 
 export const formatCategorySubtitle = (category: Category, city: string, lang: Lang) => {
-  const cityText = lang === 'en' ? city : getCityLocative(city)
-
   if (category.pageSubtitle) {
-    return getLocalizedText(
+    const template = getLocalizedText(
       category.pageSubtitle,
       lang,
       `category:${category.id}:pageSubtitle`
-    ).replace('{city}', cityText)
+    )
+
+    if (!city) {
+      return template
+        .replace(' u {city}', '')
+        .replace(' in {city}', '')
+        .replace('{city}', '')
+        .replace(/\s{2,}/g, ' ')
+        .trim()
+    }
+
+    const cityText = lang === 'en' ? city : getCityLocative(city)
+    return template.replace('{city}', cityText)
   }
 
   const subtitle = getLocalizedText(category.subtitle, lang, `category:${category.id}:subtitle`)
+
+  if (!city) {
+    return subtitle
+  }
+
+  const cityText = lang === 'en' ? city : getCityLocative(city)
   return lang === 'en' ? `${subtitle} in ${cityText}` : `${subtitle} u ${cityText}`
 }

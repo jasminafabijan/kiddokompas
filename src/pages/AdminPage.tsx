@@ -18,8 +18,11 @@ import {
   formatSchoolCategoryNames,
   formatPhoneHref,
   getAdminActivityOptions,
+  collectSchoolPhones,
   getContactPhones,
+  getSchoolEmail,
   getSchoolNameSr,
+  getSchoolWebsite,
   schools,
 } from '../data/schools'
 import type { School } from '../data/schools'
@@ -120,7 +123,7 @@ const AdminPhonesCell = ({ phones }: { phones: string[] }) => {
       {phones.map((phone, index) => (
         <span key={phone}>
           {index > 0 ? ', ' : null}
-          <a href={formatPhoneHref(phone)} className="admin-table-link">
+          <a href={formatPhoneHref(phone)} className="admin-table-link admin-table-phone">
             {phone}
           </a>
         </span>
@@ -402,13 +405,13 @@ const AdminPage = () => {
                         )}
                       </td>
                       <td>
-                        <AdminWebsiteCell website={school.contact?.website} />
+                        <AdminWebsiteCell website={getSchoolWebsite(school)} />
                       </td>
                       <td>
-                        <AdminEmailCell email={school.contact?.email} />
+                        <AdminEmailCell email={getSchoolEmail(school)} />
                       </td>
                       <td>
-                        <AdminPhonesCell phones={getContactPhones(school.contact?.phone)} />
+                        <AdminPhonesCell phones={collectSchoolPhones(school)} />
                       </td>
                     </tr>
                   )

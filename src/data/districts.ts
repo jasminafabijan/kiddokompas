@@ -4,6 +4,10 @@ import type { Lang, LocalizedText } from '../i18n/types'
 /** Canonical district names as stored on schools. English translates only directional/center labels. */
 export const DISTRICT_LABELS: Record<string, LocalizedText> = {
   Adice: { sr: 'Adice', en: 'Adice' },
+  'Blok 28': { sr: 'Blok 28', en: 'Blok 28' },
+  'Blok 61': { sr: 'Blok 61', en: 'Blok 61' },
+  Čukarica: { sr: 'Čukarica', en: 'Čukarica' },
+  'Gradski park': { sr: 'Gradski park', en: 'City Park' },
   'Adamovićevo naselje': { sr: 'Adamovićevo naselje', en: 'Adamovićevo naselje' },
   Banatić: { sr: 'Banatić', en: 'Banatić' },
   Detelinara: { sr: 'Detelinara', en: 'Detelinara' },
@@ -22,12 +26,19 @@ export const DISTRICT_LABELS: Record<string, LocalizedText> = {
   Satelit: { sr: 'Satelit', en: 'Satelit' },
   'Severni Telep': { sr: 'Severni Telep', en: 'North Telep' },
   'Južni Telep': { sr: 'Južni Telep', en: 'South Telep' },
+  Palilula: { sr: 'Palilula', en: 'Palilula' },
   'Sremska Kamenica': { sr: 'Sremska Kamenica', en: 'Sremska Kamenica' },
   Čenej: { sr: 'Čenej', en: 'Čenej' },
   Susek: { sr: 'Susek', en: 'Susek' },
+  'Savski Venac': { sr: 'Savski Venac', en: 'Savski Venac' },
+  'Stari Grad': { sr: 'Stari Grad', en: 'Stari Grad' },
   'Stari Grad (Centar)': { sr: 'Stari Grad (Centar)', en: 'City Center' },
   Telep: { sr: 'Telep', en: 'Telep' },
   Veternik: { sr: 'Veternik', en: 'Veternik' },
+  Voždovac: { sr: 'Voždovac', en: 'Voždovac' },
+  Vračar: { sr: 'Vračar', en: 'Vračar' },
+  'Zemunske kapije': { sr: 'Zemunske kapije', en: 'Zemunske kapije' },
+  Zvezdara: { sr: 'Zvezdara', en: 'Zvezdara' },
   Šangaj: { sr: 'Šangaj', en: 'Šangaj' },
 }
 

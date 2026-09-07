@@ -1,5 +1,5 @@
 import { getCategoryBySlug, getCategoryName, getCategoryNameBySlug } from './categories'
-import { DEFAULT_CITY, getCityOptions } from './cities'
+import { getCityOptions } from './cities'
 import { getDistrictName, DISTRICT_LABELS } from './districts'
 import { VERIFIED_SCHOOL_IDS } from './verifiedSchoolIds'
 import { getStreetName } from './streets'
@@ -29,7 +29,7 @@ import { teenWorkoutSchools } from './schoolCategories/teen-workout'
 import { capoeiraSchools } from './schoolCategories/capoeira'
 import { languagesSchools } from './schoolCategories/languages'
 import { programmingSchools } from './schoolCategories/programming'
-import type { School, SchoolAddress, SchoolFilters } from './schoolCategories/types'
+import type { School, SchoolAddress, SchoolContact, SchoolFilters } from './schoolCategories/types'
 
 export type { School, SchoolAddress, SchoolContact, SchoolFilters } from './schoolCategories/types'
 
@@ -64,6 +64,15 @@ const isPubliclyListed = (school: School) =>
     !school.hidden && VERIFIED_SCHOOL_IDS.has(school.id)
 
 const getListedSchools = () => schools.filter(isPubliclyListed)
+
+/** Card listings: brand overview when no city is selected, city branches when a city is. */
+export const forCatalogCards = (list: School[], city: string) =>
+    city
+        ? list.filter((school) => !school.brandOverview)
+        : list.filter((school) => !school.brandSchoolId)
+
+/** Map pins use city halls, not the brand overview. */
+export const forCatalogMap = (list: School[]) => list.filter((school) => !school.brandOverview)
 
 export const formatSchoolAddress = (address: SchoolAddress, lang: Lang = 'sr') => {
     const street = getStreetName(address.street, lang)
@@ -124,6 +133,119 @@ export const getContactPhones = (phone?: string | string[]) => {
     return Array.isArray(phone) ? phone : [phone]
 }
 
+export const hasContactDetails = (contact?: SchoolContact) => {
+    if (!contact) {
+        return false
+    }
+
+    return (
+        getContactPhones(contact.phone).length > 0 ||
+        Boolean(contact.email) ||
+        Boolean(contact.website) ||
+        Boolean(contact.facebook) ||
+        Boolean(contact.instagram)
+    )
+}
+
+export const usesLocationPicker = (addresses?: SchoolAddress[]) =>
+    Boolean(
+        addresses &&
+            addresses.length > 1 &&
+            addresses.some((address) => hasContactDetails(address.contact))
+    )
+
+export const getLocationOptionLabel = (address: SchoolAddress, lang: Lang) => {
+    if (address.areaLabel) {
+        return getLocalizedText(address.areaLabel, lang, 'address.areaLabel')
+    }
+
+    const district = address.district ? getDistrictName(address.district, lang) : ''
+    const street = getStreetName(address.street, lang)
+
+    if (district && street) {
+        return `${district} — ${street}`
+    }
+
+    return street || district || address.city
+}
+
+export const formatWebsiteLabel = (url: string) => {
+    try {
+        const parsed = new URL(url)
+        const host = parsed.hostname.replace(/^www\./, '')
+        const pathname = parsed.pathname.replace(/\/$/, '')
+
+        return pathname ? `${host}${pathname}` : host
+    } catch {
+        return url.replace(/^https?:\/\//, '').split('#')[0].replace(/\/$/, '')
+    }
+}
+
+export const formatFacebookLabel = (url: string) => {
+    try {
+        const parsed = new URL(url)
+        const host = parsed.hostname.replace(/^www\./, '')
+
+        if (parsed.pathname === '/profile.php' || parsed.pathname.startsWith('/people/')) {
+            return host
+        }
+
+        const pathname = parsed.pathname.replace(/\/$/, '').replace(/^\//, '')
+        return pathname ? `${host}/${pathname}` : host
+    } catch {
+        return url
+    }
+}
+
+export const formatInstagramLabel = (url: string) => {
+    try {
+        const username = new URL(url).pathname.replace(/\//g, '')
+        return username ? `@${username}` : url
+    } catch {
+        return url
+    }
+}
+
+const firstAddressContactValue = <K extends keyof SchoolContact>(
+    school: School,
+    key: K
+): SchoolContact[K] | undefined => {
+    for (const address of school.addresses ?? []) {
+        const value = address.contact?.[key]
+
+        if (value) {
+            return value
+        }
+    }
+
+    return undefined
+}
+
+export const getSchoolWebsite = (school: School) =>
+    school.contact?.website ?? firstAddressContactValue(school, 'website')
+
+export const getSchoolEmail = (school: School) =>
+    school.contact?.email ?? firstAddressContactValue(school, 'email')
+
+export const collectSchoolPhones = (school: School) => {
+    const phones: string[] = []
+    const seen = new Set<string>()
+
+    for (const phone of [
+        ...getContactPhones(school.contact?.phone),
+        ...(school.addresses ?? []).flatMap((address) => getContactPhones(address.contact?.phone)),
+    ]) {
+        if (seen.has(phone)) {
+            continue
+        }
+
+        seen.add(phone)
+        phones.push(phone)
+    }
+
+    return phones
+}
+
 export const formatPhoneHref = (phone: string) => {
     const digits = phone.replace(/\D/g, '')
 
@@ -143,11 +265,19 @@ export const getMapsHref = (address: SchoolAddress, placeName?: string) => {
         return address.mapsUrl
     }
 
-    const query =
-        [placeName, address.street, address.city].filter(Boolean).join(', ') ||
-        (address.lat != null && address.lng != null ? `${address.lat},${address.lng}` : '')
+    const label = [address.street, address.city].filter(Boolean).join(', ') || placeName
 
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`
+    if (address.lat != null && address.lng != null) {
+        const { lat, lng } = address
+        const slug = encodeURIComponent(label || `${lat},${lng}`)
+        return `https://www.google.com/maps/place/${slug}/@${lat},${lng},17z/data=!3m1!4b1!4m4!3m3!8m2!3d${lat}!4d${lng}`
+    }
+
+    if (label) {
+        return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(label)}`
+    }
+
+    return 'https://www.google.com/maps'
 }
 
 export const getGoogleMapsOpenHref = (addresses: SchoolAddress[], placeName?: string) => {
@@ -158,14 +288,6 @@ export const getGoogleMapsOpenHref = (addresses: SchoolAddress[], placeName?: st
 
     if (withCoords.length === 1) {
         return getMapsHref(withCoords[0], placeName)
-    }
-
-    if (withCoords.length > 1) {
-        const centerLat =
-            withCoords.reduce((sum, address) => sum + address.lat, 0) / withCoords.length
-        const centerLng =
-            withCoords.reduce((sum, address) => sum + address.lng, 0) / withCoords.length
-        return `https://www.google.com/maps/@${centerLat},${centerLng},14z`
     }
 
     if (addresses.length > 0) {
@@ -255,17 +377,22 @@ export const formatSchoolLocationLabel = (school: School, lang: Lang = 'sr') => 
         .join(' · ')
 }
 
-export const getDistrictOptions = (lang: Lang = 'sr', city?: string) =>
-    [
+export const getDistrictOptions = (lang: Lang = 'sr', city?: string) => {
+    if (!city) {
+        return []
+    }
+
+    return [
         ...new Set(
             getListedSchools().flatMap((school) =>
                 getSchoolAddressList(school)
-                    .filter((address) => !city || addressBelongsToCity(address, school.city, city))
+                    .filter((address) => addressBelongsToCity(address, school.city, city))
                     .map((address) => address.district)
                     .filter((district): district is string => district != null && district.length > 0)
             )
         ),
     ].sort((a, b) => getDistrictName(a, lang).localeCompare(getDistrictName(b, lang), lang === 'en' ? 'en' : 'sr'))
+}
 
 if (import.meta.env.DEV) {
     for (const school of schools) {
@@ -359,5 +486,5 @@ export const filterSchools = (filters: SchoolFilters) =>
     })
 
 export const venueBelongsToCity = (school: School, address: SchoolAddress, city?: string) =>
-    addressBelongsToCity(address, school.city, city || DEFAULT_CITY)
+    !city || addressBelongsToCity(address, school.city, city)
 

@@ -83,7 +83,11 @@ const spiderfy = (map: L.Map, markers: MarkerWithHome[]) => {
 export const attachMarkerOverlapZoom = (
   map: L.Map,
   markers: L.Marker[],
-  options?: { overlapPx?: number }
+  options?: {
+    overlapPx?: number
+    /** Return true when the click was handled (e.g. in-app navigation). */
+    onIsolatedClick?: (marker: L.Marker) => boolean
+  }
 ) => {
   const overlapPx = options?.overlapPx ?? OVERLAP_PX
   const typedMarkers = markers as MarkerWithHome[]
@@ -104,6 +108,10 @@ export const attachMarkerOverlapZoom = (
       const overlapping = getOverlappingMarkers(map, marker, typedMarkers, overlapPx)
 
       if (overlapping.length < 2) {
+        if (options?.onIsolatedClick?.(marker)) {
+          return
+        }
+
         if (marker.getPopup()) {
           marker.openPopup()
         }

@@ -24,6 +24,12 @@ export type SchoolAddress = {
     lng?: number
     /** Opens this Google listing instead of a coordinate search that can snap to a nearby place. */
     mapsUrl?: string
+    /** When set, the location link opens this school page instead of Google Maps. */
+    schoolSlug?: string
+    /** Dropdown label, e.g. "Centar — Vase Stajića". Falls back to district and street. */
+    areaLabel?: LocalizedText
+    /** Per-venue phone, email, website and socials. */
+    contact?: SchoolContact
 }
 
 export type School = {
@@ -44,4 +50,8 @@ export type School = {
     description?: LocalizedParagraphs
     addresses?: SchoolAddress[]
     contact?: SchoolContact
+    /** Brand landing page: shown when no city is selected; omitted from the map. */
+    brandOverview?: boolean
+    /** City branch of a brand overview school; hidden from all-cities card listings. */
+    brandSchoolId?: string
 }

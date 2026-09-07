@@ -120,7 +120,7 @@ export const balletSchools: School[] = [
         },
         categorySlugs: ['ballet'],
         city: 'Novi Sad',
-        district: 'Stari Grad (Centar)',
+        district: 'Podbara',
         minAge: 3,
         maxAge: 7,
         ageLabel: '3–7 godina',
@@ -145,13 +145,6 @@ export const balletSchools: School[] = [
             ],
         },
         addresses: [
-            {
-                street: 'Augusta Cesarca 18',
-                city: 'Novi Sad',
-                district: 'Stari Grad (Centar)',
-                lat: 45.2506936,
-                lng: 19.8383143,
-            },
             {
                 street: 'Zlatne Grede 25',
                 city: 'Novi Sad',
