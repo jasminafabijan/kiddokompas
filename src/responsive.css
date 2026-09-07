@@ -35,6 +35,10 @@
 }
 
 @media (min-width: 640px) and (max-width: 1023.98px) {
+    .recently-added-section .school-card:nth-child(4) {
+        display: flex;
+    }
+
     .school-page .category-page-back {
         width: calc(100% + 3rem);
         margin-left: -1.5rem;

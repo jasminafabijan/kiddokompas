@@ -162,11 +162,11 @@ const getSchoolBack = (
     return { to: pagePath('home', lang), label: t('school.backHome') }
   }
 
-  if (fromPath === PAGE_PATHS.search.sr || fromPath === PAGE_PATHS.search.en) {
+  if (from && (fromPath === PAGE_PATHS.search.sr || fromPath === PAGE_PATHS.search.en)) {
     return { to: localizeFrom(from, lang), label: t('school.backSearch') }
   }
 
-  if (fromPath === PAGE_PATHS.map.sr || fromPath === PAGE_PATHS.map.en) {
+  if (from && (fromPath === PAGE_PATHS.map.sr || fromPath === PAGE_PATHS.map.en)) {
     return { to: localizeFrom(from, lang), label: t('school.backMap') }
   }
 
