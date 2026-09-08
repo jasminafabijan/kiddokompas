@@ -24,8 +24,8 @@ const normalizeHref = (href: string) => href.replace(/\/$/, '').toLowerCase()
 
 const SchoolLocations = ({ city, addresses, placeName, hideHrefs = [] }: SchoolLocationsProps) => {
   const { lang, t } = useI18n()
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const selected = addresses[selectedIndex] ?? addresses[0]
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const selected = selectedIndex == null ? undefined : addresses[selectedIndex]
   const mapAddresses = addresses.filter((address) => address.lat != null && address.lng != null)
   const hiddenHrefs = new Set(hideHrefs.map(normalizeHref))
   const contactLinks = selected
@@ -66,9 +66,13 @@ const SchoolLocations = ({ city, addresses, placeName, hideHrefs = [] }: SchoolL
           <select
             id="school-locations-select"
             className="school-locations-select"
-            value={String(selectedIndex)}
-            onChange={(event) => setSelectedIndex(Number(event.target.value))}
+            value={selectedIndex == null ? '' : String(selectedIndex)}
+            onChange={(event) => {
+              const next = event.target.value
+              setSelectedIndex(next === '' ? null : Number(next))
+            }}
           >
+            <option value="">{t('school.selectLocation')}</option>
             {addresses.map((address, index) => (
               <option key={`${address.city}-${address.street}-${index}`} value={index}>
                 {getLocationOptionLabel(address, lang)}
@@ -78,7 +82,7 @@ const SchoolLocations = ({ city, addresses, placeName, hideHrefs = [] }: SchoolL
         </div>
       </div>
       <div className="school-locations-details">
-        <SchoolContactList links={contactLinks} />
+        {contactLinks.length > 0 ? <SchoolContactList links={contactLinks} /> : null}
         {mapAddresses.length > 0 ? (
           <SchoolMap addresses={mapAddresses} placeName={placeName} />
         ) : null}

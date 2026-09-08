@@ -28,7 +28,7 @@ const helenDoronContact: SchoolContact = {
     phone: ['0800 333 000', '064 641 6082', '011 3573 017'],
     website: 'https://helendoron.rs',
     facebook: 'https://sr-rs.facebook.com/HelenDoronSchoolOfEnglishSrbija',
-    facebookLabel: 'Helen Doron',
+    facebookLabel: 'Helen Doron English',
     instagram: 'https://www.instagram.com/helendoronsrbija/',
 }
 
@@ -78,6 +78,12 @@ const helenDoronHall = (
     areaLabel,
     contact,
 })
+
+const zemunContact: SchoolContact = {
+    phone: '062 1870 667',
+    email: 'zemun1@helendoron.rs',
+    website: 'https://helendoron.rs/zemun-1/',
+}
 
 const helenDoronBeogradHalls: SchoolAddress[] = [
     helenDoronHall(
@@ -208,13 +214,63 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         },
         helenDoronMaps('10769121090646486650')
     ),
+    helenDoronHall(
+        'Bulevar Arsenija Čarnojevića 103',
+        'Beograd',
+        'Novi Beograd',
+        44.8143328,
+        20.4142793,
+        {
+            sr: 'Novi Beograd, Blok 28 — Arsenija Čarnojevića',
+            en: 'Novi Beograd, Blok 28 — Arsenija Čarnojevića',
+        },
+        {
+            phone: '061 6485 334',
+            email: 'novibgd1@helendoron.rs',
+            website: 'https://helendoron.rs/novi-beograd-1/',
+        },
+        helenDoronMaps('2903457973395151446')
+    ),
+    helenDoronHall(
+        'Dr. Ivana Ribara 81',
+        'Beograd',
+        'Novi Beograd',
+        44.8022931,
+        20.3684928,
+        {
+            sr: 'Novi Beograd, Blok 61 — Dr. Ivana Ribara',
+            en: 'Novi Beograd, Blok 61 — Dr. Ivana Ribara',
+        },
+        {
+            phone: '062 9725 648',
+            email: 'novibgd2-blokovi@helendoron.rs',
+            website: 'https://helendoron.rs/novi-beograd-blok-61/',
+        },
+        helenDoronMaps('1652438137243335967')
+    ),
+    helenDoronHall(
+        'Radoja Dakića 10',
+        'Beograd',
+        'Zemun',
+        44.8382494,
+        20.4073238,
+        { sr: 'Zemun, Gradski park — Radoja Dakića', en: 'Zemun, City Park — Radoja Dakića' },
+        zemunContact,
+        helenDoronMaps('9929231828131060657')
+    ),
+    helenDoronHall(
+        'Cara Dušana 145a, stan 5',
+        'Beograd',
+        'Zemun',
+        44.8559027,
+        20.3848058,
+        {
+            sr: 'Zemun, Zemunske kapije — Cara Dušana',
+            en: 'Zemun, Zemunske kapije — Cara Dušana',
+        },
+        zemunContact
+    ),
 ]
-
-const zemunContact: SchoolContact = {
-    phone: '062 1870 667',
-    email: 'zemun1@helendoron.rs',
-    website: 'https://helendoron.rs/zemun-1/',
-}
 
 export const languagesSchools: School[] = [
     {
@@ -268,8 +324,8 @@ export const languagesSchools: School[] = [
         id: 'helen-doron',
         slug: 'helen-doron',
         name: {
-            sr: 'Helen Doron',
-            en: 'Helen Doron',
+            sr: 'Helen Doron English',
+            en: 'Helen Doron English',
         },
         ...helenDoronCityPage,
         brandOverview: true,
@@ -292,20 +348,6 @@ export const languagesSchools: School[] = [
             },
             {
                 street: '',
-                city: 'Novi Beograd',
-                lat: 44.808,
-                lng: 20.392,
-                schoolSlug: 'helen-doron-novi-beograd',
-            },
-            {
-                street: '',
-                city: 'Zemun',
-                lat: 44.847,
-                lng: 20.396,
-                schoolSlug: 'helen-doron-zemun',
-            },
-            {
-                street: '',
                 city: 'Čačak',
                 lat: 43.8914,
                 lng: 20.3497,
@@ -318,8 +360,8 @@ export const languagesSchools: School[] = [
         id: 'helen-doron-novi-sad',
         slug: 'helen-doron-novi-sad',
         name: {
-            sr: 'Helen Doron Novi Sad',
-            en: 'Helen Doron Novi Sad',
+            sr: 'Helen Doron English',
+            en: 'Helen Doron English',
         },
         ...helenDoronBranchPage,
         city: 'Novi Sad',
@@ -367,8 +409,8 @@ export const languagesSchools: School[] = [
         id: 'helen-doron-beograd',
         slug: 'helen-doron-beograd',
         name: {
-            sr: 'Helen Doron Beograd',
-            en: 'Helen Doron Beograd',
+            sr: 'Helen Doron English',
+            en: 'Helen Doron English',
         },
         ...helenDoronBranchPage,
         city: 'Beograd',
@@ -377,86 +419,11 @@ export const languagesSchools: School[] = [
         contact: helenDoronSocial,
     },
     {
-        id: 'helen-doron-novi-beograd',
-        slug: 'helen-doron-novi-beograd',
-        name: {
-            sr: 'Helen Doron Novi Beograd',
-            en: 'Helen Doron Novi Beograd',
-        },
-        ...helenDoronBranchPage,
-        city: 'Novi Beograd',
-        district: 'Blok 28',
-        addresses: [
-            helenDoronHall(
-                'Bulevar Arsenija Čarnojevića 103',
-                'Novi Beograd',
-                'Blok 28',
-                44.8143328,
-                20.4142793,
-                { sr: 'Blok 28 — Arsenija Čarnojevića', en: 'Blok 28 — Arsenija Čarnojevića' },
-                {
-                    phone: '061 6485 334',
-                    email: 'novibgd1@helendoron.rs',
-                    website: 'https://helendoron.rs/novi-beograd-1/',
-                },
-                helenDoronMaps('2903457973395151446')
-            ),
-            helenDoronHall(
-                'Dr. Ivana Ribara 81',
-                'Novi Beograd',
-                'Blok 61',
-                44.8022931,
-                20.3684928,
-                { sr: 'Blok 61 — Dr. Ivana Ribara', en: 'Blok 61 — Dr. Ivana Ribara' },
-                {
-                    phone: '062 9725 648',
-                    email: 'novibgd2-blokovi@helendoron.rs',
-                    website: 'https://helendoron.rs/novi-beograd-blok-61/',
-                },
-                helenDoronMaps('1652438137243335967')
-            ),
-        ],
-        contact: helenDoronSocial,
-    },
-    {
-        id: 'helen-doron-zemun',
-        slug: 'helen-doron-zemun',
-        name: {
-            sr: 'Helen Doron Zemun',
-            en: 'Helen Doron Zemun',
-        },
-        ...helenDoronBranchPage,
-        city: 'Zemun',
-        district: 'Gradski park',
-        addresses: [
-            helenDoronHall(
-                'Radoja Dakića 10',
-                'Zemun',
-                'Gradski park',
-                44.8382494,
-                20.4073238,
-                { sr: 'Gradski park — Radoja Dakića', en: 'City Park — Radoja Dakića' },
-                zemunContact,
-                helenDoronMaps('9929231828131060657')
-            ),
-            helenDoronHall(
-                'Cara Dušana 145a, stan 5',
-                'Zemun',
-                'Zemunske kapije',
-                44.8559027,
-                20.3848058,
-                { sr: 'Zemunske kapije — Cara Dušana', en: 'Zemunske kapije — Cara Dušana' },
-                zemunContact
-            ),
-        ],
-        contact: helenDoronSocial,
-    },
-    {
         id: 'helen-doron-cacak',
         slug: 'helen-doron-cacak',
         name: {
-            sr: 'Helen Doron Čačak',
-            en: 'Helen Doron Čačak',
+            sr: 'Helen Doron English',
+            en: 'Helen Doron English',
         },
         ...helenDoronBranchPage,
         city: 'Čačak',

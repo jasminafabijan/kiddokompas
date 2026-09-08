@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useLocation, useParams, useSearchParams } from 'react-router-dom'
 import BackLink from '../components/BackLink'
 import Navbar from '../components/Navbar'
 import SchoolContactList, {
@@ -203,6 +203,15 @@ const SchoolDetailPage = () => {
           </BackLink>
         </div>
       </div>
+    )
+  }
+
+  if (slug && slug !== school.slug) {
+    return (
+      <Navigate
+        to={`${schoolPath(lang, school.slug)}${location.search}${location.hash}`}
+        replace
+      />
     )
   }
 

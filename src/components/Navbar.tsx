@@ -60,7 +60,7 @@ const Navbar = () => {
     }, [location.pathname])
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(min-width: 680px)')
+        const mediaQuery = window.matchMedia('(min-width: 810px)')
         const closeOnDesktop = () => {
             if (mediaQuery.matches) {
                 setIsMenuOpen(false)

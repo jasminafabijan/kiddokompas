@@ -243,7 +243,7 @@
     }
 }
 
-@media (max-width: 679.98px) {
+@media (max-width: 809.98px) {
     .site-navbar-menu {
         position: absolute;
         top: calc(100% + 0.35rem);
@@ -399,7 +399,9 @@
     .site-navbar-brand {
         flex-shrink: 0;
     }
+}
 
+@media (min-width: 810px) {
     .site-navbar-tools {
         display: none;
     }

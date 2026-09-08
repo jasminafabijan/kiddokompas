@@ -114,21 +114,16 @@ const AdminEmailCell = ({ email }: { email?: string }) => {
 }
 
 const AdminPhonesCell = ({ phones }: { phones: string[] }) => {
-  if (phones.length === 0) {
+  const phone = phones[0]
+
+  if (!phone) {
     return <span className="admin-table-empty">—</span>
   }
 
   return (
-    <span className="admin-table-phones">
-      {phones.map((phone, index) => (
-        <span key={phone}>
-          {index > 0 ? ', ' : null}
-          <a href={formatPhoneHref(phone)} className="admin-table-link admin-table-phone">
-            {phone}
-          </a>
-        </span>
-      ))}
-    </span>
+    <a href={formatPhoneHref(phone)} className="admin-table-link admin-table-phone">
+      {phone}
+    </a>
   )
 }
 

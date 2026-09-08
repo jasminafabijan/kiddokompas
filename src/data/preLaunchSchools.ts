@@ -183,4 +183,27 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     email: 'novisad1@helendoron.rs',
     phone: ['021 3029 229', '060 6416 088'],
   },
+  {
+    id: 'partizan-2',
+    name: 'Partizan 2',
+    categorySlugs: ['kids-sports', 'developmental-gymnastics'],
+    website: 'https://www.facebook.com/RekreacijaPartizan2Ns',
+    email: 'office@partizan2.rs',
+    phone: '064 253 80 84',
+  },
+  {
+    id: 'do-re-mi',
+    name: 'Do Re Mi muzička radionica',
+    categorySlugs: ['music'],
+    website: 'https://www.facebook.com/profile.php?id=61593324396421',
+    email: 'kontakt@doremi.rs',
+    phone: '069 554 43 96',
+  },
+  {
+    id: 'mon-mirage',
+    name: 'Plesni klub Mon Mirage',
+    categorySlugs: ['dance'],
+    website: 'https://www.facebook.com/plesni.klub.Mon.Mirage',
+    phone: '060 374 63 27',
+  },
 ]

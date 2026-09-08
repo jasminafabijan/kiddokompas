@@ -671,7 +671,7 @@
     }
 
     .search-submit {
-        @apply btn-navy inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-2xl px-6 text-sm font-semibold sm:col-span-2 sm:w-[248px] sm:justify-self-center lg:col-auto lg:w-auto lg:min-w-[9.5rem] lg:justify-self-auto lg:flex-none;
+        @apply btn-navy inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-2xl px-6 text-sm font-semibold sm:col-span-full sm:w-[248px] sm:justify-self-center lg:col-auto lg:w-auto lg:min-w-[9.5rem] lg:justify-self-auto lg:flex-none;
         height: 58px;
     }
 

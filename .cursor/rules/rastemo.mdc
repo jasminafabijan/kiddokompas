@@ -1,0 +1,13 @@
+---
+description: Rastemo lists newest schools automatically
+globs: src/data/schoolCategories/**/*.ts,src/data/schools.ts,src/data/catalogAddOrder.ts,src/data/verifiedSchoolIds.ts
+alwaysApply: true
+---
+
+# Rastemo (recently added)
+
+Rastemo is **automatic**. Do not keep a hand-picked list of school ids for that section.
+
+- A new school appears there once it is in the public catalog (`VERIFIED_SCHOOL_IDS`, not `hidden`).
+- Brand city branches (`brandSchoolId`) stay off Rastemo; the brand hub card is enough.
+- Do not sort `src/data/catalogAddOrder.ts`. New catalog ids may be appended at the end.

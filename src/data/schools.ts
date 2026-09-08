@@ -1,6 +1,7 @@
 import { getCategoryBySlug, getCategoryName, getCategoryNameBySlug } from './categories'
 import { getCityOptions } from './cities'
 import { getDistrictName, DISTRICT_LABELS } from './districts'
+import { CATALOG_ADD_ORDER } from './catalogAddOrder'
 import { VERIFIED_SCHOOL_IDS } from './verifiedSchoolIds'
 import { getStreetName } from './streets'
 import { formatAgeLabel, formatAgeOptionLabel, getLocalizedText, warnMissingEnglish } from '../i18n/helpers'
@@ -310,20 +311,23 @@ export const getSchoolsByCategory = (categorySlug: string, lang: Lang = 'sr') =>
         .sort((a, b) => getSchoolName(a, lang).localeCompare(getSchoolName(b, lang), lang === 'en' ? 'en' : 'sr'))
 }
 
-/** Newest first — prepend the school id here when adding a new school. */
-const RECENTLY_ADDED_SCHOOL_IDS = [
-    'zverko',
-    'dexters',
-    'fk-bistrica-05',
-    'plivanje-spens',
-] as const
-
+/** Newest listed catalog cards. City branches of a brand are omitted so one hub card is enough. */
 export const getRecentlyAddedSchools = (count = 4) => {
-    const listed = getListedSchools()
+    const listed = forCatalogCards(getListedSchools(), '')
+    const byId = new Map(listed.map((school) => [school.id, school]))
+    const known = new Set<string>(CATALOG_ADD_ORDER)
+    const unseen = listed.filter((school) => !known.has(school.id)).reverse()
+    const fromOrder: School[] = []
 
-    return RECENTLY_ADDED_SCHOOL_IDS.map((id) => listed.find((school) => school.id === id))
-        .filter((school): school is School => school != null)
-        .slice(0, count)
+    for (let index = CATALOG_ADD_ORDER.length - 1; index >= 0; index -= 1) {
+        const school = byId.get(CATALOG_ADD_ORDER[index])
+
+        if (school) {
+            fromOrder.push(school)
+        }
+    }
+
+    return [...unseen, ...fromOrder].slice(0, count)
 }
 
 export const formatSchoolCategoryNames = (school: School, lang: Lang = 'sr') =>
@@ -332,8 +336,16 @@ export const formatSchoolCategoryNames = (school: School, lang: Lang = 'sr') =>
         .join(', ')
 
 /** Direct `/skola/...` URLs stay reachable. Search, categories and the map use listed schools only. */
-export const getSchoolBySlug = (slug: string) =>
-    schools.find((school) => !school.hidden && school.slug === slug)
+const SCHOOL_SLUG_ALIASES: Record<string, string> = {
+    'helen-doron-novi-beograd': 'helen-doron-beograd',
+    'helen-doron-zemun': 'helen-doron-beograd',
+}
+
+export const getSchoolBySlug = (slug: string) => {
+    const canonical = SCHOOL_SLUG_ALIASES[slug] ?? slug
+
+    return schools.find((school) => !school.hidden && school.slug === canonical)
+}
 
 export const getSchoolDistricts = (school: School) => {
     const fromAddresses =
