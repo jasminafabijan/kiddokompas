@@ -51,29 +51,21 @@ const velikoKoloNoviSadLocations = {
     ],
 }
 
-const velikoKoloBeocinLocations = {
-    sr: [
-        'Treninzi se održavaju u Suseku, raspoređeni po uzrastu.',
-        '7–14 godina:',
-        '- Susek, OŠ „Jovan Popović”',
-    ],
-    en: [
-        'Training is held in Susek, grouped by age.',
-        'Ages 7–14:',
-        '- Susek, Primary School “Jovan Popović”',
-    ],
+const velikoKoloBeocinOverviewLocations = {
+    sr: ['7–14 godina:', '- Susek, OŠ „Jovan Popović”'],
+    en: ['Ages 7–14:', '- Susek, Primary School “Jovan Popović”'],
 }
 
 const velikoKoloOverviewDescription = {
     sr: [
         ...velikoKoloIntro.sr,
         ...velikoKoloNoviSadLocations.sr,
-        ...velikoKoloBeocinLocations.sr.slice(1),
+        ...velikoKoloBeocinOverviewLocations.sr,
     ],
     en: [
         ...velikoKoloIntro.en,
         ...velikoKoloNoviSadLocations.en,
-        ...velikoKoloBeocinLocations.en.slice(1),
+        ...velikoKoloBeocinOverviewLocations.en,
     ],
 }
 
@@ -346,10 +338,10 @@ export const folkloreSchools: School[] = [
         ...velikoKoloBranchPage,
         city: 'Beočin',
         district: 'Susek',
-        description: {
-            sr: [...velikoKoloIntro.sr, ...velikoKoloBeocinLocations.sr],
-            en: [...velikoKoloIntro.en, ...velikoKoloBeocinLocations.en],
-        },
+        minAge: 7,
+        maxAge: 14,
+        ageLabel: '7–14 godina',
+        description: velikoKoloIntro,
         addresses: [
             {
                 street: 'OŠ „Jovan Popović”, Nikole Tesle 73',
