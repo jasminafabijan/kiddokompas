@@ -92,7 +92,7 @@ export const developmentalGymnasticsSchools: School[] = [
             },
         ],
         contact: {
-            phone: ['066 466 484', '064 253 80 84'],
+            phone: '066 466 484',
             email: 'office@partizan2.rs',
             website: 'https://partizan2.rs/razvojna-gimnastika/',
             facebook: 'https://www.facebook.com/RekreacijaPartizan2Ns/',

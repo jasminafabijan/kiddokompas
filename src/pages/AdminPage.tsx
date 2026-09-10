@@ -202,10 +202,11 @@ const AdminPage = () => {
       : rejectedSportOptions
 
   const catalogRows = useMemo(() => {
+    const listed = schools.filter((school) => !school.brandSchoolId)
     const filtered =
       sportFilter === ''
-        ? schools
-        : schools.filter((school) => school.categorySlugs.includes(sportFilter))
+        ? listed
+        : listed.filter((school) => school.categorySlugs.includes(sportFilter))
 
     return sortAdminSchools(filtered)
   }, [sportFilter])

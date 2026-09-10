@@ -377,8 +377,10 @@ export const getCategoryNameBySlug = (slug: string, lang: Lang) => {
 }
 
 export const getCategoryNameAccusative = (category: Category, lang: Lang) => {
-  if (lang === 'sr' && category.nameAccusative) {
-    return category.nameAccusative
+  if (lang === 'sr') {
+    const value = category.nameAccusative ?? getCategoryName(category, lang)
+    // Mid-phrase after „Nazad na …”: common nouns stay lowercase (not title case).
+    return value.charAt(0).toLocaleLowerCase('sr-RS') + value.slice(1)
   }
 
   return getCategoryName(category, lang)
