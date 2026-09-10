@@ -13,7 +13,7 @@ import type { School, SchoolAddress, SchoolContact } from './types'
 
 const helenDoronDescription = {
     sr: [
-        'Pre 35 godina, lingvista i nastavnik, gospođa Helen Doron, napravila je revoluciju u učenju engleskog jezika kao stranog jezika za decu, razvivši metod koji oponaša način na koji bebe uče njihov maternji jezik.',
+        'Pre više od 40 godina, lingvista i nastavnik, gospođa Helen Doron, napravila je revoluciju u učenju engleskog jezika kao stranog jezika za decu, razvivši metod koji oponaša način na koji bebe uče njihov maternji jezik.',
         'Danas Helen Doron predstavlja međunarodnu franšiznu mrežu zastupljenu u 34 zemlje.',
         'Preko 3 miliona dece danas priča engleski jezik zahvaljujući Helen Doron metodi.',
         'Centralna komponenta Helen Doron English metode je pozadinsko slušanje određenih audio diskova ili pesama kod kuće, optimalno 15-25 minuta dnevno svakog dana.',
@@ -21,7 +21,7 @@ const helenDoronDescription = {
         'Helen Doron metod za učenje uzima u obzir dečje jedinstvene stilove učenja i koristi igre, pokret, muziku i mnoštvo zabave da poveća dečju prirodnu ljubav za učenjem i sklonost za upijanjem jezika.',
     ],
     en: [
-        'Thirty-five years ago, linguist and teacher Helen Doron revolutionized learning English as a foreign language for children, developing a method that mimics the way babies learn their native language.',
+        'More than 40 years ago, linguist and teacher Helen Doron revolutionized learning English as a foreign language for children, developing a method that mimics the way babies learn their native language.',
         'Today Helen Doron is an international franchise network in 34 countries.',
         'More than 3 million children today speak English thanks to the Helen Doron method.',
         'A central component of the Helen Doron English method is background listening to specific audio discs or songs at home, optimally 15–25 minutes every day.',
