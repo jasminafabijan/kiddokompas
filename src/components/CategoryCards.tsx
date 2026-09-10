@@ -4,7 +4,9 @@ import { getActivityOptions } from '../data/schools'
 import { CATEGORIES_SECTION_ID } from '../i18n/routes'
 import { useI18n } from '../i18n/useI18n'
 import actingIcon from '../assets/icons/acting.svg'
+import creativeWritingIcon from '../assets/icons/creative-writing.svg'
 import languagesIcon from '../assets/icons/languages.svg'
+import learningSupportIcon from '../assets/icons/learning-support.svg'
 import programmingIcon from '../assets/icons/programming.svg'
 import balletIcon from '../assets/icons/ballet.svg'
 import basketballIcon from '../assets/icons/basketball.svg'
@@ -17,6 +19,7 @@ import jazzDanceIcon from '../assets/icons/jazz-dance.svg'
 import karateIcon from '../assets/icons/karate.svg'
 import ridingIcon from '../assets/icons/riding.svg'
 import folkloreIcon from '../assets/icons/folklore.svg'
+import musicIcon from '../assets/icons/music.svg'
 import tennisIcon from '../assets/icons/tennis.svg'
 import tableTennisIcon from '../assets/icons/table-tennis.svg'
 import athleticsIcon from '../assets/icons/athletics.svg'
@@ -62,8 +65,11 @@ const categoryDisplay: CategoryDisplay[] = [
   { id: 'jazz-ballet', iconBg: 'peach', iconSrc: jazzDanceIcon, iconSizeAdjustPx: 6 },
   { id: 'dance-sport', iconBg: 'mint', iconSrc: danceSportIcon, iconSizeAdjustPx: 4 },
   { id: 'folklore', iconBg: 'mint', iconSrc: folkloreIcon, iconSizeAdjustPx: 2 },
+  { id: 'music', iconBg: 'peach', iconSrc: musicIcon },
   { id: 'acting', iconBg: 'peach', iconSrc: actingIcon, iconSizeAdjustPx: -6 },
+  { id: 'creative-writing', iconBg: 'mint', iconSrc: creativeWritingIcon },
   { id: 'languages', iconBg: 'mint', iconSrc: languagesIcon, iconSizeAdjustPx: -6 },
+  { id: 'learning-support', iconBg: 'peach', iconSrc: learningSupportIcon, iconSizeAdjustPx: -4 },
   { id: 'programming', iconBg: 'peach', iconSrc: programmingIcon, iconSizeAdjustPx: -18 },
 ]
 

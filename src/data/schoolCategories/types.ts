@@ -48,6 +48,10 @@ export type School = {
     imageWebp: string
     imageFallback: string
     description?: LocalizedParagraphs
+    /** Optional override when the school is opened from a specific category. */
+    descriptionsByCategory?: Partial<Record<string, LocalizedParagraphs>>
+    /** Optional website override when opened from a specific category. */
+    websitesByCategory?: Partial<Record<string, string>>
     addresses?: SchoolAddress[]
     contact?: SchoolContact
     /** Brand landing page: shown when no city is selected; omitted from the map. */

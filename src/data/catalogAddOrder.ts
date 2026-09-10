@@ -46,4 +46,5 @@ export const CATALOG_ADD_ORDER = [
   'partizan-2-plesni-klub',
   'academy-centar-stranih-jezika',
   'nskrug',
+  'scool',
 ] as const

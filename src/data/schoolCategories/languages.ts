@@ -3,8 +3,10 @@ import helenDoronWebp from '../../assets/images/schools/languages/helen-doron.we
 import helenDoronJpg from '../../assets/images/schools/languages/helen-doron.jpg'
 import academyWebp from '../../assets/images/schools/languages/academy.webp'
 import academyJpg from '../../assets/images/schools/languages/academy.jpg'
-import nskrugWebp from '../../assets/images/schools/languages/nskrug.webp'
-import nskrugPng from '../../assets/images/schools/languages/nskrug.png'
+import nskrugWebp from '../../assets/images/schools/languages/ns-krug.webp'
+import nskrugFallback from '../../assets/images/schools/languages/ns-krug.jpg'
+import scoolWebp from '../../assets/images/schools/languages/scool.webp'
+import scoolPng from '../../assets/images/schools/languages/scool.png'
 
 import type { LocalizedText } from '../../i18n/types'
 import type { School, SchoolAddress, SchoolContact } from './types'
@@ -414,33 +416,89 @@ export const languagesSchools: School[] = [
             sr: 'Novosadski kulturno-obrazovni krug',
             en: 'Novi Sad Cultural and Educational Circle',
         },
-        categorySlugs: ['languages'],
+        categorySlugs: ['languages', 'learning-support', 'programming', 'creative-writing'],
         city: 'Novi Sad',
         district: 'Detelinara',
         minAge: 3,
         maxAge: null,
         ageLabel: '3+ godina',
         imageWebp: nskrugWebp,
-        imageFallback: nskrugPng,
+        imageFallback: nskrugFallback,
         description: {
             sr: [
-                'Novosadski kulturno-obrazovni krug je obrazovni centar u kom deca uče strane jezike kroz igre, pesmice, crtanje i igračke, uz nastavni plan prilagođen uzrastu.',
-                'U ponudi su engleski, nemački, španski, ruski, francuski, mađarski i srpski, u malim grupama i sa naglaskom na konverzaciju.',
-                'Pored jezika, centar okuplja i kreativne radionice, prve korake u programiranju i školsku podršku — jezik ostaje deo šireg rada sa decom.',
+                'Strani jezici uče se kroz igru, pesmice, priče i crtanje, uz nastavni plan prilagođen uzrastu i interesovanjima.',
+                'U ponudi su engleski, nemački, ruski, francuski, španski, mađarski i srpski — u malim grupama, sa naglaskom na konverzaciju i aktivno usvajanje jezika.',
+                'Nastava prati module od predškolskog uzrasta do srednje škole, uz kvalifikovane nastavnike i fleksibilne termine.',
             ],
             en: [
-                'Novi Sad Cultural and Educational Circle is an education center where children learn foreign languages through games, songs, drawing and toys, with an age-adapted syllabus.',
-                'The offer includes English, German, Spanish, Russian, French, Hungarian and Serbian, in small groups and with an emphasis on conversation.',
-                'Alongside languages, the center also runs creative workshops, first steps in programming and school support — language stays part of a wider way of working with children.',
+                'Foreign languages are taught through play, songs, stories and drawing, with a syllabus adapted to age and interests.',
+                'The offer includes English, German, Russian, French, Spanish, Hungarian and Serbian — in small groups, with an emphasis on conversation and active language use.',
+                'Classes follow modules from preschool through high school, with qualified teachers and flexible scheduling.',
             ],
+        },
+        descriptionsByCategory: {
+            languages: {
+                sr: [
+                    'Strani jezici uče se kroz igru, pesmice, priče i crtanje, uz nastavni plan prilagođen uzrastu i interesovanjima.',
+                    'U ponudi su engleski, nemački, ruski, francuski, španski, mađarski i srpski — u malim grupama, sa naglaskom na konverzaciju i aktivno usvajanje jezika.',
+                    'Nastava prati module od predškolskog uzrasta do srednje škole, uz kvalifikovane nastavnike i fleksibilne termine.',
+                ],
+                en: [
+                    'Foreign languages are taught through play, songs, stories and drawing, with a syllabus adapted to age and interests.',
+                    'The offer includes English, German, Russian, French, Spanish, Hungarian and Serbian — in small groups, with an emphasis on conversation and active language use.',
+                    'Classes follow modules from preschool through high school, with qualified teachers and flexible scheduling.',
+                ],
+            },
+            'learning-support': {
+                sr: [
+                    'Individualni časovi uz mentora 1:1 — fokus na znanja koja treba steći i probleme koje treba rešiti, u terminima koji odgovaraju učeniku.',
+                    'Poluindividualni rad u malim grupama prati školsko gradivo, pripremu za kontrolne i pismene, uz efikasan pristup sličan individualnoj nastavi.',
+                    'U ponudi su časovi iz srpskog, matematike, programiranja, fizike, hemije, biologije, geografije, istorije, stranih jezika i drugih školskih predmeta.',
+                ],
+                en: [
+                    'Individual 1:1 mentoring — focused on the knowledge to build and the problems to solve, on a schedule that works for the student.',
+                    'Semi-individual work in small groups tracks school material and prep for tests and written exams, with an approach close to one-on-one teaching.',
+                    'The offer includes classes in Serbian, math, programming, physics, chemistry, biology, geography, history, foreign languages and other school subjects.',
+                ],
+            },
+            programming: {
+                sr: [
+                    'Prvi koraci u programiranju uvode decu postepeno — najmlađi kroz vizuelno programiranje u Scratch-u i rad sa robotićima, stariji kroz Python na sopstvenim projektima.',
+                    'Kursevi su prilagođeni različitim nivoima znanja; nastava je mentorska, u malim grupama, uz visok udeo praktičnog rada.',
+                    'Tim čine saradnici i diplomci računarskog usmerenja FTN-a — cilj je kreativnost, logičko razmišljanje i timski rad, umesto pasivnog vremena ispred ekrana.',
+                ],
+                en: [
+                    'First steps in programming introduce children gradually — younger kids through visual Scratch coding and work with small robots, older ones through Python on their own projects.',
+                    'Courses are adapted to different knowledge levels; teaching is mentored, in small groups, with a strong share of hands-on work.',
+                    'The team includes collaborators and computer-science graduates from FTN — the goal is creativity, logical thinking and teamwork, instead of passive screen time.',
+                ],
+            },
+            'creative-writing': {
+                sr: [
+                    'Kurs kreativnog pisanja poezije ili proze — prostor da se ideje, misli i osećanja pretoče u stihove, priče ili roman, bilo da ste početnik ili već pišete.',
+                    'Polaznici čitaju odabrana dela svetske i srpske književnosti, pišu na teme, dobijaju usmerenja i povratne informacije, a mogu i da učestvuju na književnoj večeri ili literarnom konkursu.',
+                    'Nastava je interaktivna, u manjim grupama ili individualno — cilj je razviti stil, maštu i veštinu pisanja do prve sopstvene knjige.',
+                ],
+                en: [
+                    'A creative writing course in poetry or prose — room to turn ideas, thoughts and feelings into verses, stories or a novel, whether you are a beginner or already write.',
+                    'Participants read selected works of world and Serbian literature, write on themes, get guidance and feedback, and may join a literary evening or contest.',
+                    'Classes are interactive, in small groups or one-on-one — the goal is to develop style, imagination and writing skill toward a first book of your own.',
+                ],
+            },
+        },
+        websitesByCategory: {
+            languages: 'https://www.nskrug.org/časovi-i-kursevi/stranijezicizadecu',
+            'learning-support': 'https://www.nskrug.org/časovi-i-kursevi/individualni-časovi',
+            programming: 'https://www.nskrug.org/časovi-i-kursevi/programiranje-za-decu',
+            'creative-writing': 'https://www.nskrug.org/časovi-i-kursevi/kreativnopisanje',
         },
         addresses: [
             {
                 street: 'Pasterova 2',
                 city: 'Novi Sad',
                 district: 'Detelinara',
-                lat: 45.2599429,
-                lng: 19.8209554,
+                lat: 45.2599119,
+                lng: 19.8208928,
             },
             {
                 street: 'Narodnog fronta 2a',
@@ -449,14 +507,97 @@ export const languagesSchools: School[] = [
                 lat: 45.2425341,
                 lng: 19.8464136,
             },
+            {
+                street: 'Preradovićeva 17',
+                city: 'Novi Sad',
+                district: 'Petrovaradin',
+                lat: 45.251155,
+                lng: 19.8742251,
+            },
         ],
         contact: {
             phone: ['064 039 32 69', '064 113 27 29'],
             email: 'info@nskrug.org',
-            website: 'https://www.nskrug.org/',
+            website: 'https://www.nskrug.org/časovi-i-kursevi/stranijezicizadecu',
             facebook: 'https://www.facebook.com/nskulobrazovnikrug',
             facebookLabel: 'Novosadski kulturno-obrazovni krug',
             instagram: 'https://www.instagram.com/ns.krug/',
+        },
+    },
+    {
+        id: 'scool',
+        slug: 'scool',
+        name: {
+            sr: 'Centar stranih jezika Scool',
+            en: 'Scool Language Center',
+        },
+        categorySlugs: ['languages', 'learning-support', 'music'],
+        city: 'Novi Sad',
+        district: 'Stari Grad (Centar)',
+        minAge: 4,
+        maxAge: 77,
+        ageLabel: '4–77 godina',
+        imageWebp: scoolWebp,
+        imageFallback: scoolPng,
+        description: {
+            sr: [
+                'Scool je drugačiji način učenja.',
+                'Po uzoru na kanadski obrazovni sistem, engleski se uči kroz Project-Based Learning (PBL) — deca istražuju, stvaraju, sarađuju i kroz konkretne projekte zaista koriste jezik.',
+                'Srpski jezik za strance: praktičan srpski za decu i odrasle kojima srpski nije maternji jezik — kroz razgovor, svakodnevne situacije i postepeno razvijanje sigurnosti u jeziku.',
+                'U ponudi su i klavir i solfeđo, uživo i online.',
+            ],
+            en: [
+                'Scool is a different way of learning.',
+                'Following the Canadian education model, English is taught through Project-Based Learning (PBL) — children explore, create, collaborate and truly use the language through concrete projects.',
+                'Serbian for foreigners: practical Serbian for children and adults whose first language is not Serbian — through conversation, everyday situations and gradually building confidence in the language.',
+                'The offer also includes piano and solfeggio, in person and online.',
+            ],
+        },
+        descriptionsByCategory: {
+            'learning-support': {
+                sr: [
+                    'Srpski jezik – priprema za malu maturu',
+                    'Ciljana priprema za završni ispit iz srpskog jezika, uz sistematizaciju gradiva, vežbanje zadataka i rad na oblastima koje učeniku predstavljaju najveći izazov.',
+                    'Pomoć sa školskim gradivom',
+                    'Podrška u učenju i savladavanju gradiva iz različitih školskih predmeta, uz objašnjenja prilagođena učeniku, vežbanje i pomoć u organizaciji učenja.',
+                ],
+                en: [
+                    'Serbian — prep for the elementary school leaving exam',
+                    'Focused preparation for the final Serbian exam, with systematizing the material, practice tasks and work on the areas that challenge the student most.',
+                    'Help with schoolwork',
+                    'Support in learning and mastering material from different school subjects, with explanations tailored to the student, practice and help organizing study.',
+                ],
+            },
+            music: {
+                sr: [
+                    'Muzičko i solfeđo',
+                    'Razvijanje muzičkih veština kroz upoznavanje sa notama, ritmom, melodijom i osnovama muzičke teorije, uz praktičan i prilagođen pristup.',
+                    'Klavir',
+                    'Individualni časovi klavira prilagođeni uzrastu i predznanju deteta, sa fokusom na pravilnu tehniku, muzikalnost, čitanje nota i uživanje u sviranju.',
+                ],
+                en: [
+                    'Music theory and solfeggio',
+                    'Building musical skills through notes, rhythm, melody and the basics of music theory, with a practical, age-adapted approach.',
+                    'Piano',
+                    'Individual piano lessons adapted to the child’s age and prior knowledge, with a focus on proper technique, musicality, reading notes and enjoying playing.',
+                ],
+            },
+        },
+        addresses: [
+            {
+                street: 'Dunavska 17',
+                city: 'Novi Sad',
+                district: 'Stari Grad (Centar)',
+                lat: 45.2572671,
+                lng: 19.8497204,
+                mapsUrl:
+                    'https://www.google.com/maps/place/Scool+-+Centar+stranih+jezika+Novi+Sad/@45.2572671,19.8497204,17z/data=!4m6!3m5!1s0x475b11840e2b40fb:0x8412724a10026438!8m2!3d45.2572671!4d19.8497204!16s%2Fg%2F11tx6df5mb',
+            },
+        ],
+        contact: {
+            phone: '062 412 646',
+            email: 'centarscool@gmail.com',
+            instagram: 'https://www.instagram.com/scoolns/',
         },
     },
     {

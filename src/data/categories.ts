@@ -305,6 +305,18 @@ export const categories: Category[] = [
     subtitle: { sr: 'Umetničke škole', en: 'Art schools' },
   },
   {
+    id: 'creative-writing',
+    name: { sr: 'Kreativno pisanje', en: 'Creative writing' },
+    nameAccusative: 'kreativno pisanje',
+    slug: 'creative-writing',
+    slugs: { sr: 'kreativno-pisanje', en: 'creative-writing' },
+    subtitle: { sr: 'Kursevi kreativnog pisanja', en: 'Creative writing courses' },
+    pageSubtitle: {
+      sr: 'Istražite kurseve kreativnog pisanja u {city} — za poeziju, prozu i radost stvaranja kroz reči.',
+      en: 'Explore creative writing courses in {city} — for poetry, prose and the joy of creating through words.',
+    },
+  },
+  {
     id: 'languages',
     name: { sr: 'Jezici', en: 'Languages' },
     nameAccusative: 'jezike',
@@ -314,6 +326,18 @@ export const categories: Category[] = [
     pageSubtitle: {
       sr: 'Istražite škole stranih jezika u {city} — za decu koja kroz igru i razgovor usvajaju novi jezik.',
       en: 'Explore foreign language schools in {city} — for children who acquire a new language through play and conversation.',
+    },
+  },
+  {
+    id: 'learning-support',
+    name: { sr: 'Podrška učenju', en: 'Learning support' },
+    nameAccusative: 'podršku učenju',
+    slug: 'learning-support',
+    slugs: { sr: 'podrska-ucenju', en: 'learning-support' },
+    subtitle: { sr: 'Podrška učenju', en: 'Learning support' },
+    pageSubtitle: {
+      sr: 'Istražite podršku učenju u {city} — priprema za ispite i pomoć sa školskim gradivom.',
+      en: 'Explore learning support in {city} — exam prep and help with schoolwork.',
     },
   },
   {

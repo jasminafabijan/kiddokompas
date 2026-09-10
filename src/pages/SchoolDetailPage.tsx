@@ -217,13 +217,25 @@ const SchoolDetailPage = () => {
     )
   }
 
-  const contactLinks = buildContactLinks(school.contact)
+  const contactForCategory = {
+    ...school.contact,
+    website:
+      (activeCategorySlug && school.websitesByCategory?.[activeCategorySlug]) ||
+      school.contact?.website,
+  }
+  const contactLinks = buildContactLinks(contactForCategory)
   const showLocationPicker = usesLocationPicker(school.addresses)
   const mapAddresses =
     school.addresses?.filter((address) => address.lat != null && address.lng != null) ?? []
   const showSimpleLocations = Boolean(school.addresses?.length || mapAddresses.length > 0)
-  const descriptionParagraphs = school.description
-    ? getLocalizedParagraphs(school.description, lang, `school:${school.id}:description`)
+  const descriptionSource =
+    (activeCategorySlug && school.descriptionsByCategory?.[activeCategorySlug]) || school.description
+  const descriptionParagraphs = descriptionSource
+    ? getLocalizedParagraphs(
+        descriptionSource,
+        lang,
+        `school:${school.id}:description${activeCategorySlug ? `:${activeCategorySlug}` : ''}`
+      )
     : []
   const back = getSchoolBack(
     from,

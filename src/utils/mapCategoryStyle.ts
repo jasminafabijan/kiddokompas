@@ -37,9 +37,11 @@ const GROUP_COLOR: Record<string, string> = {
   music: DANCE_MUSIC,
   acting: ACTING,
   art: CHESS,
+  'creative-writing': ACTING,
   riding: NATURE,
   nature: NATURE,
   languages: LEARNING,
+  'learning-support': LEARNING,
   programming: LEARNING,
   science: LEARNING,
   technology: LEARNING,
@@ -120,8 +122,14 @@ const ICONS: Record<string, string> = {
   art: wrap(
     '<path d="M12 3.4c-4.8 0-8.6 3.6-8.6 7.4 0 2.6 1.8 4 3.4 4 1.2 0 1.6-.6 1.6-1.4 0-.6-.4-1.2-.4-2 0-2.6 2.2-4.6 4-4.6s4 2 4 4.6c0 .8-.4 1.4-.4 2 0 .8.4 1.4 1.6 1.4 1.6 0 3.4-1.4 3.4-4 0-3.8-3.8-7.4-8.6-7.4z"/><circle cx="8.2" cy="8.4" r="1"/><circle cx="12" cy="6.6" r="1"/><circle cx="15.8" cy="8.4" r="1"/>'
   ),
+  'creative-writing': wrap(
+    '<path d="M14 3.8 19.2 9l-9.4 9.4-5.2 1.2 1.2-5.2z"/><path d="M12.2 5.6 18.4 11.8"/><path d="M4.5 20.5h15"/>'
+  ),
   languages: wrap(
     '<circle cx="12" cy="12" r="9"/><path d="M3.6 12h16.8M12 3c2.4 3.2 3.6 6.2 3.6 9s-1.2 5.8-3.6 9M12 3c-2.4 3.2-3.6 6.2-3.6 9s1.2 5.8 3.6 9"/>'
+  ),
+  'learning-support': wrap(
+    '<path d="M4.5 19.5V6.2c0-.8.6-1.4 1.4-1.4h5.2c.8 0 1.4.6 1.4 1.4V19.5"/><path d="M12.5 19.5V6.2c0-.8.6-1.4 1.4-1.4h5.2c.8 0 1.4.6 1.4 1.4V19.5"/><path d="M4.5 19.5h15"/>'
   ),
   programming: wrap(
     '<path d="M8.2 6.8 3.8 12l4.4 5.2M15.8 6.8 20.2 12l-4.4 5.2M10.4 18.6 13.6 5.4"/>'
