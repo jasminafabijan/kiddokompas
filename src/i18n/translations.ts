@@ -168,6 +168,7 @@ export const translations = {
     backMap: { sr: 'Nazad na mapu', en: 'Back to map' },
     backCategory: { sr: 'Nazad na {category}', en: 'Back to {category}' },
     aboutProgram: { sr: 'O programu', en: 'About the program' },
+    activities: { sr: 'Aktivnosti:', en: 'Activities:' },
   },
   category: {
     notFound: { sr: 'Kategorija nije pronađena.', en: 'Category not found.' },

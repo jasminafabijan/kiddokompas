@@ -1646,6 +1646,32 @@
         @apply m-0 list-disc space-y-1 pl-5 text-base leading-relaxed md:text-lg;
     }
 
+    .school-detail-activity-links {
+        @apply mt-5 flex flex-col gap-2;
+    }
+
+    .school-detail-activity-links-list {
+        @apply m-0 flex list-none flex-col gap-2 p-0 text-base md:text-lg;
+    }
+
+    .school-detail-activity-link {
+        @apply inline-flex items-center gap-2 no-underline transition-colors;
+        color: var(--text-muted);
+    }
+
+    .school-detail-activity-link:hover {
+        color: var(--text-muted);
+    }
+
+    .school-detail-activity-link-arrow {
+        @apply h-4 w-4 shrink-0 transition-transform duration-200 ease-out;
+        color: var(--primary);
+    }
+
+    .school-detail-activity-link:hover .school-detail-activity-link-arrow {
+        transform: translateX(0.2rem);
+    }
+
     .school-detail-map {
         @apply relative z-0 overflow-hidden rounded-2xl border;
         border-color: var(--border);

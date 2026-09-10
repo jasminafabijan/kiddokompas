@@ -426,14 +426,12 @@ export const languagesSchools: School[] = [
         imageFallback: nskrugFallback,
         description: {
             sr: [
-                'Strani jezici uče se kroz igru, pesmice, priče i crtanje, uz nastavni plan prilagođen uzrastu i interesovanjima.',
-                'U ponudi su engleski, nemački, ruski, francuski, španski, mađarski i srpski — u malim grupama, sa naglaskom na konverzaciju i aktivno usvajanje jezika.',
-                'Nastava prati module od predškolskog uzrasta do srednje škole, uz kvalifikovane nastavnike i fleksibilne termine.',
+                'U ponudi su strani jezici, podrška školskom gradivu, programiranje za decu i kreativno pisanje — u malim grupama ili individualno, uz pristup prilagođen uzrastu.',
+                'Strani jezici kroz igru i konverzaciju, mentorski časovi iz školskih predmeta, Scratch i Python sa robotićima, kao i kurs poezije i proze.',
             ],
             en: [
-                'Foreign languages are taught through play, songs, stories and drawing, with a syllabus adapted to age and interests.',
-                'The offer includes English, German, Russian, French, Spanish, Hungarian and Serbian — in small groups, with an emphasis on conversation and active language use.',
-                'Classes follow modules from preschool through high school, with qualified teachers and flexible scheduling.',
+                'The offer includes foreign languages, schoolwork support, programming for children and creative writing — in small groups or one-on-one, with an age-adapted approach.',
+                'Foreign languages through play and conversation, mentored classes in school subjects, Scratch and Python with small robots, plus a poetry and prose course.',
             ],
         },
         descriptionsByCategory: {
@@ -541,19 +539,27 @@ export const languagesSchools: School[] = [
         imageFallback: scoolPng,
         description: {
             sr: [
-                'Scool je drugačiji način učenja.',
-                'Po uzoru na kanadski obrazovni sistem, engleski se uči kroz Project-Based Learning (PBL) — deca istražuju, stvaraju, sarađuju i kroz konkretne projekte zaista koriste jezik.',
-                'Srpski jezik za strance: praktičan srpski za decu i odrasle kojima srpski nije maternji jezik — kroz razgovor, svakodnevne situacije i postepeno razvijanje sigurnosti u jeziku.',
-                'U ponudi su i klavir i solfeđo, uživo i online.',
+                'Scool nudi engleski kroz Project-Based Learning, srpski za strance, podršku školskom gradivu i malu maturu, kao i časove klavira i solfeđa — uživo i online.',
+                'Po uzoru na kanadski obrazovni sistem, nastava je praktična: deca istražuju, stvaraju, sarađuju i zaista koriste jezik kroz projekte.',
             ],
             en: [
-                'Scool is a different way of learning.',
-                'Following the Canadian education model, English is taught through Project-Based Learning (PBL) — children explore, create, collaborate and truly use the language through concrete projects.',
-                'Serbian for foreigners: practical Serbian for children and adults whose first language is not Serbian — through conversation, everyday situations and gradually building confidence in the language.',
-                'The offer also includes piano and solfeggio, in person and online.',
+                'Scool offers English through Project-Based Learning, Serbian for foreigners, schoolwork support and elementary exam prep, plus piano and solfeggio — in person and online.',
+                'Following the Canadian education model, teaching is practical: children explore, create, collaborate and truly use the language through projects.',
             ],
         },
         descriptionsByCategory: {
+            languages: {
+                sr: [
+                    'Scool je drugačiji način učenja.',
+                    'Po uzoru na kanadski obrazovni sistem, engleski se uči kroz Project-Based Learning (PBL) — deca istražuju, stvaraju, sarađuju i kroz konkretne projekte zaista koriste jezik.',
+                    'Srpski jezik za strance: praktičan srpski za decu i odrasle kojima srpski nije maternji jezik — kroz razgovor, svakodnevne situacije i postepeno razvijanje sigurnosti u jeziku.',
+                ],
+                en: [
+                    'Scool is a different way of learning.',
+                    'Following the Canadian education model, English is taught through Project-Based Learning (PBL) — children explore, create, collaborate and truly use the language through concrete projects.',
+                    'Serbian for foreigners: practical Serbian for children and adults whose first language is not Serbian — through conversation, everyday situations and gradually building confidence in the language.',
+                ],
+            },
             'learning-support': {
                 sr: [
                     'Srpski jezik – priprema za malu maturu',

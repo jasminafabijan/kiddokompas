@@ -7,7 +7,7 @@ import SchoolContactList, {
 } from '../components/SchoolContactList'
 import SchoolLocations from '../components/SchoolLocations'
 import SchoolMap from '../components/SchoolMap'
-import { getCategoryBySlug, getCategoryNameAccusative } from '../data/categories'
+import { getCategoryBySlug, getCategoryName, getCategoryNameAccusative } from '../data/categories'
 import {
   categoryPath,
   getCategoryQueryValue,
@@ -191,8 +191,10 @@ const SchoolDetailPage = () => {
   const activeCategorySlug =
     school && categoryFromQuery && school.categorySlugs.includes(categoryFromQuery.id)
       ? categoryFromQuery.id
-      : school?.categorySlugs[0]
+      : undefined
   const category = activeCategorySlug ? getCategoryBySlug(activeCategorySlug) : undefined
+  const isMultiCategory = Boolean(school && school.categorySlugs.length > 1)
+  const showCategoryLinks = Boolean(school && isMultiCategory && !activeCategorySlug)
 
   if (!school) {
     return (
@@ -234,7 +236,7 @@ const SchoolDetailPage = () => {
     ? getLocalizedParagraphs(
         descriptionSource,
         lang,
-        `school:${school.id}:description${activeCategorySlug ? `:${activeCategorySlug}` : ''}`
+        `school:${school.id}:description${activeCategorySlug ? `:${activeCategorySlug}` : ':overview'}`
       )
     : []
   const back = getSchoolBack(
@@ -290,31 +292,69 @@ const SchoolDetailPage = () => {
                 </div>
               </div>
 
-              {descriptionParagraphs.length > 0 && (
+              {(descriptionParagraphs.length > 0 || showCategoryLinks) && (
                 <section className="school-detail-section" aria-labelledby="school-description">
                   <h2 id="school-description" className="school-detail-section-title">
                     {t('school.aboutProgram')}
                   </h2>
-                  <div className="school-detail-description">
-                    {groupDescriptionParagraphs(descriptionParagraphs).map((block, index) =>
-                      block.type === 'list' ? (
-                        <div key={`list-${index}`} className="school-detail-description-group">
-                          {block.heading ? (
-                            <p className="school-detail-description-heading">{block.heading}</p>
-                          ) : null}
-                          <ul className="school-detail-description-list">
-                            {block.items.map((item) => (
-                              <li key={item}>
-                                <DescriptionText text={item} />
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : (
-                        <DescriptionParagraph key={block.text} text={block.text} />
-                      )
-                    )}
-                  </div>
+                  {descriptionParagraphs.length > 0 ? (
+                    <div className="school-detail-description">
+                      {groupDescriptionParagraphs(descriptionParagraphs).map((block, index) =>
+                        block.type === 'list' ? (
+                          <div key={`list-${index}`} className="school-detail-description-group">
+                            {block.heading ? (
+                              <p className="school-detail-description-heading">{block.heading}</p>
+                            ) : null}
+                            <ul className="school-detail-description-list">
+                              {block.items.map((item) => (
+                                <li key={item}>
+                                  <DescriptionText text={item} />
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : (
+                          <DescriptionParagraph key={block.text} text={block.text} />
+                        )
+                      )}
+                    </div>
+                  ) : null}
+                  {showCategoryLinks ? (
+                    <div className="school-detail-activity-links">
+                      <p className="school-detail-description-heading">{t('school.activities')}</p>
+                      <ul className="school-detail-activity-links-list">
+                        {school.categorySlugs.map((categorySlug) => {
+                          const activityCategory = getCategoryBySlug(categorySlug)
+                          if (!activityCategory) return null
+
+                          return (
+                            <li key={categorySlug}>
+                              <Link
+                                to={path.school(school.slug, categorySlug)}
+                                state={{ from }}
+                                className="school-detail-activity-link"
+                              >
+                                <span>{getCategoryName(activityCategory, lang)}</span>
+                                <svg
+                                  aria-hidden="true"
+                                  className="school-detail-activity-link-arrow"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                >
+                                  <path d="M5 12h14" />
+                                  <path d="m13 6 6 6-6 6" />
+                                </svg>
+                              </Link>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </div>
+                  ) : null}
                 </section>
               )}
             </div>
