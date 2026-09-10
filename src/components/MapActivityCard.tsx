@@ -51,7 +51,7 @@ const MapActivityCard = ({ location, selected, onSelect }: MapActivityCardProps)
   const categorySlug = school.categorySlugs[0]
   const categoryName = getCategoryNameBySlug(categorySlug, lang)
   const { color, svg } = getMapCategoryStyle(categorySlug)
-  const href = schoolMapHref(school, lang)
+  const href = schoolMapHref(school, lang, location.addressIndex)
   const from = `${routeLocation.pathname}${routeLocation.search}${routeLocation.hash}`
 
   return (

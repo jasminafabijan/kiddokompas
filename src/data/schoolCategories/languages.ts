@@ -1,6 +1,10 @@
 import eltisiJpg from '../../assets/images/schools/languages/eltisi.jpg'
 import helenDoronWebp from '../../assets/images/schools/languages/helen-doron.webp'
 import helenDoronJpg from '../../assets/images/schools/languages/helen-doron.jpg'
+import academyWebp from '../../assets/images/schools/languages/academy.webp'
+import academyJpg from '../../assets/images/schools/languages/academy.jpg'
+import nskrugWebp from '../../assets/images/schools/languages/nskrug.webp'
+import nskrugPng from '../../assets/images/schools/languages/nskrug.png'
 
 import type { LocalizedText } from '../../i18n/types'
 import type { School, SchoolAddress, SchoolContact } from './types'
@@ -25,9 +29,9 @@ const helenDoronDescription = {
 }
 
 const helenDoronContact: SchoolContact = {
-    phone: ['0800 333 000', '064 641 6082', '011 3573 017'],
+    phone: ['0800 333 000', '064 641 60 82', '011 357 30 17'],
     website: 'https://helendoron.rs',
-    facebook: 'https://sr-rs.facebook.com/HelenDoronSchoolOfEnglishSrbija',
+    facebook: 'https://www.facebook.com/HelenDoronSchoolOfEnglishSrbija/',
     facebookLabel: 'Helen Doron English',
     instagram: 'https://www.instagram.com/helendoronsrbija/',
 }
@@ -80,9 +84,12 @@ const helenDoronHall = (
 })
 
 const zemunContact: SchoolContact = {
-    phone: '062 1870 667',
+    phone: '062 187 06 67',
     email: 'zemun1@helendoron.rs',
     website: 'https://helendoron.rs/zemun-1/',
+    facebook: 'https://www.facebook.com/helen.doron.zemun',
+    facebookLabel: 'Helen Doron Zemun',
+    instagram: 'https://www.instagram.com/helen.doron.zemun/',
 }
 
 const helenDoronBeogradHalls: SchoolAddress[] = [
@@ -94,9 +101,12 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         20.4199788,
         { sr: 'Čukarica — Banovo brdo', en: 'Čukarica — Banovo brdo' },
         {
-            phone: ['011 3573 017', '064 641 6082'],
+            phone: ['011 357 30 17', '064 641 60 82'],
             email: 'cukarica@helendoron.rs',
             website: 'https://helendoron.rs/cukarica/',
+            facebook: 'https://www.facebook.com/HelenDoronEnglishCukarica',
+            facebookLabel: 'Helen Doron Čukarica',
+            instagram: 'https://www.instagram.com/helen_doron_school_cukarica/',
         },
         helenDoronMaps('14360350694701766148')
     ),
@@ -108,9 +118,12 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         20.476965,
         { sr: 'Palilula — Cvijićeva', en: 'Palilula — Cvijićeva' },
         {
-            phone: '063 8346 958',
+            phone: '063 834 69 58',
             email: 'palilula1@helendoron.rs',
             website: 'https://helendoron.rs/helen-doron-palilula/',
+            facebook: 'https://www.facebook.com/HelenDoronEnglishPalilula1',
+            facebookLabel: 'Helen Doron Palilula 1',
+            instagram: 'https://www.instagram.com/helendoronpalilula1/',
         },
         helenDoronMaps('8636135683467167051')
     ),
@@ -125,6 +138,9 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
             phone: '062 736 525',
             email: 'savskivenac@helendoron.rs',
             website: 'https://helendoron.rs/savski-venac-helen-doron/',
+            facebook: 'https://www.facebook.com/helendoronsavskivenac',
+            facebookLabel: 'Helen Doron Savski Venac',
+            instagram: 'https://www.instagram.com/helendoron.savskivenac/',
         },
         helenDoronMaps('12301328192489613629')
     ),
@@ -136,9 +152,12 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         20.4586092,
         { sr: 'Stari Grad — Dorćol', en: 'Stari Grad — Dorćol' },
         {
-            phone: '065 8346 958',
+            phone: '065 834 69 58',
             email: 'starigrad@helendoron.rs',
             website: 'https://helendoron.rs/stari-grad/',
+            facebook: 'https://www.facebook.com/helendoronstarigrad',
+            facebookLabel: 'Helen Doron Stari Grad',
+            instagram: 'https://www.instagram.com/helendoron_starigrad/',
         },
         helenDoronMaps('16106082710081904292')
     ),
@@ -150,9 +169,12 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         20.4736796,
         { sr: 'Voždovac — Autokomanda', en: 'Voždovac — Autokomanda' },
         {
-            phone: '062 1222 099',
+            phone: '062 122 20 99',
             email: 'vozdovac1@helendoron.rs',
             website: 'https://helendoron.rs/vozdovac-jove-ilica-125/',
+            facebook: 'https://www.facebook.com/HelenDoronVozdovac1',
+            facebookLabel: 'Helen Doron Voždovac 1',
+            instagram: 'https://www.instagram.com/helendoronvozdovac1/',
         },
         helenDoronMaps('16536227715528641172')
     ),
@@ -164,9 +186,12 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         20.476671,
         { sr: 'Voždovac — Banjica', en: 'Voždovac — Banjica' },
         {
-            phone: ['011 3675 130', '064 4610 233'],
+            phone: ['011 367 51 30', '064 461 02 33'],
             email: 'vozdovac2@helendoron.rs',
             website: 'https://helendoron.rs/vozdovac-paunova-40/',
+            facebook: 'https://www.facebook.com/HelenDoronVozdovac2.SkolicaZekan',
+            facebookLabel: 'Helen Doron Voždovac 2',
+            instagram: 'https://www.instagram.com/skolicazekan/',
         },
         helenDoronMaps('5416108815432540262')
     ),
@@ -174,17 +199,18 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         'Kneza Stracimira 8',
         'Beograd',
         'Vračar',
-        44.7918322,
-        20.4762224,
+        44.7917823,
+        20.4762834,
         { sr: 'Vračar — Kneza Stracimira', en: 'Vračar — Kneza Stracimira' },
         {
-            phone: ['011 3085 644', '064 6416 083'],
+            phone: ['011 308 56 44', '064 641 60 83'],
             email: 'vracar@helendoron.rs',
             website: 'https://helendoron.rs/vracar/',
-            facebook: 'https://www.facebook.com/HelenDoronEnglishVracar',
+            facebook: 'https://www.facebook.com/HelenDoronEnglishVracar/',
             facebookLabel: 'Helen Doron Vračar',
+            instagram: 'https://www.instagram.com/helendoron_vracar/',
         },
-        helenDoronMaps('3548129985076988917')
+        helenDoronMaps('17016160093086498663')
     ),
     helenDoronHall(
         'Bulevar kralja Aleksandra 151',
@@ -194,9 +220,12 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         20.4895316,
         { sr: 'Zvezdara — Đeram', en: 'Zvezdara — Đeram' },
         {
-            phone: ['011 2413 043', '065 241 3043'],
+            phone: ['011 241 30 43', '065 241 30 43'],
             email: 'zvezdara1@helendoron.rs',
             website: 'https://helendoron.rs/zvezdara-1/',
+            facebook: 'https://www.facebook.com/HelenDoronEnglishZvezdara1',
+            facebookLabel: 'Helen Doron Zvezdara 1',
+            instagram: 'https://www.instagram.com/helendoronzvezdara1/',
         },
         helenDoronMaps('10920551699865680109')
     ),
@@ -208,9 +237,12 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         20.5278845,
         { sr: 'Zvezdara — Mirijevo', en: 'Zvezdara — Mirijevo' },
         {
-            phone: ['011 316 7754', '062 1222 099'],
+            phone: ['011 316 77 54', '062 122 20 99'],
             email: 'zvezdara2@helendoron.rs',
             website: 'https://helendoron.rs/zvezdara-2/',
+            facebook: 'https://www.facebook.com/sigel.studio.beograd',
+            facebookLabel: 'Helen Doron Zvezdara 2',
+            instagram: 'https://www.instagram.com/helen.doron.mirijevo/',
         },
         helenDoronMaps('10769121090646486650')
     ),
@@ -218,16 +250,19 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         'Bulevar Arsenija Čarnojevića 103',
         'Beograd',
         'Novi Beograd',
-        44.8143328,
-        20.4142793,
+        44.8141443,
+        20.4146265,
         {
             sr: 'Novi Beograd, Blok 28 — Arsenija Čarnojevića',
             en: 'Novi Beograd, Blok 28 — Arsenija Čarnojevića',
         },
         {
-            phone: '061 6485 334',
+            phone: '061 648 53 34',
             email: 'novibgd1@helendoron.rs',
             website: 'https://helendoron.rs/novi-beograd-1/',
+            facebook: 'https://www.facebook.com/HelenDoronNoviBeograd1',
+            facebookLabel: 'Helen Doron Novi Beograd 1',
+            instagram: 'https://www.instagram.com/helendoronenglishnovibeograd1/',
         },
         helenDoronMaps('2903457973395151446')
     ),
@@ -242,9 +277,12 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
             en: 'Novi Beograd, Blok 61 — Dr. Ivana Ribara',
         },
         {
-            phone: '062 9725 648',
+            phone: '062 972 56 48',
             email: 'novibgd2-blokovi@helendoron.rs',
             website: 'https://helendoron.rs/novi-beograd-blok-61/',
+            facebook: 'https://www.facebook.com/helen.doron.blok.61',
+            facebookLabel: 'Helen Doron Blokovi',
+            instagram: 'https://www.instagram.com/helen.doron.blok.61/',
         },
         helenDoronMaps('1652438137243335967')
     ),
@@ -252,23 +290,24 @@ const helenDoronBeogradHalls: SchoolAddress[] = [
         'Radoja Dakića 10',
         'Beograd',
         'Zemun',
-        44.8382494,
-        20.4073238,
+        44.8382363,
+        20.4074002,
         { sr: 'Zemun, Gradski park — Radoja Dakića', en: 'Zemun, City Park — Radoja Dakića' },
         zemunContact,
-        helenDoronMaps('9929231828131060657')
+        'https://www.google.com/maps/place/Helen+Doron+English+LC+Zemun/@44.8382363,20.4074002,17z/data=!4m6!3m5!1s0x475a65a7c2677ff3:0xdbcc9dd261fb8b8f!8m2!3d44.8382363!4d20.4074002!16s%2Fg%2F11cn0qdcy0'
     ),
     helenDoronHall(
         'Cara Dušana 145a, stan 5',
         'Beograd',
         'Zemun',
-        44.8559027,
-        20.3848058,
+        44.8558671,
+        20.3847697,
         {
             sr: 'Zemun, Zemunske kapije — Cara Dušana',
             en: 'Zemun, Zemunske kapije — Cara Dušana',
         },
-        zemunContact
+        zemunContact,
+        'https://www.google.com/maps/place/Cara+Du%C5%A1ana+145a,+Beograd+11080/@44.8558671,20.3847697,17z/data=!4m6!3m5!1s0x475a65d290e1d885:0x995f64634582bec8!8m2!3d44.8558671!4d20.3847697!16s%2Fg%2F11z93qpxpg'
     ),
 ]
 
@@ -318,6 +357,106 @@ export const languagesSchools: School[] = [
             facebook: 'https://www.facebook.com/eltisins/',
             facebookLabel: 'ELTISI',
             instagram: 'https://www.instagram.com/el_ti_si/',
+        },
+    },
+    {
+        id: 'academy-centar-stranih-jezika',
+        slug: 'academy-centar-stranih-jezika',
+        name: {
+            sr: 'Academy — Centar stranih jezika',
+            en: 'Academy Language Center',
+        },
+        categorySlugs: ['languages'],
+        city: 'Novi Sad',
+        district: 'Stari Grad (Centar)',
+        minAge: 6,
+        maxAge: null,
+        ageLabel: '6+ godina',
+        hidden: true,
+        imageWebp: academyWebp,
+        imageFallback: academyJpg,
+        description: {
+            sr: [
+                'Academy radi od 1995. godine kao centar stranih jezika, sa kursevima engleskog, nemačkog i ruskog.',
+                'Dečije grupe imaju najviše osam učenika i formiraju se prema uzrastu i stvarnom nivou znanja, uz besplatno testiranje predznanja pre upisa.',
+                'Na času se jezik odmah koristi u govoru, zadacima i situacijama — nije cilj samo preći udžbenik, već podići nivo od početnog do najviših stepena, uključujući pripremu za Cambridge ispite.',
+                'Isti čas može da se prati u učionici ili uživo online, sa istim profesorom i istom grupom.',
+            ],
+            en: [
+                'Academy has been a language center since 1995, with English, German and Russian courses.',
+                'Children’s groups have at most eight pupils and are formed by age and actual level, with a free placement test before enrollment.',
+                'In class the language is used right away in speech, tasks and real situations — the goal is not only to get through the textbook, but to raise the level from starter through the highest grades, including Cambridge exam preparation.',
+                'The same lesson can be followed in the classroom or live online, with the same teacher and the same group.',
+            ],
+        },
+        addresses: [
+            {
+                street: 'Jevrejska 22',
+                city: 'Novi Sad',
+                district: 'Stari Grad (Centar)',
+                lat: 45.2532102,
+                lng: 19.8393455,
+            },
+        ],
+        contact: {
+            phone: ['021 425 542', '066 425 542'],
+            email: 'info@academy.edu.rs',
+            website: 'https://academy.edu.rs/kursevi/kursevi-engleskog-za-decu/',
+            facebook: 'https://www.facebook.com/academycentarstranihjezika',
+            facebookLabel: 'Academy',
+            instagram: 'https://www.instagram.com/academy.centar.stranih.jezika/',
+        },
+    },
+    {
+        id: 'nskrug',
+        slug: 'nskrug',
+        name: {
+            sr: 'Novosadski kulturno-obrazovni krug',
+            en: 'Novi Sad Cultural and Educational Circle',
+        },
+        categorySlugs: ['languages'],
+        city: 'Novi Sad',
+        district: 'Detelinara',
+        minAge: 3,
+        maxAge: null,
+        ageLabel: '3+ godina',
+        imageWebp: nskrugWebp,
+        imageFallback: nskrugPng,
+        description: {
+            sr: [
+                'Novosadski kulturno-obrazovni krug je obrazovni centar u kom deca uče strane jezike kroz igre, pesmice, crtanje i igračke, uz nastavni plan prilagođen uzrastu.',
+                'U ponudi su engleski, nemački, španski, ruski, francuski, mađarski i srpski, u malim grupama i sa naglaskom na konverzaciju.',
+                'Pored jezika, centar okuplja i kreativne radionice, prve korake u programiranju i školsku podršku — jezik ostaje deo šireg rada sa decom.',
+            ],
+            en: [
+                'Novi Sad Cultural and Educational Circle is an education center where children learn foreign languages through games, songs, drawing and toys, with an age-adapted syllabus.',
+                'The offer includes English, German, Spanish, Russian, French, Hungarian and Serbian, in small groups and with an emphasis on conversation.',
+                'Alongside languages, the center also runs creative workshops, first steps in programming and school support — language stays part of a wider way of working with children.',
+            ],
+        },
+        addresses: [
+            {
+                street: 'Pasterova 2',
+                city: 'Novi Sad',
+                district: 'Detelinara',
+                lat: 45.2599429,
+                lng: 19.8209554,
+            },
+            {
+                street: 'Narodnog fronta 2a',
+                city: 'Novi Sad',
+                district: 'Liman 1',
+                lat: 45.2425341,
+                lng: 19.8464136,
+            },
+        ],
+        contact: {
+            phone: ['064 039 32 69', '064 113 27 29'],
+            email: 'info@nskrug.org',
+            website: 'https://www.nskrug.org/',
+            facebook: 'https://www.facebook.com/nskulobrazovnikrug',
+            facebookLabel: 'Novosadski kulturno-obrazovni krug',
+            instagram: 'https://www.instagram.com/ns.krug/',
         },
     },
     {
@@ -371,18 +510,19 @@ export const languagesSchools: School[] = [
                 'Vase Stajića 22a',
                 'Novi Sad',
                 'Stari Grad (Centar)',
-                45.250605,
-                19.8424414,
+                45.2505949,
+                19.8425673,
                 { sr: 'Centar — Vase Stajića', en: 'City Center — Vase Stajića' },
                 {
-                    phone: '060 6416 088',
+                    phone: '060 641 60 88',
                     email: 'novisad1@helendoron.rs',
                     website:
                         'https://helendoron.rs/novi-sad-1/#1642502612622-e811b19c-b8bc0c3f-a6a3',
-                    facebook: 'https://www.facebook.com/HelenDoronNoviSad1/',
+                    facebook: 'https://www.facebook.com/HelenDoronNoviSad1',
                     facebookLabel: 'Helen Doron Novi Sad 1',
+                    instagram: 'https://www.instagram.com/helen_doron_school_novi_sad_1/',
                 },
-                helenDoronMaps('5937701111303450701')
+                helenDoronMaps('8445124162537648362')
             ),
             helenDoronHall(
                 'Rumenačka 35, ulaz 3',
@@ -392,17 +532,20 @@ export const languagesSchools: School[] = [
                 19.8183782,
                 { sr: 'Detelinara — Rumenačka', en: 'Detelinara — Rumenačka' },
                 {
-                    phone: '064 1413 764',
+                    phone: '064 141 37 64',
                     email: 'novisad2@helendoron.rs',
                     website: 'https://helendoron.rs/novi-sad-2/',
+                    facebook: 'https://www.facebook.com/share/18FtdiBsDe/?mibextid=LQQJ4d',
+                    facebookLabel: 'Helen Doron Novi Sad 2',
+                    instagram: 'https://www.instagram.com/helendoron_novi_sad2/',
                 },
                 helenDoronMaps('8397576049915206913')
             ),
         ],
         contact: {
-            facebook: 'https://www.facebook.com/HelenDoronNoviSad1/',
+            facebook: 'https://www.facebook.com/HelenDoronNoviSad1',
             facebookLabel: 'Helen Doron Novi Sad 1',
-            instagram: helenDoronSocial.instagram,
+            instagram: 'https://www.instagram.com/helen_doron_school_novi_sad_1/',
         },
     },
     {
@@ -432,17 +575,18 @@ export const languagesSchools: School[] = [
             {
                 street: 'Kursulina 10',
                 city: 'Čačak',
-                lat: 43.886999,
-                lng: 20.351934,
-                mapsUrl: helenDoronMaps('14424722641234276524'),
+                lat: 43.8870188,
+                lng: 20.3518839,
+                mapsUrl: helenDoronMaps('12399991383292778973'),
             },
         ],
         contact: {
             phone: '069 774 492',
+            email: 'cacak@helendoron.rs',
             website: 'https://helendoron.rs/cacak/',
-            facebook: helenDoronSocial.facebook,
-            facebookLabel: helenDoronSocial.facebookLabel,
-            instagram: helenDoronSocial.instagram,
+            facebook: 'https://www.facebook.com/profile.php?id=61574665184386',
+            facebookLabel: 'Helen Doron Čačak',
+            instagram: 'https://www.instagram.com/helendoron_cacak/',
         },
     },
 ]

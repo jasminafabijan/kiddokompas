@@ -162,7 +162,6 @@ export const translations = {
     contact: { sr: 'Kontakt', en: 'Contact' },
     location: { sr: 'Lokacija', en: 'Location' },
     locations: { sr: 'Lokacije', en: 'Locations' },
-    chooseArea: { sr: 'Pogledajte detalje', en: 'View details' },
     selectLocation: { sr: 'Izaberite lokaciju', en: 'Select a location' },
     backHome: { sr: 'Nazad na početnu', en: 'Back to home' },
     backSearch: { sr: 'Nazad na pretragu', en: 'Back to search' },

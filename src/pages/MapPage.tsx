@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import CatalogMap from '../components/CatalogMap'
 import FiltersBar, { type FilterValues } from '../components/FiltersBar'
 import MapActivityCard from '../components/MapActivityCard'
@@ -7,7 +8,7 @@ import { filterSchools, forCatalogMap, getSchoolName, venueBelongsToCity } from 
 import { formatEmptyFilterMessage, formatMapCountLabel } from '../i18n/formatters'
 import { useI18n } from '../i18n/useI18n'
 import { getMapLocations } from '../utils/mapLocation'
-import { getDefaultFilters } from '../utils/searchFilters'
+import { filtersToSearchParams, getFiltersFromSearchParams } from '../utils/searchFilters'
 
 const scrollMapCardIntoView = (card: HTMLElement) => {
   const list = card.closest('.map-page-list-cards')
@@ -27,7 +28,8 @@ const scrollMapCardIntoView = (card: HTMLElement) => {
 
 const MapPage = () => {
   const { lang, t } = useI18n()
-  const [filters, setFilters] = useState<FilterValues>(getDefaultFilters)
+  const [searchParams, setSearchParams] = useSearchParams()
+  const filters = useMemo(() => getFiltersFromSearchParams(searchParams), [searchParams])
   const [selectedLocationId, setSelectedLocationId] = useState<string | null>(null)
   const cardRefs = useRef<Map<string, HTMLElement>>(new Map())
   const visibleSchools = useMemo(() => forCatalogMap(filterSchools(filters)), [filters])
@@ -45,10 +47,13 @@ const MapPage = () => {
     )
   }, [filters.city, lang, visibleSchools])
 
-  const handleFilterChange = useCallback((next: FilterValues) => {
-    setFilters(next)
-    setSelectedLocationId(null)
-  }, [])
+  const handleFilterChange = useCallback(
+    (next: FilterValues) => {
+      setSearchParams(filtersToSearchParams(next), { replace: true })
+      setSelectedLocationId(null)
+    },
+    [setSearchParams]
+  )
 
   const handleSelectLocation = (locationId: string) => {
     setSelectedLocationId(locationId)
@@ -75,7 +80,12 @@ const MapPage = () => {
           <h1 className="category-page-title">{t('map.title')}</h1>
         </header>
 
-        <FiltersBar hideDistrict applyOnChange onFilterChange={handleFilterChange} />
+        <FiltersBar
+          hideDistrict
+          applyOnChange
+          initialFilters={filters}
+          onFilterChange={handleFilterChange}
+        />
       </div>
 
       {mappedLocations.length > 0 ? (

@@ -181,7 +181,7 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['languages'],
     website: 'https://www.facebook.com/HelenDoronNoviSad1',
     email: 'novisad1@helendoron.rs',
-    phone: ['021 3029 229', '060 6416 088'],
+    phone: ['021 302 92 29', '060 641 60 88'],
   },
   {
     id: 'partizan-2',

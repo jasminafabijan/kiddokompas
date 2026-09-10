@@ -28,6 +28,7 @@ export {
   SCHOOL_ROUTE_PATH,
   categoryPath,
   getCategoryQueryValue,
+  getLocationIndexFromSearchParams,
   getCategorySlug,
   getLocalizedRoute,
   homeHashPath,

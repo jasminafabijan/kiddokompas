@@ -1,71 +1,40 @@
 import { useState } from 'react'
-import SchoolContactList, {
-  buildContactLinks,
-  LocationPinIcon,
-} from './SchoolContactList'
-import SchoolMap from './SchoolMap'
+import SchoolContactList, { buildContactLinks } from './SchoolContactList'
 import type { SchoolAddress } from '../data/schools'
-import {
-  formatSchoolAddress,
-  getLocationOptionLabel,
-  getMapsHref,
-} from '../data/schools'
-import { formatLocationCountLabel } from '../i18n/formatters'
+import { getLocationOptionLabel } from '../data/schools'
 import { useI18n } from '../i18n/useI18n'
 
 type SchoolLocationsProps = {
-  city: string
   addresses: SchoolAddress[]
-  placeName: string
-  hideHrefs?: string[]
+  /** Pre-select a hall (e.g. from map `?lokacija=` / `?location=`). */
+  initialSelectedIndex?: number | null
 }
 
-const normalizeHref = (href: string) => href.replace(/\/$/, '').toLowerCase()
-
-const SchoolLocations = ({ city, addresses, placeName, hideHrefs = [] }: SchoolLocationsProps) => {
+const SchoolLocations = ({ addresses, initialSelectedIndex = null }: SchoolLocationsProps) => {
   const { lang, t } = useI18n()
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const resolvedInitial =
+    initialSelectedIndex != null &&
+    Number.isInteger(initialSelectedIndex) &&
+    initialSelectedIndex >= 0 &&
+    initialSelectedIndex < addresses.length
+      ? initialSelectedIndex
+      : null
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(resolvedInitial)
   const selected = selectedIndex == null ? undefined : addresses[selectedIndex]
-  const mapAddresses = addresses.filter((address) => address.lat != null && address.lng != null)
-  const hiddenHrefs = new Set(hideHrefs.map(normalizeHref))
-  const contactLinks = selected
-    ? [
-        ...buildContactLinks(selected.contact).filter(
-          (link) => !hiddenHrefs.has(normalizeHref(link.href))
-        ),
-        {
-          label: formatSchoolAddress(selected, lang),
-          href: getMapsHref(selected, placeName),
-          icon: <LocationPinIcon />,
-          external: true,
-        },
-      ]
-    : []
+  const contactLinks = selected ? buildContactLinks(selected.contact) : []
 
   if (addresses.length === 0) {
     return null
   }
 
   return (
-    <section className="school-detail-section school-locations" aria-labelledby="school-location">
-      <h2 id="school-location" className="school-detail-section-title">
-        {t('school.locations')}
-      </h2>
-      <p className="school-locations-summary">
-        <span className="school-locations-city">{city}</span>
-        <span className="school-locations-count">
-          {' '}
-          · {formatLocationCountLabel(addresses.length, lang)}
-        </span>
-      </p>
+    <div className="school-locations">
       <div className="school-locations-picker">
-        <label htmlFor="school-locations-select" className="school-locations-label">
-          {t('school.chooseArea')}
-        </label>
         <div className="school-locations-select-wrap">
           <select
             id="school-locations-select"
             className="school-locations-select"
+            aria-label={t('school.selectLocation')}
             value={selectedIndex == null ? '' : String(selectedIndex)}
             onChange={(event) => {
               const next = event.target.value
@@ -81,13 +50,12 @@ const SchoolLocations = ({ city, addresses, placeName, hideHrefs = [] }: SchoolL
           </select>
         </div>
       </div>
-      <div className="school-locations-details">
-        {contactLinks.length > 0 ? <SchoolContactList links={contactLinks} /> : null}
-        {mapAddresses.length > 0 ? (
-          <SchoolMap addresses={mapAddresses} placeName={placeName} />
-        ) : null}
-      </div>
-    </section>
+      {contactLinks.length > 0 ? (
+        <div className="school-locations-details">
+          <SchoolContactList links={contactLinks} />
+        </div>
+      ) : null}
+    </div>
   )
 }
 

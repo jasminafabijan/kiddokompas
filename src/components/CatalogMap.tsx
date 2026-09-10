@@ -99,10 +99,10 @@ const CatalogMap = ({ locations, selectedLocationId, onSelectLocation, city }: C
       marker.bindPopup(
         buildSchoolMapPopupHtml(
           getStreetName(point.locations[0].address.street, lang),
-          uniqueSchools.map(({ school }) => ({
+          uniqueSchools.map(({ school, addressIndex }) => ({
             name: getSchoolName(school, lang),
             ageLabel: schoolAgeLabel(school, lang, true),
-            href: schoolMapHref(school, lang),
+            href: schoolMapHref(school, lang, addressIndex),
           })),
           t('map.seeDetails')
         ),

@@ -42,4 +42,8 @@ export const CATALOG_ADD_ORDER = [
   'helen-doron-novi-sad',
   'veliko-kolo-beocin',
   'veliko-kolo-novi-sad',
+  'partizan-2-razvojna-gimnastika',
+  'partizan-2-plesni-klub',
+  'academy-centar-stranih-jezika',
+  'nskrug',
 ] as const

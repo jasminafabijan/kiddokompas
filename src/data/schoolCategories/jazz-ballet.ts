@@ -8,6 +8,8 @@ import nsdkcWebp from '../../assets/images/schools/dance/nsdkc-savremeni-ples.we
 import nsdkcJpg from '../../assets/images/schools/dance/nsdkc-savremeni-ples.jpg'
 import sportisimoWebp from '../../assets/images/schools/athletics/sportisimo.webp'
 import sportisimoJpg from '../../assets/images/schools/athletics/sportisimo.jpg'
+import partizan2Webp from '../../assets/images/schools/developmental-gymnastics/partizan2.webp'
+import partizan2Png from '../../assets/images/schools/developmental-gymnastics/partizan2.png'
 
 import type { School } from './types'
 
@@ -268,6 +270,55 @@ export const jazzBalletSchools: School[] = [
             facebook: 'https://www.facebook.com/sportisimosportskaporodica',
             facebookLabel: 'Sportisimo sportska porodica',
             instagram: 'https://www.instagram.com/sportisimo_sportska_porodica/',
+        },
+    },
+    {
+        id: 'partizan-2-plesni-klub',
+        slug: 'partizan-2-plesni-klub',
+        name: {
+            sr: 'Plesni klub Partizan 2',
+            en: 'Partizan 2 Dance Club',
+        },
+        categorySlugs: ['jazz-ballet'],
+        city: 'Novi Sad',
+        district: 'Sajmište',
+        minAge: 3,
+        maxAge: null,
+        ageLabel: '3+ godina',
+        imageWebp: partizan2Webp,
+        imageFallback: partizan2Png,
+        description: {
+            sr: [
+                'Plesni klub Partizan 2 vodi časove modernog plesa — jazz dance, show dance, moderan balet i savremeni plesni pokret.',
+                'Rad počinje od osnovne baletske tehnike, motoričkih sposobnosti i kratkih koreografija, sa ciljem da pokret postane scenska stvarnost, a ne samo niz koraka.',
+                'Klub gradi upornost i ljubav prema igri, uz odlaske na baletske predstave, analizu snimaka i saradnju trenera i roditelja.',
+                'Nastupa na državnim i evropskim takmičenjima, festivalima Dance Now, Zmajevima dečijim igrama i tradicionalnom novogodišnjem plesnom koncertu.',
+            ],
+            en: [
+                'Partizan 2 Dance Club teaches modern dance — jazz dance, show dance, modern ballet and contemporary movement.',
+                'Work starts from basic ballet technique, motor skills and short choreography, with the aim that movement becomes something for the stage, not only a sequence of steps.',
+                'The club builds persistence and a love of dance, with visits to ballet performances, video review and close coach–parent collaboration.',
+                'It performs at national and European competitions, Dance Now festivals, Zmajeve dečije igre and the traditional New Year dance concert.',
+            ],
+        },
+        addresses: [
+            {
+                street: 'Uroša Predića 6',
+                city: 'Novi Sad',
+                district: 'Sajmište',
+                lat: 45.2536679,
+                lng: 19.8288715,
+                mapsUrl:
+                    'https://www.google.com/maps/place/Partizan+2/@45.2536679,19.8288715,17z/data=!4m6!3m5!1s0x475b10464601ec3b:0x5c39dc4ef17d129e!8m2!3d45.2536679!4d19.8288715!16s%2Fg%2F11gh3d6hcx',
+            },
+        ],
+        contact: {
+            phone: ['064 253 80 84', '063 707 49 59'],
+            email: 'office@partizan2.rs',
+            website: 'https://partizan2.rs/partizan-2-plesni-klub/',
+            facebook: 'https://www.facebook.com/partizan2plesniklub/',
+            facebookLabel: 'Partizan 2 plesni klub',
+            instagram: 'https://www.instagram.com/p2_dance/',
         },
     },
 ]

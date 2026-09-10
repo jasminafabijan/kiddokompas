@@ -1750,34 +1750,12 @@
         @apply h-7 w-7;
     }
 
-    .school-locations .school-detail-section-title {
+    .school-detail-section:has(.school-locations) .school-detail-section-title {
         @apply mb-5;
-    }
-
-    .school-locations-summary {
-        @apply m-0 mb-7 leading-snug;
-    }
-
-    .school-locations-summary span {
-        font-size: 14px;
-    }
-
-    .school-locations-city {
-        @apply font-bold text-primary;
-    }
-
-    .school-locations-count {
-        font-weight: 400;
-        color: var(--text-muted);
     }
 
     .school-locations-picker {
         @apply mb-0;
-    }
-
-    .school-locations-label {
-        @apply mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.12em];
-        color: var(--text-gray);
     }
 
     .school-locations-select-wrap {

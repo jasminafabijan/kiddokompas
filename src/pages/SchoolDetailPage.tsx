@@ -11,6 +11,7 @@ import { getCategoryBySlug, getCategoryNameAccusative } from '../data/categories
 import {
   categoryPath,
   getCategoryQueryValue,
+  getLocationIndexFromSearchParams,
   getLocalizedRoute,
   isCategoryPath,
   isHomePath,
@@ -185,6 +186,7 @@ const SchoolDetailPage = () => {
   const school = slug ? getSchoolBySlug(slug) : undefined
   const from = (location.state as SchoolLocationState | null)?.from
   const queryCategory = getCategoryQueryValue(searchParams)
+  const locationIndex = getLocationIndexFromSearchParams(searchParams)
   const categoryFromQuery = queryCategory ? getCategoryBySlug(queryCategory) : undefined
   const activeCategorySlug =
     school && categoryFromQuery && school.categorySlugs.includes(categoryFromQuery.id)
@@ -219,8 +221,7 @@ const SchoolDetailPage = () => {
   const showLocationPicker = usesLocationPicker(school.addresses)
   const mapAddresses =
     school.addresses?.filter((address) => address.lat != null && address.lng != null) ?? []
-  const showSimpleLocations =
-    !showLocationPicker && Boolean(school.addresses?.length || mapAddresses.length > 0)
+  const showSimpleLocations = Boolean(school.addresses?.length || mapAddresses.length > 0)
   const descriptionParagraphs = school.description
     ? getLocalizedParagraphs(school.description, lang, `school:${school.id}:description`)
     : []
@@ -307,25 +308,24 @@ const SchoolDetailPage = () => {
             </div>
 
             <aside className="school-detail-sidebar">
-              {contactLinks.length > 0 && (
+              {showLocationPicker && school.addresses ? (
+                <section className="school-detail-section" aria-labelledby="school-contact">
+                  <h2 id="school-contact" className="school-detail-section-title">
+                    {t('school.contact')}
+                  </h2>
+                  <SchoolLocations
+                    key={`${school.id}-${locationIndex ?? 'none'}`}
+                    addresses={school.addresses}
+                    initialSelectedIndex={locationIndex}
+                  />
+                </section>
+              ) : contactLinks.length > 0 ? (
                 <section className="school-detail-section" aria-labelledby="school-contact">
                   <h2 id="school-contact" className="school-detail-section-title">
                     {t('school.contact')}
                   </h2>
                   <SchoolContactList links={contactLinks} />
                 </section>
-              )}
-
-              {showLocationPicker && school.addresses ? (
-                <SchoolLocations
-                  key={school.id}
-                  city={school.city}
-                  addresses={school.addresses}
-                  placeName={getSchoolName(school, lang)}
-                  hideHrefs={[school.contact?.facebook, school.contact?.instagram].filter(
-                    (href): href is string => Boolean(href)
-                  )}
-                />
               ) : null}
 
               {showSimpleLocations ? (

@@ -1,5 +1,5 @@
 import type { PopupOptions } from 'leaflet'
-import { schoolPath } from '../i18n/routes'
+import { QUERY, schoolPath } from '../i18n/routes'
 import type { Lang } from '../i18n/types'
 
 const escapeHtml = (value: string) =>
@@ -11,8 +11,18 @@ const escapeHtml = (value: string) =>
 
 export const schoolMapHref = (
   school: { slug: string; categorySlugs: string[] },
-  lang: Lang
-) => schoolPath(lang, school.slug, school.categorySlugs[0])
+  lang: Lang,
+  addressIndex?: number
+) => {
+  const base = schoolPath(lang, school.slug, school.categorySlugs[0])
+
+  if (addressIndex == null || addressIndex < 0) {
+    return base
+  }
+
+  const separator = base.includes('?') ? '&' : '?'
+  return `${base}${separator}${QUERY.location[lang]}=${addressIndex}`
+}
 
 export const schoolMapPopupOptions: PopupOptions = {
   maxWidth: 260,

@@ -3,6 +3,7 @@
  * Admin Provera writes this file in `npm run dev`. Unchecked schools stay in admin, not here.
  */
 export const VERIFIED_SCHOOL_IDS = new Set<string>([
+  'academy-centar-stranih-jezika',
   'aikido-ikeda-dojo',
   'bolesnikov',
   'dexters',
@@ -23,8 +24,11 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'kud-nera',
   'la-jazz',
   'master-dance',
+  'nskrug',
   'ntc-balet',
   'ok-vojvodina-akademija',
+  'partizan-2-plesni-klub',
+  'partizan-2-razvojna-gimnastika',
   'plivanje-spens',
   'reverans',
   'sinisa-mihajlovic',

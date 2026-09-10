@@ -26,6 +26,7 @@ export const CATEGORIES_SECTION_ID = 'categories'
 
 export const QUERY = {
   category: { sr: 'kategorija', en: 'category' },
+  location: { sr: 'lokacija', en: 'location' },
 } as const
 
 export const CATEGORY_ROUTE_PATH = {
@@ -50,6 +51,21 @@ export const isCategoriesHash = (hash: string) => {
 
 export const getCategoryQueryValue = (searchParams: URLSearchParams) =>
   searchParams.get(QUERY.category.sr) ?? searchParams.get(QUERY.category.en)
+
+export const getLocationQueryValue = (searchParams: URLSearchParams) =>
+  searchParams.get(QUERY.location.sr) ?? searchParams.get(QUERY.location.en)
+
+/** Address index for multi-hall schools (Helen Doron, etc.), or null if missing/invalid. */
+export const getLocationIndexFromSearchParams = (searchParams: URLSearchParams) => {
+  const raw = getLocationQueryValue(searchParams)
+
+  if (raw == null || raw === '') {
+    return null
+  }
+
+  const index = Number(raw)
+  return Number.isInteger(index) && index >= 0 ? index : null
+}
 
 export const pagePath = (name: PageName, lang: Lang) => PAGE_PATHS[name][lang]
 
@@ -109,21 +125,35 @@ const mapHash = (hash: string, targetLang: Lang) => {
   return hash.startsWith('#') ? hash : `#${hash}`
 }
 
+const mapLocalizedQueryKey = (
+  params: URLSearchParams,
+  keys: { sr: string; en: string },
+  targetLang: Lang,
+  mapValue?: (value: string) => string
+) => {
+  const fromKey = keys[targetLang === 'en' ? 'sr' : 'en']
+  const toKey = keys[targetLang]
+  const value = params.get(fromKey) ?? params.get(toKey)
+
+  if (!value) {
+    return
+  }
+
+  params.delete(keys.sr)
+  params.delete(keys.en)
+  params.set(toKey, mapValue ? mapValue(value) : value)
+}
+
 const mapSearch = (search: string, targetLang: Lang) => {
   if (!search) {
     return ''
   }
 
   const params = new URLSearchParams(search.startsWith('?') ? search.slice(1) : search)
-  const fromKey = QUERY.category[targetLang === 'en' ? 'sr' : 'en']
-  const toKey = QUERY.category[targetLang]
-  const categoryValue = params.get(fromKey) ?? params.get(toKey)
-
-  if (categoryValue) {
-    params.delete(QUERY.category.sr)
-    params.delete(QUERY.category.en)
-    params.set(toKey, localizeCategorySlug(categoryValue, targetLang))
-  }
+  mapLocalizedQueryKey(params, QUERY.category, targetLang, (value) =>
+    localizeCategorySlug(value, targetLang)
+  )
+  mapLocalizedQueryKey(params, QUERY.location, targetLang)
 
   const next = params.toString()
   return next ? `?${next}` : ''
