@@ -29,7 +29,9 @@ import { developmentalGymnasticsSchools } from './schoolCategories/developmental
 import { teenWorkoutSchools } from './schoolCategories/teen-workout'
 import { capoeiraSchools } from './schoolCategories/capoeira'
 import { languagesSchools } from './schoolCategories/languages'
+import { musicSchools } from './schoolCategories/music'
 import { programmingSchools } from './schoolCategories/programming'
+import { roboticsSchools } from './schoolCategories/robotics'
 import type { School, SchoolAddress, SchoolContact, SchoolFilters } from './schoolCategories/types'
 
 export type { School, SchoolAddress, SchoolContact, SchoolFilters } from './schoolCategories/types'
@@ -57,8 +59,10 @@ export const schools: School[] = [
     ...teenWorkoutSchools,
     ...ridingSchools,
     ...folkloreSchools,
+    ...musicSchools,
     ...languagesSchools,
     ...programmingSchools,
+    ...roboticsSchools,
 ]
 
 const isPubliclyListed = (school: School) =>

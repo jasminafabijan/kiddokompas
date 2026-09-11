@@ -8,6 +8,7 @@ import creativeWritingIcon from '../assets/icons/creative-writing.svg'
 import languagesIcon from '../assets/icons/languages.svg'
 import learningSupportIcon from '../assets/icons/learning-support.svg'
 import programmingIcon from '../assets/icons/programming.svg'
+import roboticsIcon from '../assets/icons/robotics.svg'
 import balletIcon from '../assets/icons/ballet.svg'
 import basketballIcon from '../assets/icons/basketball.svg'
 import boxingIcon from '../assets/icons/boxing.svg'
@@ -71,6 +72,7 @@ const categoryDisplay: CategoryDisplay[] = [
   { id: 'languages', iconBg: 'mint', iconSrc: languagesIcon, iconSizeAdjustPx: -6 },
   { id: 'learning-support', iconBg: 'peach', iconSrc: learningSupportIcon, iconSizeAdjustPx: -4 },
   { id: 'programming', iconBg: 'peach', iconSrc: programmingIcon, iconSizeAdjustPx: -18 },
+  { id: 'robotics', iconBg: 'mint', iconSrc: roboticsIcon },
 ]
 
 const CategoryCards = () => {

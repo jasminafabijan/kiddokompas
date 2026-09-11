@@ -47,4 +47,6 @@ export const CATALOG_ADD_ORDER = [
   'academy-centar-stranih-jezika',
   'nskrug',
   'scool',
+  'odgajanje-sa-muzikom',
+  'young-engineers',
 ] as const

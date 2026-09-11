@@ -43,6 +43,7 @@ const GROUP_COLOR: Record<string, string> = {
   languages: LEARNING,
   'learning-support': LEARNING,
   programming: LEARNING,
+  robotics: LEARNING,
   science: LEARNING,
   technology: LEARNING,
 }
@@ -133,6 +134,9 @@ const ICONS: Record<string, string> = {
   ),
   programming: wrap(
     '<path d="M8.2 6.8 3.8 12l4.4 5.2M15.8 6.8 20.2 12l-4.4 5.2M10.4 18.6 13.6 5.4"/>'
+  ),
+  robotics: wrap(
+    '<rect x="8.2" y="9.2" width="7.6" height="6.4" rx="1.2"/><circle cx="10.4" cy="12.4" r="0.9"/><circle cx="13.6" cy="12.4" r="0.9"/><path d="M12 6.2v3M9.2 6.8 10.6 9.2M14.8 6.8 13.4 9.2M8.2 12.4H5.6M18.4 12.4h-2.6M10.2 15.6 8.6 18.4M13.8 15.6 15.4 18.4"/>'
   ),
   science: wrap(
     '<path d="M9.2 3.5h5.6M10.2 3.5v6.4L5.4 19.2A2.2 2.2 0 0 0 7.3 22.5h9.4a2.2 2.2 0 0 0 1.9-3.3L13.8 9.9V3.5"/><path d="M8.6 14.8h6.8"/>'

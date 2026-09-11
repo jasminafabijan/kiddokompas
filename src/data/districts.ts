@@ -16,6 +16,7 @@ export const DISTRICT_LABELS: Record<string, LocalizedText> = {
   Klisa: { sr: 'Klisa', en: 'Klisa' },
   'Liman 1': { sr: 'Liman 1', en: 'Liman 1' },
   'Liman 3': { sr: 'Liman 3', en: 'Liman 3' },
+  'Liman 4': { sr: 'Liman 4', en: 'Liman 4' },
   'Novo naselje': { sr: 'Novo naselje', en: 'Novo naselje' },
   'Novi Beograd': { sr: 'Novi Beograd', en: 'Novi Beograd' },
   Petrovaradin: { sr: 'Petrovaradin', en: 'Petrovaradin' },

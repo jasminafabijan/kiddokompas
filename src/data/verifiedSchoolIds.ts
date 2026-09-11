@@ -26,6 +26,7 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'master-dance',
   'nskrug',
   'ntc-balet',
+  'odgajanje-sa-muzikom',
   'ok-vojvodina-akademija',
   'partizan-2-plesni-klub',
   'partizan-2-razvojna-gimnastika',
@@ -44,6 +45,7 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'veliko-kolo',
   'veliko-kolo-beocin',
   'veliko-kolo-novi-sad',
+  'young-engineers',
   'zok-novi-sad',
   'zverko',
 ])

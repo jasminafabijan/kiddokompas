@@ -293,9 +293,14 @@ export const categories: Category[] = [
   {
     id: 'music',
     name: { sr: 'Muzika', en: 'Music' },
+    nameAccusative: 'muziku',
     slug: 'music',
     slugs: { sr: 'muzika', en: 'music' },
     subtitle: { sr: 'Muzičke škole', en: 'Music schools' },
+    pageSubtitle: {
+      sr: 'Istražite muzičke škole i radionice u {city} — od prvih nota do razvijanja muzičkog talenta.',
+      en: 'Explore music schools and workshops in {city} — from the first notes to developing musical talent.',
+    },
   },
   {
     id: 'art',
@@ -350,6 +355,18 @@ export const categories: Category[] = [
     pageSubtitle: {
       sr: 'Istražite škole programiranja u {city} — za kod, logiku i prve korake u informatici.',
       en: 'Explore programming schools in {city} — for code, logic and first steps in computer science.',
+    },
+  },
+  {
+    id: 'robotics',
+    name: { sr: 'Robotika', en: 'Robotics' },
+    nameAccusative: 'robotiku',
+    slug: 'robotics',
+    slugs: { sr: 'robotika', en: 'robotics' },
+    subtitle: { sr: 'Škole robotike', en: 'Robotics schools' },
+    pageSubtitle: {
+      sr: 'Istražite škole robotike u {city} — za male inženjere i velike ideje.',
+      en: 'Explore robotics schools in {city} — for young engineers and big ideas.',
     },
   },
   {
