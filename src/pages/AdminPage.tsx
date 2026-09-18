@@ -26,15 +26,21 @@ import {
   schools,
 } from '../data/schools'
 import type { School } from '../data/schools'
+import { CATALOG_ADD_ORDER } from '../data/catalogAddOrder'
 import './admin.css'
 
 type AdminTab = 'catalog' | 'prelaunch' | 'rejected'
+type CatalogSort = 'activity' | 'newest'
 
 const TABS: { id: AdminTab; label: string; panelId: string }[] = [
   { id: 'catalog', label: 'Škole', panelId: 'admin-tabpanel-catalog' },
   { id: 'prelaunch', label: 'Upit za prikaz', panelId: 'admin-tabpanel-prelaunch' },
   { id: 'rejected', label: 'Odbijeno', panelId: 'admin-tabpanel-rejected' },
 ]
+
+const CATALOG_ADD_INDEX = new Map<string, number>(
+  CATALOG_ADD_ORDER.map((id, index) => [id, index])
+)
 
 const toggleFlag = (schoolId: string, current: Record<string, boolean>) => ({
   ...current,
@@ -44,7 +50,7 @@ const toggleFlag = (schoolId: string, current: Record<string, boolean>) => ({
 const formatCategorySlugs = (slugs: string[]) =>
   slugs.map((slug) => getCategoryNameBySlug(slug, 'sr')).join(', ')
 
-const sortAdminSchools = (list: School[]) =>
+const sortAdminSchoolsByActivity = (list: School[]) =>
   [...list].sort((a, b) => {
     const bySport = formatSchoolCategoryNames(a).localeCompare(formatSchoolCategoryNames(b), 'sr')
 
@@ -55,6 +61,21 @@ const sortAdminSchools = (list: School[]) =>
     return getSchoolNameSr(a).localeCompare(getSchoolNameSr(b), 'sr')
   })
 
+/** Newest catalog adds first (end of CATALOG_ADD_ORDER). Ids not in the list sort last. */
+const sortAdminSchoolsByNewest = (list: School[]) =>
+  [...list].sort((a, b) => {
+    const ai = CATALOG_ADD_INDEX.has(a.id) ? CATALOG_ADD_INDEX.get(a.id)! : -1
+    const bi = CATALOG_ADD_INDEX.has(b.id) ? CATALOG_ADD_INDEX.get(b.id)! : -1
+
+    if (ai !== bi) {
+      return bi - ai
+    }
+
+    return getSchoolNameSr(a).localeCompare(getSchoolNameSr(b), 'sr')
+  })
+
+const sortAdminSchools = (list: School[], sort: CatalogSort) =>
+  sort === 'newest' ? sortAdminSchoolsByNewest(list) : sortAdminSchoolsByActivity(list)
 const sortPreLaunchSchools = (list: PreLaunchSchool[]) =>
   [...list].sort((a, b) => {
     const bySport = formatCategorySlugs(a.categorySlugs).localeCompare(
@@ -167,6 +188,7 @@ const AdminCheckboxes = ({
 const AdminPage = () => {
   const [tab, setTab] = useState<AdminTab>('catalog')
   const [sportFilter, setSportFilter] = useState('')
+  const [catalogSort, setCatalogSort] = useState<CatalogSort>('newest')
   const [contacted, setContacted] = useState<Record<string, boolean>>(loadContactedFlags)
   const [verified, setVerified] = useState<Record<string, boolean>>(loadVerifiedFlags)
 
@@ -208,8 +230,8 @@ const AdminPage = () => {
         ? listed
         : listed.filter((school) => school.categorySlugs.includes(sportFilter))
 
-    return sortAdminSchools(filtered)
-  }, [sportFilter])
+    return sortAdminSchools(filtered, catalogSort)
+  }, [sportFilter, catalogSort])
 
   const prelaunchRows = useMemo(() => {
     const filtered =
@@ -318,6 +340,7 @@ const AdminPage = () => {
             className="admin-filter-select"
             value={sportOptions.some((option) => option.slug === sportFilter) ? sportFilter : ''}
             onChange={(event) => setSportFilter(event.target.value)}
+            aria-label="Filter po aktivnosti"
           >
             <option value="">Sve aktivnosti</option>
             {sportOptions.map((option) => (
@@ -327,6 +350,19 @@ const AdminPage = () => {
             ))}
           </select>
         </label>
+        {isCatalog ? (
+          <label className="admin-filter">
+            <select
+              className="admin-filter-select"
+              value={catalogSort}
+              onChange={(event) => setCatalogSort(event.target.value as CatalogSort)}
+              aria-label="Sortiranje"
+            >
+              <option value="newest">Najnovije prvo</option>
+              <option value="activity">Po aktivnosti</option>
+            </select>
+          </label>
+        ) : null}
       </div>
 
       <div

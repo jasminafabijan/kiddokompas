@@ -181,6 +181,13 @@ export const categories: Category[] = [
     subtitle: { sr: 'Škole tekvondoa', en: 'Taekwondo schools' },
   },
   {
+    id: 'bowling',
+    name: { sr: 'Kuglanje', en: 'Bowling' },
+    slug: 'bowling',
+    slugs: { sr: 'kuglanje', en: 'bowling' },
+    subtitle: { sr: 'Kuglaški klubovi', en: 'Bowling clubs' },
+  },
+  {
     id: 'capoeira',
     name: { sr: 'Kapuera', en: 'Capoeira' },
     nameAccusative: 'kapueru',

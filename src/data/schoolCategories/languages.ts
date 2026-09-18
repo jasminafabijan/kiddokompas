@@ -419,9 +419,9 @@ export const languagesSchools: School[] = [
         categorySlugs: ['languages', 'learning-support', 'programming', 'creative-writing'],
         city: 'Novi Sad',
         district: 'Detelinara',
-        minAge: 3,
+        minAge: 5,
         maxAge: null,
-        ageLabel: '3+ godina',
+        ageLabel: '5+ godina',
         imageWebp: nskrugWebp,
         imageFallback: nskrugFallback,
         description: {
