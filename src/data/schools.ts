@@ -304,15 +304,31 @@ export const getGoogleMapsOpenHref = (addresses: SchoolAddress[], placeName?: st
 
 export const getSchoolNameSr = (school: Pick<School, 'name'>): string => school.name.sr
 
-export const getSchoolName = (school: Pick<School, 'id' | 'name'>, lang: Lang): string =>
-    getLocalizedText(school.name, lang, `school:${school.id}:name`)
+export const getSchoolName = (
+    school: Pick<School, 'id' | 'name' | 'namesByCategory'>,
+    lang: Lang,
+    categoryId?: string
+): string => {
+    const override = categoryId ? school.namesByCategory?.[categoryId] : undefined
+
+    if (override) {
+        return getLocalizedText(override, lang, `school:${school.id}:name:${categoryId}`)
+    }
+
+    return getLocalizedText(school.name, lang, `school:${school.id}:name`)
+}
 
 export const getSchoolsByCategory = (categorySlug: string, lang: Lang = 'sr') => {
     const categoryId = getCategoryBySlug(categorySlug)?.id ?? categorySlug
 
     return getListedSchools()
         .filter((school) => school.categorySlugs.includes(categoryId))
-        .sort((a, b) => getSchoolName(a, lang).localeCompare(getSchoolName(b, lang), lang === 'en' ? 'en' : 'sr'))
+        .sort((a, b) =>
+            getSchoolName(a, lang, categoryId).localeCompare(
+                getSchoolName(b, lang, categoryId),
+                lang === 'en' ? 'en' : 'sr'
+            )
+        )
 }
 
 /** Newest listed catalog cards. City branches of a brand are omitted so one hub card is enough. */

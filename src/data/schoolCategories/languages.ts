@@ -529,6 +529,16 @@ export const languagesSchools: School[] = [
             sr: 'Centar stranih jezika Scool',
             en: 'Scool Language Center',
         },
+        namesByCategory: {
+            'learning-support': {
+                sr: 'Scool',
+                en: 'Scool',
+            },
+            music: {
+                sr: 'Scool',
+                en: 'Scool',
+            },
+        },
         categorySlugs: ['languages', 'learning-support', 'music'],
         city: 'Novi Sad',
         district: 'Stari Grad (Centar)',

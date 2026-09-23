@@ -353,6 +353,18 @@ export const categories: Category[] = [
     },
   },
   {
+    id: 'speech-development',
+    name: { sr: 'Razvoj govora', en: 'Speech development' },
+    nameAccusative: 'razvoj govora',
+    slug: 'speech-development',
+    slugs: { sr: 'razvoj-govora', en: 'speech-development' },
+    subtitle: { sr: 'Razvoj govora', en: 'Speech development' },
+    pageSubtitle: {
+      sr: 'Istražite programe za razvoj govora u {city} — kroz muziku, umetnost i podršku komunikaciji.',
+      en: 'Explore speech development programs in {city} — through music, art and support for communication.',
+    },
+  },
+  {
     id: 'programming',
     name: { sr: 'Programiranje', en: 'Programming' },
     nameAccusative: 'programiranje',

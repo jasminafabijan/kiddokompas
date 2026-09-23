@@ -6,7 +6,6 @@ import { useI18n } from '../i18n/useI18n'
 import actingIcon from '../assets/icons/acting.svg'
 import creativeWritingIcon from '../assets/icons/creative-writing.svg'
 import languagesIcon from '../assets/icons/languages.svg'
-import learningSupportIcon from '../assets/icons/learning-support.svg'
 import programmingIcon from '../assets/icons/programming.svg'
 import roboticsIcon from '../assets/icons/robotics.svg'
 import balletIcon from '../assets/icons/ballet.svg'
@@ -70,7 +69,6 @@ const categoryDisplay: CategoryDisplay[] = [
   { id: 'acting', iconBg: 'peach', iconSrc: actingIcon, iconSizeAdjustPx: -6 },
   { id: 'creative-writing', iconBg: 'mint', iconSrc: creativeWritingIcon },
   { id: 'languages', iconBg: 'mint', iconSrc: languagesIcon, iconSizeAdjustPx: -6 },
-  { id: 'learning-support', iconBg: 'peach', iconSrc: learningSupportIcon, iconSizeAdjustPx: -4 },
   { id: 'programming', iconBg: 'peach', iconSrc: programmingIcon, iconSizeAdjustPx: -18 },
   { id: 'robotics', iconBg: 'mint', iconSrc: roboticsIcon },
 ]

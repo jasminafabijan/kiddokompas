@@ -42,8 +42,16 @@ export const translations = {
     tag: { sr: 'Kategorije', en: 'Categories' },
     title: { sr: 'Istražite po interesovanjima', en: 'Explore by interest' },
     subtitle: {
-      sr: 'Odaberite oblast koja najviše odgovara vašem detetu i otkrijte programe u vašem kraju',
-      en: 'Choose the area that suits your child best and discover programs nearby',
+      sr: 'Odaberite oblast koja najviše odgovara vašem detetu i otkrijte aktivnosti u vašem kraju',
+      en: 'Choose the area that suits your child best and discover activities nearby',
+    },
+  },
+  support: {
+    tag: { sr: 'Oslonac', en: 'Support' },
+    title: { sr: 'Za svaki korak napred', en: 'For every step forward' },
+    subtitle: {
+      sr: 'Pronađite programe prilagođene različitim potrebama vašeg deteta',
+      en: 'Find programs adapted to your child’s different needs',
     },
   },
   recentlyAdded: {

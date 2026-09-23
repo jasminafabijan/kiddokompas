@@ -49,4 +49,5 @@ export const CATALOG_ADD_ORDER = [
   'scool',
   'odgajanje-sa-muzikom',
   'young-engineers',
+  'muzicka-radionica-andeli',
 ] as const

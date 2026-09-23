@@ -14,6 +14,7 @@ import FiltersBar, { type FilterValues } from './FiltersBar'
 import Hero from './Hero'
 import Navbar from './Navbar'
 import RecentlyAddedSection from './RecentlyAddedSection'
+import SupportSection from './SupportSection'
 
 const HomePage = () => {
   const navigate = useNavigate()
@@ -65,6 +66,7 @@ const HomePage = () => {
         <FiltersBar initialFilters={initialFilters} onFilterChange={handleFilterChange} />
 
         <CategoryCards />
+        <SupportSection />
         <RecentlyAddedSection />
       </div>
     </div>

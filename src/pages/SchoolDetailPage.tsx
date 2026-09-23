@@ -257,7 +257,7 @@ const SchoolDetailPage = () => {
 
         <article className="school-detail">
           <header className="school-detail-header">
-            <h1 className="school-detail-title">{getSchoolName(school, lang)}</h1>
+            <h1 className="school-detail-title">{getSchoolName(school, lang, activeCategorySlug)}</h1>
 
             {school.ageLabel ? (
               <div className="school-detail-tags">
@@ -281,7 +281,7 @@ const SchoolDetailPage = () => {
                     )}
                     <img
                       src={school.imageFallback}
-                      alt={getSchoolName(school, lang)}
+                      alt={getSchoolName(school, lang, activeCategorySlug)}
                       loading="eager"
                       decoding="async"
                       width={680}

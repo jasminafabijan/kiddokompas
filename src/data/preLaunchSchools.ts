@@ -266,10 +266,4 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['music'],
     website: 'https://www.facebook.com/muzickaskolarsnova',
   },
-  {
-    id: 'muzicka-radionica-andeli',
-    name: 'Muzička radionica Anđeli',
-    categorySlugs: ['music'],
-    website: 'https://www.facebook.com/angelsmusicws',
-  },
 ]

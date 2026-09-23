@@ -36,6 +36,8 @@ export type School = {
     id: string
     slug: string
     name: LocalizedText
+    /** Optional display name when the school is opened from a specific category. */
+    namesByCategory?: Partial<Record<string, LocalizedText>>
     /** Keep the record, but omit from the public catalog, map, search and school page. */
     /** Keep the record, but omit from the public catalog, map, search and school page. */
     hidden?: boolean

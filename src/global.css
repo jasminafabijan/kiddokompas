@@ -696,6 +696,7 @@
     }
 
     .categories-section,
+    .support-section,
     .recently-added-section {
         @apply py-8 sm:py-12 md:py-16;
     }
@@ -736,14 +737,6 @@
 
     .category-card-icon {
         @apply flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-2xl;
-    }
-
-    .category-card-icon--mint {
-        background-color: color-mix(in srgb, var(--mint) 45%, white);
-    }
-
-    .category-card-icon--peach {
-        background-color: color-mix(in srgb, var(--peach) 45%, white);
     }
 
     .category-card-icon-image {

@@ -24,6 +24,7 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'kud-nera',
   'la-jazz',
   'master-dance',
+  'muzicka-radionica-andeli',
   'nskrug',
   'ntc-balet',
   'odgajanje-sa-muzikom',

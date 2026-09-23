@@ -2,7 +2,7 @@ import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { getCategoryBySlug, getCategoryName } from '../data/categories'
 import { getSchoolBySlug, getSchoolName } from '../data/schools'
-import { isHomePath, matchCategorySlug, matchSchoolSlug, PAGE_PATHS } from './routes'
+import { getCategoryQueryValue, isHomePath, matchCategorySlug, matchSchoolSlug, PAGE_PATHS } from './routes'
 import { useI18n } from './useI18n'
 
 const setMetaDescription = (description: string) => {
@@ -14,7 +14,7 @@ const setMetaDescription = (description: string) => {
 
 /** Keep `<html lang>`, title and description in sync with the route. */
 const DocumentLang = () => {
-  const { pathname } = useLocation()
+  const { pathname, search } = useLocation()
   const { lang, t } = useI18n()
 
   useLayoutEffect(() => {
@@ -63,13 +63,17 @@ const DocumentLang = () => {
     const schoolSlug = matchSchoolSlug(pathname)
     if (schoolSlug) {
       const school = getSchoolBySlug(schoolSlug)
-      const schoolName = school ? getSchoolName(school, lang) : t('school.notFound')
+      const queryCategory = getCategoryQueryValue(new URLSearchParams(search))
+      const categoryId = queryCategory ? getCategoryBySlug(queryCategory)?.id : undefined
+      const activeCategory =
+        school && categoryId && school.categorySlugs.includes(categoryId) ? categoryId : undefined
+      const schoolName = school ? getSchoolName(school, lang, activeCategory) : t('school.notFound')
       document.title = t('seo.pageTitle', { page: schoolName })
       return
     }
 
     document.title = t('seo.pageTitle', { page: t('notFound.title') })
-  }, [lang, pathname, t])
+  }, [lang, pathname, search, t])
 
   return null
 }

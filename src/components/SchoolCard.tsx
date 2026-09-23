@@ -64,7 +64,7 @@ const SchoolCard = ({ school, categoryLabel, categoryContext }: SchoolCardProps)
           )}
           <img
             src={school.imageFallback}
-            alt={getSchoolName(school, lang)}
+            alt={getSchoolName(school, lang, categoryContext)}
             loading="lazy"
             decoding="async"
             width={288}
@@ -75,7 +75,7 @@ const SchoolCard = ({ school, categoryLabel, categoryContext }: SchoolCardProps)
       </div>
 
       <div className="school-card-body">
-        <h3 className="school-card-title">{getSchoolName(school, lang)}</h3>
+        <h3 className="school-card-title">{getSchoolName(school, lang, categoryContext)}</h3>
 
         <ul className="school-card-meta">
           <li className="school-card-meta-item">
