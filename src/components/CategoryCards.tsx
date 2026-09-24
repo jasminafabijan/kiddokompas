@@ -14,6 +14,7 @@ import boxingIcon from '../assets/icons/boxing.svg'
 import capoeiraIcon from '../assets/icons/capoeira.svg'
 import aikidoIcon from '../assets/icons/aikido.svg'
 import chessIcon from '../assets/icons/chess.svg'
+import bowlingIcon from '../assets/icons/nine-pin-bowling.svg'
 import footballIcon from '../assets/icons/football.svg'
 import jazzDanceIcon from '../assets/icons/jazz-dance.svg'
 import karateIcon from '../assets/icons/karate.svg'
@@ -55,6 +56,7 @@ const categoryDisplay: CategoryDisplay[] = [
   { id: 'capoeira', iconBg: 'mint', iconSrc: capoeiraIcon, iconSizeAdjustPx: 4 },
   { id: 'aikido', iconBg: 'peach', iconSrc: aikidoIcon },
   { id: 'chess', iconBg: 'mint', iconSrc: chessIcon, iconSizeAdjustPx: -10 },
+  { id: 'bowling', iconBg: 'peach', iconSrc: bowlingIcon },
   { id: 'swimming', iconBg: 'mint', iconSrc: swimmingIcon, iconSizeAdjustPx: -18 },
   { id: 'mini-sports', iconBg: 'peach', iconSrc: miniSportsIcon },
   { id: 'kids-sports', iconBg: 'mint', iconSrc: kidsSportsIcon },

@@ -249,12 +249,6 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     website: 'https://www.facebook.com/KreativniMKutak',
   },
   {
-    id: 'ada-comp-ns',
-    name: 'Ada Comp NS',
-    categorySlugs: ['programming'],
-    website: 'https://www.facebook.com/adacompNS',
-  },
-  {
     id: 'kuglaski-klub-spartak',
     name: 'Kuglaški klub Spartak',
     categorySlugs: ['bowling'],
@@ -265,5 +259,29 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     name: 'Edukativni centar Ars Nova',
     categorySlugs: ['music'],
     website: 'https://www.facebook.com/muzickaskolarsnova',
+  },
+  {
+    id: 'pk-marlin',
+    name: 'Plivački klub Marlin',
+    categorySlugs: ['swimming'],
+    website: 'https://www.facebook.com/pkmarlinsrb/',
+  },
+  {
+    id: 'sonatina',
+    name: 'Sonatina',
+    categorySlugs: ['music'],
+    website: 'https://www.facebook.com/profile.php?id=61594421888907',
+  },
+  {
+    id: 'carpe-diem',
+    name: 'Jezički centar Carpe Diem',
+    categorySlugs: ['languages'],
+    website: 'https://www.facebook.com/carpediemnosceteipsum',
+  },
+  {
+    id: 'dramski-studio-pozorista-mladih',
+    name: 'Dramski studio Pozorišta mladih',
+    categorySlugs: ['acting'],
+    website: 'https://www.pozoristemladih.co.rs/arhiva-vesti/1527-dramski-studio-pozorista-mladih-upisuje-nove-clanove',
   },
 ]

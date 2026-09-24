@@ -42,6 +42,7 @@ const CategoryPage = () => {
 
   const categoryCities = [...new Set(categorySchools.flatMap((school) => getSchoolCities(school)))]
   const selectedCity = getSelectedCity(searchParams, categoryCities)
+  const cityFromFilter = searchParams.get('grad') ?? searchParams.get('city') ?? ''
   const visibleSchools = forCatalogCards(
     selectedCity
       ? categorySchools.filter((school) => getSchoolCities(school).includes(selectedCity))
@@ -85,7 +86,7 @@ const CategoryPage = () => {
         <header className="category-page-header">
           <h1 className="category-page-title">{getCategoryName(category, lang)}</h1>
           <p className="category-page-subtitle">
-            {formatCategorySubtitle(category, selectedCity, lang)}
+            {formatCategorySubtitle(category, cityFromFilter, lang)}
           </p>
         </header>
 

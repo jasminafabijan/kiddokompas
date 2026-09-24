@@ -29,6 +29,7 @@ const GROUP_COLOR: Record<string, string> = {
   judo: MARTIAL,
   capoeira: MARTIAL,
   chess: CHESS,
+  bowling: COURT_MOVEMENT,
   ballet: DANCE_MUSIC,
   'jazz-ballet': DANCE_MUSIC,
   'dance-sport': DANCE_MUSIC,
@@ -83,6 +84,9 @@ const ICONS: Record<string, string> = {
   capoeira: `<svg viewBox="0 0 24 24" fill="#0b1a3b" stroke="#0b1a3b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16.2" cy="15.6" r="2.1" stroke="none"/><path fill="none" d="M9.8 21.4 12.2 13.2M12.2 13.2 6.8 14.8M12.2 13.2 12.8 7.4M12.8 7.4 6.2 2.8M12.8 7.4 20.8 3.2"/></svg>`,
   chess: wrap(
     '<path d="M12 3.2v3.2M10.4 4.8h3.2"/><path d="M8.4 7.4h7.2v2H8.4z"/><path d="M9.2 9.4 8.2 17.8h7.6L14.8 9.4"/><path d="M6.8 17.8h10.4v2.4H6.8z"/>'
+  ),
+  bowling: wrap(
+    '<path d="M10.2 20.8h3.6"/><path d="M11 20.8c.15-3.4.45-7 1-8.8.55 1.8.85 5.4 1 8.8"/><circle cx="12" cy="7.4" r="2.7"/><circle cx="11.3" cy="6.8" r="0.45" fill="#0b1a3b" stroke="none"/><circle cx="12.7" cy="7.6" r="0.45" fill="#0b1a3b" stroke="none"/>'
   ),
   swimming: wrap(
     '<path d="M3 17.2c1.6-1.2 3.2-1.2 4.8 0s3.2 1.2 4.8 0 3.2-1.2 4.8 0 3.2 1.2 4.8 0"/><circle cx="16" cy="6.4" r="2"/><path d="M5.5 13.5 11 12l3.6-3.4M14.2 11.2 18 13.4"/>'

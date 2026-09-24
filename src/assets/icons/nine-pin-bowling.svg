@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <!-- Traced from the original uploaded pin silhouette. -->
+    <path id="pin-shape" d="M824 3C868 3 903 25 918 63 936 108 930 164 909 220 904 234 902 247 905 257L903 268 904 300 910 321 917 335 940 370 955 396 967 420 983 458 996 497 1005 533 1010 560 1015 603 1016 667 1013 705 1004 759 995 794 974 854 955 899 949 907 941 914 929 919 922 920H726L719 919 707 914 699 907 693 899 674 854 653 794 644 759 635 705 632 667 633 603 638 560 643 533 652 497 665 458 681 420 693 396 708 370 731 335 738 321 744 300 745 268 743 257C746 247 744 234 739 220 718 164 712 108 730 63 745 25 780 3 824 3Z"/>
+    <clipPath id="pin-clip" clipPathUnits="userSpaceOnUse">
+      <use xlink:href="#pin-shape" fill="#000"/>
+    </clipPath>
+    <ellipse id="ball-shape" cx="292" cy="732" rx="283" ry="287"/>
+    <clipPath id="ball-clip" clipPathUnits="userSpaceOnUse">
+      <use xlink:href="#ball-shape" fill="#000"/>
+    </clipPath>
+  </defs>
+
+  <!-- The pin silhouettes are unchanged; only the internal stripes were removed. -->
+  <g fill="#C0E0CF" stroke="#0B1A3B" stroke-width="36" stroke-linejoin="round">
+    <g transform="translate(-540 0)">
+      <use xlink:href="#pin-shape" clip-path="url(#pin-clip)"/>
+    </g>
+    <use xlink:href="#pin-shape" clip-path="url(#pin-clip)"/>
+    <g transform="translate(-270 93) scale(1 1.00435)">
+      <use xlink:href="#pin-shape" clip-path="url(#pin-clip)"/>
+    </g>
+  </g>
+
+  <!-- The ball keeps its original silhouette and receives the thinner outline. -->
+  <use xlink:href="#ball-shape" fill="#F7C6B7" stroke="#0B1A3B" stroke-width="36" clip-path="url(#ball-clip)"/>
+</svg>

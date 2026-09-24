@@ -9,6 +9,8 @@ export const CATALOG_ADD_ORDER = [
   'kud-nera',
   'master-dance',
   'ntc-balet',
+  'ntc-balet-novi-sad',
+  'ntc-balet-beograd',
   'reverans',
   'sinisa-mihajlovic',
   'fiesta',
@@ -50,4 +52,5 @@ export const CATALOG_ADD_ORDER = [
   'odgajanje-sa-muzikom',
   'young-engineers',
   'muzicka-radionica-andeli',
+  'kuglaski-klub-backa',
 ] as const

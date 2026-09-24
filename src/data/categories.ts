@@ -182,10 +182,15 @@ export const categories: Category[] = [
   },
   {
     id: 'bowling',
-    name: { sr: 'Kuglanje', en: 'Bowling' },
+    name: { sr: 'Kuglanje', en: 'Nine-pin bowling' },
+    nameAccusative: 'kuglanje',
     slug: 'bowling',
     slugs: { sr: 'kuglanje', en: 'bowling' },
-    subtitle: { sr: 'Kuglaški klubovi', en: 'Bowling clubs' },
+    subtitle: { sr: 'Kuglaški klubovi', en: 'Nine-pin bowling clubs' },
+    pageSubtitle: {
+      sr: 'Istražite kuglaške klubove u {city} — za preciznost, strpljenje i igru na stazi.',
+      en: 'Explore nine-pin bowling clubs in {city} — for precision, patience and the game on the lane.',
+    },
   },
   {
     id: 'capoeira',
@@ -360,8 +365,8 @@ export const categories: Category[] = [
     slugs: { sr: 'razvoj-govora', en: 'speech-development' },
     subtitle: { sr: 'Razvoj govora', en: 'Speech development' },
     pageSubtitle: {
-      sr: 'Istražite programe za razvoj govora u {city} — kroz muziku, umetnost i podršku komunikaciji.',
-      en: 'Explore speech development programs in {city} — through music, art and support for communication.',
+      sr: 'Istražite programe za razvoj govora u {city} — podsticaj za jasnije izražavanje i sigurniju komunikaciju.',
+      en: 'Explore speech development programs in {city} — encouragement for clearer expression and more confident communication.',
     },
   },
   {

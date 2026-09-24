@@ -11,6 +11,59 @@ import ludensJpg from '../../assets/images/schools/ballet/ludens.jpg'
 
 import type { School } from './types'
 
+const ntcBaletDescription = {
+    sr: [
+        'Kroz pokret, muziku i igru, NTC balet razvija maštu, koordinaciju i samopouzdanje deteta.',
+        'Program spaja balet, ritmičku gimnastiku i NTC metodologiju. Nije profesionalna baletska obuka, već razvojni program za decu koja vole pokret, muziku i igru, i nije potrebno prethodno iskustvo.',
+        'Na času se radi na koordinaciji, ravnoteži, pravilnom držanju, pažnji i osećaju za ritam, a kroz baletske igre i na samopouzdanju, izražavanju emocija i saradnji.',
+        'NTC tehnike ulaze u svaki čas kroz ritam, asocijacije, koordinacione zadatke i igru, tako da deca istovremeno pokreću telo, maštu i razmišljanje.',
+        'Svaki čas vodi u novu priču: deca plešu kroz pustinje, džungle, ledene predele i skrivene gradove, i tako povezuju pokret sa avanturom.',
+        'Radionice traju 60 minuta, jednom ili dva puta sedmično tokom školske godine. Tokom godine su javni časovi, a na kraju i godišnja priredba svih grupa.',
+    ],
+    en: [
+        'Through movement, music and play, NTC ballet develops a child’s imagination, coordination and confidence.',
+        'The program combines ballet, rhythmic gymnastics and the NTC methodology. It is not professional ballet training, but a developmental program for children who like movement, music and play, and no previous experience is required.',
+        'Class works on coordination, balance, posture, attention and a sense of rhythm, and through ballet games also on confidence, expressing emotions and cooperation.',
+        'NTC techniques are part of every class through rhythm, associations, coordination tasks and play, so children set body, imagination and thinking in motion at the same time.',
+        'Each class leads into a new story: children dance through deserts, jungles, icy landscapes and hidden cities, and so connect movement with adventure.',
+        'Workshops last 60 minutes, once or twice a week throughout the school year. There are open classes during the year, and an annual performance of all groups at the end.',
+    ],
+}
+
+const ntcBaletContact = {
+    phone: '061 3755 399',
+    email: 'balet.gimnastika@ntcucenje.com',
+    website: 'https://ntcucenje.com/ntc-balet/',
+    facebook: 'https://www.facebook.com/ntcsistemucenja',
+    instagram: 'https://www.instagram.com/ntcucenje/',
+}
+
+const ntcBaletCityPage = {
+    categorySlugs: ['ballet'],
+    minAge: 3,
+    maxAge: 9,
+    ageLabel: '3–9 godina',
+    imageWebp: ntcBaletWebp,
+    imageFallback: ntcBaletPng,
+    description: ntcBaletDescription,
+    contact: ntcBaletContact,
+} satisfies Pick<
+    School,
+    | 'categorySlugs'
+    | 'minAge'
+    | 'maxAge'
+    | 'ageLabel'
+    | 'imageWebp'
+    | 'imageFallback'
+    | 'description'
+    | 'contact'
+>
+
+const ntcBaletBranchPage = {
+    ...ntcBaletCityPage,
+    brandSchoolId: 'ntc-balet',
+}
+
 export const balletSchools: School[] = [
     {
         id: 'dobrila-novkov',
@@ -118,32 +171,37 @@ export const balletSchools: School[] = [
             sr: 'NTC balet',
             en: 'NTC Ballet',
         },
-        categorySlugs: ['ballet'],
+        ...ntcBaletCityPage,
+        brandOverview: true,
+        city: 'Novi Sad',
+        district: '',
+        addresses: [
+            {
+                street: '',
+                city: 'Novi Sad',
+                lat: 45.252,
+                lng: 19.842,
+                schoolSlug: 'ntc-balet-novi-sad',
+            },
+            {
+                street: '',
+                city: 'Beograd',
+                lat: 44.8176,
+                lng: 20.4569,
+                schoolSlug: 'ntc-balet-beograd',
+            },
+        ],
+    },
+    {
+        id: 'ntc-balet-novi-sad',
+        slug: 'ntc-balet-novi-sad',
+        name: {
+            sr: 'NTC balet',
+            en: 'NTC Ballet',
+        },
+        ...ntcBaletBranchPage,
         city: 'Novi Sad',
         district: 'Podbara',
-        minAge: 3,
-        maxAge: 7,
-        ageLabel: '3–7 godina',
-        imageWebp: ntcBaletWebp,
-        imageFallback: ntcBaletPng,
-        description: {
-            sr: [
-                'NTC program baleta predstavlja inovativni pristup razvoju dece koji spaja elemente klasičnog baleta sa principima NTC sistema učenja.',
-                'Program je osmišljen od strane dr Ranka Rajovića i balerine Sare Đurakić, sa ciljem da deca kroz pokret razvijaju koordinaciju, motoriku i samopouzdanje.',
-                'Deca uče osnovne baletne pozicije, ritam i muzikalnost kroz igru, pri čemu se posebna pažnja posvećuje individualnom razvoju svakog deteta.',
-                'Grupe su manje, što omogućava nastavnicima da svakom detetu posvete dovoljno pažnje i podrške tokom časa.',
-                'Kroz kombinaciju igre, muzike i strukturisanih zadataka, deca uče da pokret povezuju sa emocijama i maštom.',
-                'Program podstiče samostalnost i radoznalost, uz okruženje u kojem je istraživanje pokreta podržano i svakom koraku dozvoljeno vreme.',
-            ],
-            en: [
-                'The NTC ballet program is an innovative approach to children’s development that combines elements of classical ballet with the principles of the NTC learning system.',
-                'The program was designed by Dr Ranko Rajović and ballerina Sara Đurakić, so that children develop coordination, motor skills and confidence through movement.',
-                'Children learn basic ballet positions, rhythm and musicality through play, with particular attention to each child’s individual development.',
-                'Groups are smaller, which allows teachers to give every child enough attention and support during class.',
-                'Through a mix of play, music and structured tasks, children learn to connect movement with emotion and imagination.',
-                'The program encourages independence and curiosity, in a setting where exploring movement is supported and every step is given time.',
-            ],
-        },
         addresses: [
             {
                 street: 'Zlatne Grede 25',
@@ -153,12 +211,59 @@ export const balletSchools: School[] = [
                 lng: 19.847808,
             },
         ],
-        contact: {
-            phone: '065 2451 405',
-            website: 'https://ntcucenje.com/ntc-balet/',
-            facebook: 'https://www.facebook.com/ntcsistemucenja',
-            instagram: 'https://www.instagram.com/ntcucenje/',
+    },
+    {
+        id: 'ntc-balet-beograd',
+        slug: 'ntc-balet-beograd',
+        name: {
+            sr: 'NTC balet',
+            en: 'NTC Ballet',
         },
+        ...ntcBaletBranchPage,
+        city: 'Beograd',
+        district: 'Palilula',
+        addresses: [
+            {
+                street: 'Predškolska ustanova „Dečije carstvo”, Profesora Mihaila Đurića 71',
+                city: 'Beograd',
+                district: 'Palilula',
+                lat: 44.8089944,
+                lng: 20.473619,
+                mapsUrl: 'https://www.google.com/maps?cid=12710270496040487959',
+            },
+            {
+                street: 'Plesna škola UV Dance, Resavska 28',
+                city: 'Beograd',
+                district: 'Vračar',
+                lat: 44.8076783,
+                lng: 20.4654008,
+                mapsUrl: 'https://www.google.com/maps?cid=18435185411975160700',
+            },
+            {
+                street: 'Sportsko-rekreativni centar M, Bulevar Maršala Tolbuhina 38',
+                city: 'Beograd',
+                district: 'Zemun',
+                lat: 44.8304385,
+                lng: 20.4068597,
+                mapsUrl: 'https://www.google.com/maps?cid=5829842104018423254',
+            },
+            {
+                street: 'Salome bellydance studio, Dr Ivana Ribara 55a',
+                city: 'Beograd',
+                district: 'Novi Beograd',
+                lat: 44.8033546,
+                lng: 20.3698412,
+                mapsUrl: 'https://www.google.com/maps?cid=7972978205243774238',
+            },
+            {
+                street: 'Ice Park Stari DIF, Deligradska 27',
+                city: 'Beograd',
+                district: 'Savski Venac',
+                lat: 44.7995331,
+                lng: 20.4630567,
+                mapsUrl: 'https://www.google.com/maps?cid=10211936266591972520',
+            },
+        ],
     },
     {
         id: 'pointe-dance-serbia',
