@@ -396,7 +396,8 @@ const SchoolDetailPage = () => {
                           return (
                             <Link
                               key={address.schoolSlug}
-                              to={schoolPath(lang, address.schoolSlug)}
+                              to={schoolPath(lang, address.schoolSlug, activeCategorySlug)}
+                              state={{ from }}
                               className="school-detail-contact-link"
                             >
                               <span className="school-detail-contact-icon-wrap">
@@ -428,6 +429,8 @@ const SchoolDetailPage = () => {
                     <SchoolMap
                       addresses={mapAddresses}
                       placeName={getSchoolName(school, lang)}
+                      categoryId={activeCategorySlug}
+                      from={from}
                     />
                   )}
                 </section>

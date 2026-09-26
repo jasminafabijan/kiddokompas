@@ -5,7 +5,9 @@
 export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'academy-centar-stranih-jezika',
   'aikido-ikeda-dojo',
+  'beograd-roller-school',
   'bolesnikov',
+  'daske-i-maske',
   'dexters',
   'fiesta',
   'fk-bistrica-05',
@@ -26,6 +28,7 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'la-jazz',
   'master-dance',
   'muzicka-radionica-andeli',
+  'novi-sad-roller-school',
   'nskrug',
   'ntc-balet',
   'ntc-balet-beograd',

@@ -24,6 +24,7 @@ import musicIcon from '../assets/icons/music.svg'
 import tennisIcon from '../assets/icons/tennis.svg'
 import tableTennisIcon from '../assets/icons/table-tennis.svg'
 import athleticsIcon from '../assets/icons/athletics.svg'
+import rollerSkatingIcon from '../assets/icons/roller-skating.svg'
 import volleyballIcon from '../assets/icons/volleyball.webp'
 import danceSportIcon from '../assets/icons/dance-sport.svg'
 import swimmingIcon from '../assets/icons/swimming.svg'
@@ -51,12 +52,13 @@ const categoryDisplay: CategoryDisplay[] = [
   { id: 'tennis', iconBg: 'peach', iconSrc: tennisIcon },
   { id: 'table-tennis', iconBg: 'mint', iconSrc: tableTennisIcon, iconSizeAdjustPx: -6 },
   { id: 'athletics', iconBg: 'peach', iconSrc: athleticsIcon },
+  { id: 'roller-skating', iconBg: 'mint', iconSrc: rollerSkatingIcon },
   { id: 'karate', iconBg: 'mint', iconSrc: karateIcon },
   { id: 'boxing', iconBg: 'peach', iconSrc: boxingIcon, iconSizeAdjustPx: -6 },
   { id: 'capoeira', iconBg: 'mint', iconSrc: capoeiraIcon, iconSizeAdjustPx: 4 },
   { id: 'aikido', iconBg: 'peach', iconSrc: aikidoIcon },
   { id: 'chess', iconBg: 'mint', iconSrc: chessIcon, iconSizeAdjustPx: -10 },
-  { id: 'bowling', iconBg: 'peach', iconSrc: bowlingIcon },
+  { id: 'bowling', iconBg: 'peach', iconSrc: bowlingIcon, iconSizeAdjustPx: -4 },
   { id: 'swimming', iconBg: 'mint', iconSrc: swimmingIcon, iconSizeAdjustPx: -18 },
   { id: 'mini-sports', iconBg: 'peach', iconSrc: miniSportsIcon },
   { id: 'kids-sports', iconBg: 'mint', iconSrc: kidsSportsIcon },

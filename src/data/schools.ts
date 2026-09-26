@@ -26,6 +26,7 @@ import { swimmingSchools } from './schoolCategories/swimming'
 import { miniSportsSchools } from './schoolCategories/mini-sports'
 import { kidsSportsSchools } from './schoolCategories/kids-sports'
 import { athleticsSchools } from './schoolCategories/athletics'
+import { rollerSkatingSchools } from './schoolCategories/roller-skating'
 import { developmentalGymnasticsSchools } from './schoolCategories/developmental-gymnastics'
 import { teenWorkoutSchools } from './schoolCategories/teen-workout'
 import { capoeiraSchools } from './schoolCategories/capoeira'
@@ -57,6 +58,7 @@ export const schools: School[] = [
     ...miniSportsSchools,
     ...kidsSportsSchools,
     ...athleticsSchools,
+    ...rollerSkatingSchools,
     ...developmentalGymnasticsSchools,
     ...teenWorkoutSchools,
     ...ridingSchools,

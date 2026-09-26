@@ -28,11 +28,6 @@ const STREET_LABELS: Record<string, string> = {
     'Bistrica Community Center, Braće Dronjak 11',
   'Bazeni SPENS-a, Sutjeska 2': 'SPENS pools, Sutjeska 2',
   'Kuglana SPENS-a, Sutjeska 2': 'SPENS bowling alley, Sutjeska 2',
-  'Predškolska ustanova „Dečije carstvo”, Profesora Mihaila Đurića 71':
-    'Preschool “Dečije carstvo”, Profesora Mihaila Đurića 71',
-  'Plesna škola UV Dance, Resavska 28': 'UV Dance dance school, Resavska 28',
-  'Sportsko-rekreativni centar M, Bulevar Maršala Tolbuhina 38':
-    'Sports and Recreation Center M, Bulevar Maršala Tolbuhina 38',
   'Tehnička škola „Mileva Marić Anštajn”, Gagarinova 1':
     'Technical School “Mileva Marić Anštajn”, Gagarinova 1',
   'TC Pariski magazin, Kralja Aleksandra 12':

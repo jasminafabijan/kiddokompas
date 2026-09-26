@@ -63,6 +63,7 @@ export const categories: Category[] = [
   {
     id: 'acting',
     name: { sr: 'Gluma', en: 'Acting' },
+    nameAccusative: 'glumu',
     slug: 'acting',
     slugs: { sr: 'gluma', en: 'acting' },
     subtitle: { sr: 'Škole glume', en: 'Acting schools' },
@@ -127,6 +128,18 @@ export const categories: Category[] = [
     pageSubtitle: {
       sr: 'Istražite škole atletike u {city} — za razvoj brzine, izdržljivosti i pravilnog pokreta.',
       en: 'Explore athletics schools in {city} — for developing speed, endurance and proper movement.',
+    },
+  },
+  {
+    id: 'roller-skating',
+    name: { sr: 'Roleri', en: 'Roller skating' },
+    nameAccusative: 'rolere',
+    slug: 'roller-skating',
+    slugs: { sr: 'roleri', en: 'roller-skating' },
+    subtitle: { sr: 'Škole rolanja', en: 'Roller skating schools' },
+    pageSubtitle: {
+      sr: 'Istražite škole rolanja u {city} — za ravnotežu, sigurnu vožnju i uživanje na otvorenom.',
+      en: 'Explore roller skating schools in {city} — for balance, safe skating and time outdoors.',
     },
   },
   {

@@ -20,6 +20,7 @@ const GROUP_COLOR: Record<string, string> = {
   tennis: COURT_MOVEMENT,
   'table-tennis': COURT_MOVEMENT,
   athletics: COURT_MOVEMENT,
+  'roller-skating': COURT_MOVEMENT,
   gymnastics: COURT_MOVEMENT,
   'developmental-gymnastics': COURT_MOVEMENT,
   'teen-workout': COURT_MOVEMENT,
@@ -73,6 +74,9 @@ const ICONS: Record<string, string> = {
   ),
   athletics: wrap(
     '<circle cx="14.6" cy="4.8" r="2"/><path d="M8.2 21.2 12.2 12.4 16.8 8.6M12.2 12.4 6.4 11.2M16.8 8.6 20.4 12.8M16.8 8.6 13.4 7.2"/>'
+  ),
+  'roller-skating': wrap(
+    '<circle cx="7.2" cy="17.4" r="2"/><circle cx="16.4" cy="17.4" r="2"/><path d="M8.4 15.6c.8-3.6 2-6.4 3.6-7.6 1.8 1.2 2.8 4 3.4 7.6"/><path d="M6.2 19.6h12.8"/>'
   ),
   karate: wrap(
     '<circle cx="8.6" cy="5.2" r="2.1"/><path d="M9.4 7.4 11.3 13.8M11.3 13.8 10.9 21.5M11.3 13.8 20.5 5.2M9.5 9.2 18.2 3.8M9.3 8.8 3.8 14.6"/>'

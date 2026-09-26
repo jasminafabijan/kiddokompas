@@ -19,9 +19,11 @@ const getMapZoom = (pointCount: number) => {
 interface SchoolMapProps {
   addresses: SchoolAddress[]
   placeName?: string
+  categoryId?: string
+  from?: string
 }
 
-const SchoolMap = ({ addresses, placeName }: SchoolMapProps) => {
+const SchoolMap = ({ addresses, placeName, categoryId, from }: SchoolMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<L.Map | null>(null)
   const { lang, t } = useI18n()
@@ -72,7 +74,7 @@ const SchoolMap = ({ addresses, placeName }: SchoolMapProps) => {
           return false
         }
 
-        navigate(schoolPath(lang, slug))
+        navigate(schoolPath(lang, slug, categoryId), { state: { from } })
         return true
       },
     })
@@ -104,7 +106,7 @@ const SchoolMap = ({ addresses, placeName }: SchoolMapProps) => {
       map.remove()
       mapInstanceRef.current = null
     }
-  }, [lang, navigate, points])
+  }, [categoryId, from, lang, navigate, points])
 
   if (points.length === 0) return null
 

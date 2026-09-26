@@ -284,4 +284,10 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['acting'],
     website: 'https://www.pozoristemladih.co.rs/arhiva-vesti/1527-dramski-studio-pozorista-mladih-upisuje-nove-clanove',
   },
+  {
+    id: 'lingomat',
+    name: 'Lingomat',
+    categorySlugs: ['technology'],
+    website: 'https://www.facebook.com/profile.php?id=61579078864189',
+  },
 ]
