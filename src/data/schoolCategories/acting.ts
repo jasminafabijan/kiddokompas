@@ -102,7 +102,7 @@ export const actingSchools: School[] = [
             },
         ],
         contact: {
-            phone: '063 8359 589',
+            phone: '063 835 95 89',
             email: 'studio@daskeimaske.rs',
             website: 'https://daskeimaske.rs/',
             facebook: 'https://www.facebook.com/profile.php?id=61586083949797',
