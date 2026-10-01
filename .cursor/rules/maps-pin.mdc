@@ -1,0 +1,25 @@
+---
+description: Every school address needs a Google Maps link that opens the place pin
+globs: src/data/schoolCategories/**/*.ts
+alwaysApply: true
+---
+
+# Google Maps pin
+
+Every school `addresses` entry must include `mapsUrl`. Coordinates alone are not enough. Without `mapsUrl`, the map link is only a camera position and has no pin.
+
+- `mapsUrl` is `https://www.google.com/maps?cid=DECIMAL`
+- The decimal comes from the second hex of `0x…:0xCID`: `int(hex, 16)`
+- `lat` and `lng` are the place pin (`!3dLAT!4dLNG` or `[null,null,LAT,LNG]`), not the map camera (`@lat,lng`)
+- Use the listing for that venue. A nearby place in the same complex is the wrong pin (SPENS pools are not the bowling alley, and the sports center is not the indoor pool)
+
+```ts
+{
+  street: 'Bazeni SPENS-a, Sutjeska 2',
+  city: 'Novi Sad',
+  district: 'Stari Grad (Centar)',
+  lat: 45.24634,
+  lng: 19.8461232,
+  mapsUrl: 'https://www.google.com/maps?cid=5659167617721317525',
+}
+```

@@ -229,6 +229,13 @@ export const categories: Category[] = [
     },
   },
   {
+    id: 'rowing',
+    name: { sr: 'Veslanje', en: 'Rowing' },
+    slug: 'rowing',
+    slugs: { sr: 'veslanje', en: 'rowing' },
+    subtitle: { sr: 'Škole veslanja', en: 'Rowing schools' },
+  },
+  {
     id: 'swimming',
     name: { sr: 'Plivanje', en: 'Swimming' },
     slug: 'swimming',

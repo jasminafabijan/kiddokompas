@@ -221,7 +221,7 @@ export const preLaunchSchools: PreLaunchSchool[] = [
   {
     id: 'veslacki-klub-danubius-1885',
     name: 'Veslački klub Danubius 1885',
-    categorySlugs: ['swimming'],
+    categorySlugs: ['rowing'],
     website: 'https://www.facebook.com/p/Veslački-klub-Danubius-1885-100057054026621/',
   },
   {
@@ -289,5 +289,29 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     name: 'Lingomat',
     categorySlugs: ['technology'],
     website: 'https://www.facebook.com/profile.php?id=61579078864189',
+  },
+  {
+    id: 'aikido-zemun',
+    name: 'Aikido Zemun',
+    categorySlugs: ['aikido'],
+    website: 'https://www.facebook.com/aikido.zemun97',
+  },
+  {
+    id: 'pony-kutak',
+    name: 'Pony Kutak',
+    categorySlugs: ['riding'],
+    website: 'https://www.ponykutak.com',
+  },
+  {
+    id: 'kk-petras',
+    name: 'Konjički klub Petraš',
+    categorySlugs: ['riding'],
+    website: 'https://www.instagram.com/kkpetras/',
+  },
+  {
+    id: 'sumska-stala',
+    name: 'Šumska štala',
+    categorySlugs: ['riding'],
+    website: 'https://sumskastala.rs/skola-jahanja/',
   },
 ]

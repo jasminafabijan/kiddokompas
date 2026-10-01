@@ -3,6 +3,8 @@ import pkNoviSadJpg from '../../assets/images/schools/swimming/pk-novi-sad.jpg'
 import pkVojvodinaWebp from '../../assets/images/schools/swimming/pk-vojvodina.webp'
 import pkVojvodinaJpg from '../../assets/images/schools/swimming/pk-vojvodina.jpg'
 import plivanjeSpensJpg from '../../assets/images/schools/swimming/plivanje-spens.jpg'
+import pkNeptunWebp from '../../assets/images/schools/swimming/pk-neptun.webp'
+import pkNeptunPng from '../../assets/images/schools/swimming/pk-neptun.png'
 
 import type { School } from './types'
 
@@ -153,6 +155,50 @@ export const swimmingSchools: School[] = [
             facebook: 'https://www.facebook.com/AkvarobikObukaNeplivaca',
             facebookLabel: 'AkvarobikObukaNeplivaca',
             instagram: 'https://www.instagram.com/skolicaplivanja_akvafitness/',
+        },
+    },
+    {
+        id: 'pk-neptun',
+        slug: 'pk-neptun',
+        name: {
+            sr: 'Plivački klub „Neptun”',
+            en: 'Neptun Swimming Club',
+        },
+        categorySlugs: ['swimming'],
+        city: 'Novi Sad',
+        district: 'Stari Grad (Centar)',
+        minAge: 3,
+        maxAge: null,
+        ageLabel: '3+ godina',
+        imageWebp: pkNeptunWebp,
+        imageFallback: pkNeptunPng,
+        description: {
+            sr: [
+                'Plivački klub „Neptun” upisuje nove članove svakog meseca.',
+                'Program obuhvata školicu plivanja za najmlađe, obuku neplivača i usavršavanje tehnike. Klub ima predtakmičarske i takmičarske grupe, kao i rekreativno plivanje.',
+                'Za prijavu su zadužene Marinela Marković i Mihaela Marković.',
+            ],
+            en: [
+                'Swimming club “Neptun” enrolls new members every month.',
+                'The program covers a swimming school for the youngest, training for non-swimmers and work on technique. The club has pre-competitive and competitive groups, and recreational swimming.',
+                'Enrollment is with Marinela Marković and Mihaela Marković.',
+            ],
+        },
+        addresses: [
+            {
+                street: 'Bazeni SPENS-a, Sutjeska 2',
+                city: 'Novi Sad',
+                district: 'Stari Grad (Centar)',
+                lat: 45.24634,
+                lng: 19.8461232,
+                mapsUrl: 'https://www.google.com/maps?cid=5659167617721317525',
+            },
+        ],
+        contact: {
+            phone: ['062 846 40 14', '062 846 40 07'],
+            email: 'pkneptun.ns@gmail.com',
+            facebook: 'https://www.facebook.com/profile.php?id=61561605963576',
+            instagram: 'https://www.instagram.com/pkneptun_ns/',
         },
     },
 ]

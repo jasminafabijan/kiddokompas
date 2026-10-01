@@ -37,6 +37,7 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'ok-vojvodina-akademija',
   'partizan-2-plesni-klub',
   'partizan-2-razvojna-gimnastika',
+  'pk-neptun',
   'plivanje-spens',
   'reverans',
   'scool',

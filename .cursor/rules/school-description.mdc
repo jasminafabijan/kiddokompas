@@ -6,9 +6,9 @@ alwaysApply: true
 
 # School description content
 
-When writing `description` paragraphs for a school:
+When composing a description (the user did not paste the exact text):
 
-- **Do not** repeat age / uzrast (already shown via `ageLabel` / tags).
-- **Do not** repeat street address, district, or venue location (already shown via `addresses` / map / meta).
-- Focus on program, approach, atmosphere, and what makes the school distinctive.
-- Avoid phrases like „za uzrast…“, „od X godina“, „na adresi…“, „treninzi se održavaju u…“ when that only restates structured fields.
+- Never mention age or uzrast. It is already on the card (`ageLabel`).
+- Never mention the place, street, district, or venue. It is already on the address and the map.
+- That includes „časovi su na…“, „treninzi se održavaju u…“, „na adresi…“, „od X godina“, „za uzrast…“.
+- Write only the program.
