@@ -97,6 +97,13 @@ export const categories: Category[] = [
     },
   },
   {
+    id: 'handball',
+    name: { sr: 'Rukomet', en: 'Handball' },
+    slug: 'handball',
+    slugs: { sr: 'rukomet', en: 'handball' },
+    subtitle: { sr: 'Škole rukometa', en: 'Handball schools' },
+  },
+  {
     id: 'tennis',
     name: { sr: 'Tenis', en: 'Tennis' },
     slug: 'tennis',

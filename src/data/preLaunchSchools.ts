@@ -309,9 +309,9 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     website: 'https://www.instagram.com/kkpetras/',
   },
   {
-    id: 'sumska-stala',
-    name: 'Šumska štala',
-    categorySlugs: ['riding'],
-    website: 'https://sumskastala.rs/skola-jahanja/',
+    id: 'rk-vojvodina',
+    name: 'Rukometni klub Vojvodina',
+    categorySlugs: ['handball'],
+    website: 'https://www.rkv.rs/?page_id=8523',
   },
 ]

@@ -167,21 +167,21 @@ export const swimmingSchools: School[] = [
         categorySlugs: ['swimming'],
         city: 'Novi Sad',
         district: 'Stari Grad (Centar)',
-        minAge: 3,
+        minAge: 5,
         maxAge: null,
-        ageLabel: '3+ godina',
+        ageLabel: '5+ godina',
         imageWebp: pkNeptunWebp,
         imageFallback: pkNeptunPng,
         description: {
             sr: [
                 'Plivački klub „Neptun” upisuje nove članove svakog meseca.',
                 'Program obuhvata školicu plivanja za najmlađe, obuku neplivača i usavršavanje tehnike. Klub ima predtakmičarske i takmičarske grupe, kao i rekreativno plivanje.',
-                'Za prijavu su zadužene Marinela Marković i Mihaela Marković.',
+                'Prijave se vrše putem telefona ili dolaskom u kancelariju kluba.',
             ],
             en: [
                 'Swimming club “Neptun” enrolls new members every month.',
                 'The program covers a swimming school for the youngest, training for non-swimmers and work on technique. The club has pre-competitive and competitive groups, and recreational swimming.',
-                'Enrollment is with Marinela Marković and Mihaela Marković.',
+                'Enrollment is by phone or by coming to the club office.',
             ],
         },
         addresses: [

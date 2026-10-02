@@ -50,6 +50,7 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'sportisimo-razvojna-gimnastika',
   'sportisimo-skolica-sporta',
   'sportisimo-teen-workout',
+  'sumska-stala',
   'veliko-kolo',
   'veliko-kolo-beocin',
   'veliko-kolo-novi-sad',

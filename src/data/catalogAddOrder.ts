@@ -57,4 +57,5 @@ export const CATALOG_ADD_ORDER = [
   'beograd-roller-school',
   'daske-i-maske',
   'pk-neptun',
+  'sumska-stala',
 ] as const

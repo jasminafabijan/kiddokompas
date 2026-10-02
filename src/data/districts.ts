@@ -20,6 +20,7 @@ export const DISTRICT_LABELS: Record<string, LocalizedText> = {
   'Novo naselje': { sr: 'Novo naselje', en: 'Novo naselje' },
   'Novi Beograd': { sr: 'Novi Beograd', en: 'Novi Beograd' },
   Petrovaradin: { sr: 'Petrovaradin', en: 'Petrovaradin' },
+  'Stari Ledinci': { sr: 'Stari Ledinci', en: 'Stari Ledinci' },
   Podbara: { sr: 'Podbara', en: 'Podbara' },
   Rotkvarija: { sr: 'Rotkvarija', en: 'Rotkvarija' },
   Sajmište: { sr: 'Sajmište', en: 'Sajmište' },
