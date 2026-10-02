@@ -58,4 +58,5 @@ export const CATALOG_ADD_ORDER = [
   'daske-i-maske',
   'pk-neptun',
   'sumska-stala',
+  'arte-dance',
 ] as const

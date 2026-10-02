@@ -10,6 +10,8 @@ import sportisimoWebp from '../../assets/images/schools/athletics/sportisimo.web
 import sportisimoJpg from '../../assets/images/schools/athletics/sportisimo.jpg'
 import partizan2Webp from '../../assets/images/schools/developmental-gymnastics/partizan2.webp'
 import partizan2Png from '../../assets/images/schools/developmental-gymnastics/partizan2.png'
+import arteDanceWebp from '../../assets/images/schools/dance/arte-dance.webp'
+import arteDanceJpg from '../../assets/images/schools/dance/arte-dance.jpg'
 
 import type { School } from './types'
 
@@ -319,6 +321,61 @@ export const jazzBalletSchools: School[] = [
             facebook: 'https://www.facebook.com/partizan2plesniklub/',
             facebookLabel: 'Partizan 2 plesni klub',
             instagram: 'https://www.instagram.com/p2_dance/',
+        },
+    },
+    {
+        id: 'arte-dance',
+        slug: 'arte-dance',
+        name: {
+            sr: 'Arte Dance',
+            en: 'Arte Dance',
+        },
+        categorySlugs: ['jazz-ballet'],
+        city: 'Novi Sad',
+        district: 'Grbavica',
+        minAge: 3,
+        maxAge: null,
+        ageLabel: '3+ godina',
+        imageWebp: arteDanceWebp,
+        imageFallback: arteDanceJpg,
+        description: {
+            sr: [
+                'Arte Dance je baletski studio, osnovan 2006. godine, sa željom da deci pruži prostor u kojem će kroz ples, muziku i pokret razvijati ljubav prema baletu.',
+                'Kroz rad sa decom, studio se trudi da stvara sredinu u kojoj se posvećenost i trud podjednako vrednuju kao prijateljstvo i zajedništvo.',
+                'Putovanja su kroz godine postala važan deo kluba, a pored takmičenja, nastupi u pozorištu pružaju članovima priliku da iskustvo stečeno na treninzima prenesu na scenu.',
+                'Baletski studio Arte Dance je mesto na kom se stvaraju prijateljstva, dele uspesi i izazovi i gde ljubav prema plesu povezuje generacije.',
+            ],
+            en: [
+                'Arte Dance is a ballet studio, founded in 2006, with the wish to give children a place where, through dance, music and movement, they develop a love of ballet.',
+                'Through work with children, the studio tries to create an environment in which dedication and effort are valued just as much as friendship and togetherness.',
+                'Over the years, trips have become an important part of the club, and alongside competitions, theatre performances give members a chance to bring what they learn in training onto the stage.',
+                'Ballet studio Arte Dance is a place where friendships are made, successes and challenges are shared, and a love of dance connects generations.',
+            ],
+        },
+        addresses: [
+            {
+                street: 'Đorđa Servickog 14',
+                city: 'Novi Sad',
+                district: 'Grbavica',
+                lat: 45.2422729,
+                lng: 19.828108,
+                mapsUrl: 'https://www.google.com/maps?cid=16520463007777888476',
+            },
+            {
+                street: 'Kraljevića Marka 32',
+                city: 'Novi Sad',
+                district: 'Rotkvarija',
+                lat: 45.2633156,
+                lng: 19.8353929,
+                mapsUrl: 'https://www.google.com/maps?cid=10910001761116030920',
+            },
+        ],
+        contact: {
+            phone: '064 154 66 52',
+            email: 'c.bisera@yahoo.com',
+            facebook: 'https://www.facebook.com/artedancens',
+            facebookLabel: 'artedancens',
+            instagram: 'https://www.instagram.com/artedance.novisad/',
         },
     },
 ]

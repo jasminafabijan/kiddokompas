@@ -10,12 +10,6 @@ export type PreLaunchSchool = {
 /** Schools contacted before the site existed. Not in the public catalog. */
 export const preLaunchSchools: PreLaunchSchool[] = [
   {
-    id: 'arte-dance',
-    name: 'Studio Arte Dance',
-    categorySlugs: ['dance'],
-    website: 'https://www.instagram.com/artedance.novisad/',
-  },
-  {
     id: 'dream-dance',
     name: 'Dream Dance',
     categorySlugs: ['dance'],
@@ -313,5 +307,17 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     name: 'Rukometni klub Vojvodina',
     categorySlugs: ['handball'],
     website: 'https://www.rkv.rs/?page_id=8523',
+  },
+  {
+    id: 'zok-subotica',
+    name: 'ŽOK „Subotica”',
+    categorySlugs: ['volleyball'],
+    website: 'https://www.instagram.com/zok_subotica/',
+  },
+  {
+    id: 'plesni-studio-style',
+    name: 'Plesni studio Style',
+    categorySlugs: ['dance'],
+    website: 'https://www.facebook.com/plesnistudiostyle',
   },
 ]
