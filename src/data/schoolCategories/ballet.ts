@@ -31,7 +31,7 @@ const ntcBaletDescription = {
 }
 
 const ntcBaletContact = {
-    phone: '061 3755 399',
+    phone: '060 375 53 99',
     email: 'balet.gimnastika@ntcucenje.com',
     website: 'https://ntcucenje.com/ntc-balet/',
     facebook: 'https://www.facebook.com/ntcsistemucenja',

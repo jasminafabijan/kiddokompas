@@ -334,8 +334,8 @@ export const jazzBalletSchools: School[] = [
         city: 'Novi Sad',
         district: 'Grbavica',
         minAge: 3,
-        maxAge: null,
-        ageLabel: '3+ godina',
+        maxAge: 20,
+        ageLabel: '3–20 godina',
         imageWebp: arteDanceWebp,
         imageFallback: arteDanceJpg,
         description: {

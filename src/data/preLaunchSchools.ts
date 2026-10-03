@@ -320,4 +320,16 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['dance'],
     website: 'https://www.facebook.com/plesnistudiostyle',
   },
+  {
+    id: 'kk-mambo',
+    name: 'Konjički klub Mambo',
+    categorySlugs: ['riding'],
+    website: 'https://www.instagram.com/konjicki_klub_mambo/',
+  },
+  {
+    id: 'prvi-koraci',
+    name: 'Škola glume „Prvi koraci”',
+    categorySlugs: ['acting'],
+    website: 'https://prvikoraci.com/teatar/ns-standard-teatar-osnovci',
+  },
 ]
