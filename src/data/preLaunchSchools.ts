@@ -332,4 +332,22 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['acting'],
     website: 'https://prvikoraci.com/teatar/ns-standard-teatar-osnovci',
   },
+  {
+    id: 'tinker-labs-zemun',
+    name: 'Tinker Labs Zemun',
+    categorySlugs: ['science'],
+    website: 'https://www.facebook.com/profile.php?id=100092957217781',
+  },
+  {
+    id: 'go-swim',
+    name: 'Škola plivanja Go Swim',
+    categorySlugs: ['swimming'],
+    website: 'https://www.facebook.com/profile.php?id=61572679935640',
+  },
+  {
+    id: 'tkd',
+    name: 'TKD Teatar komedije i drame',
+    categorySlugs: ['acting'],
+    website: 'https://tkdstudio.rs',
+  },
 ]

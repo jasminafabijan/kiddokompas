@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import jasminaWebp from '../assets/images/img-5.webp'
-import jasminaJpg from '../assets/images/img-5.jpg'
+import jasminaPhoto from '../assets/images/jasmina.png'
 import AddActivityModal from '../components/AddActivityModal'
 import Navbar from '../components/Navbar'
 import { useI18n } from '../i18n/useI18n'
@@ -18,16 +17,13 @@ const AboutPage = () => {
           <div className="about-intro-media">
             <span className="about-intro-blob about-intro-blob--peach" />
             <span className="about-intro-blob about-intro-blob--mint" />
-            <picture>
-              <source srcSet={jasminaWebp} type="image/webp" />
-              <img
-                src={jasminaJpg}
-                alt="Jasmina Fabijan"
-                className="about-intro-photo"
-                width={840}
-                height={1262}
-              />
-            </picture>
+            <img
+              src={jasminaPhoto}
+              alt="Jasmina Fabijan"
+              className="about-intro-photo"
+              width={800}
+              height={1075}
+            />
           </div>
 
           <div className="about-intro-copy">
