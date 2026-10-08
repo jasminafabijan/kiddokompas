@@ -365,6 +365,109 @@ export const categoryIdForSchoolLink = (categorySlugs: string[], selectedActivit
     return matching.length === 1 ? matching[0] : undefined
 }
 
+const foldSearchText = (value: string) =>
+    value
+        .toLocaleLowerCase('sr-RS')
+        .replace(/đ/g, 'dj')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+
+const schoolSearchHaystack = (school: School, lang: Lang) => {
+    const names = [
+        getSchoolName(school, lang),
+        ...Object.keys(school.namesByCategory ?? {}).map((categoryId) =>
+            getSchoolName(school, lang, categoryId)
+        ),
+    ]
+    const descriptions = [
+        ...(school.description?.[lang] ?? []),
+        ...Object.values(school.descriptionsByCategory ?? {}).flatMap((block) => block?.[lang] ?? []),
+    ]
+    const places = [
+        school.city,
+        getDistrictName(school.district, lang),
+        ...(school.addresses ?? []).flatMap((address) => [
+            getStreetName(address.street, lang),
+            address.city,
+            address.district ? getDistrictName(address.district, lang) : '',
+            address.areaLabel
+                ? getLocalizedText(address.areaLabel, lang, `school:${school.id}:area`)
+                : '',
+        ]),
+    ]
+    const categories = school.categorySlugs.flatMap((slug) => {
+        const category = getCategoryBySlug(slug)
+        return category ? [getCategoryName(category, lang)] : []
+    })
+
+    return {
+        name: foldSearchText(names.join(' ')),
+        text: foldSearchText([...names, ...descriptions, ...places, ...categories].join(' ')),
+    }
+}
+
+const searchTokens = (value: string) => value.split(/[^a-z0-9]+/).filter((token) => token.length > 0)
+
+/** Lower is better. An exact word beats a longer word that only starts with the query. */
+const rankSearchWord = (word: string, tokens: string[]) => {
+    let rank = 5
+
+    for (const token of tokens) {
+        if (token === word) {
+            rank = Math.min(rank, 0)
+        } else if (token.startsWith(word)) {
+            rank = Math.min(rank, 1)
+        }
+    }
+
+    return rank
+}
+
+/** Listed schools whose name, description, place or activity contains every word, in the current language. */
+export const searchSchoolsByWords = (query: string, lang: Lang, limit = 8) => {
+    const words = searchTokens(foldSearchText(query))
+
+    if (words.length === 0) {
+        return []
+    }
+
+    const matched = getListedSchools()
+        .map((school) => {
+            const haystack = schoolSearchHaystack(school, lang)
+            const nameTokens = searchTokens(haystack.name)
+            const textTokens = searchTokens(haystack.text)
+            const score = words.reduce((sum, word) => {
+                const inName = rankSearchWord(word, nameTokens)
+
+                if (inName < 5) {
+                    return sum + inName
+                }
+
+                return sum + 10 + rankSearchWord(word, textTokens)
+            }, 0)
+
+            return { school, score, matched: words.every((word) => rankSearchWord(word, textTokens) < 5) }
+        })
+        .filter((row) => row.matched)
+
+    const overviewIds = new Set(
+        matched.filter((row) => row.school.brandOverview).map((row) => row.school.id)
+    )
+
+    return matched
+        .filter((row) => !row.school.brandSchoolId || !overviewIds.has(row.school.brandSchoolId))
+        .sort(
+            (a, b) =>
+                a.score - b.score ||
+                getSchoolName(a.school, lang).localeCompare(
+                    getSchoolName(b.school, lang),
+                    lang === 'en' ? 'en' : 'sr'
+                )
+        )
+        .slice(0, limit)
+        .map(({ school }) => school)
+}
+
 /** Direct `/skola/...` URLs stay reachable. Search, categories and the map use listed schools only. */
 const SCHOOL_SLUG_ALIASES: Record<string, string> = {
     'helen-doron-novi-beograd': 'helen-doron-beograd',

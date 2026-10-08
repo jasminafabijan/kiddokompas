@@ -243,7 +243,7 @@
     }
 }
 
-@media (max-width: 809.98px) {
+@media (max-width: 1023.98px) {
     .site-navbar-menu {
         position: absolute;
         top: calc(100% + 0.35rem);
@@ -292,6 +292,24 @@
         padding: 0.25rem 0.1rem;
         font-size: 1.05rem;
         font-weight: 700;
+    }
+
+    .nav-search,
+    .nav-search-form,
+    .nav-search-field {
+        width: 100%;
+    }
+
+    .nav-search-toggle {
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+
+    .nav-search-results {
+        position: static;
+        width: 100%;
+        margin-top: 0.45rem;
+        box-shadow: none;
     }
 
     .site-navbar-cta {
@@ -401,13 +419,17 @@
     }
 }
 
-@media (min-width: 810px) {
+@media (min-width: 1024px) {
     .site-navbar-tools {
         display: none;
     }
 
     .lang-switch.site-navbar-lang-menu {
         display: inline-flex;
+    }
+
+    .nav-search {
+        margin-left: 0.85rem;
     }
 
     .site-navbar-divider {

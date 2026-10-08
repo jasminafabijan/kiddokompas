@@ -18,34 +18,26 @@ const LanguageSwitcher = ({ className = '' }: LanguageSwitcherProps) => {
       role="group"
       aria-label={t('nav.language')}
     >
-      {(['sr', 'en'] as const).map((itemLang, index) => {
+      {(['sr', 'en'] as const).map((itemLang) => {
         const label = LANG_LABEL[itemLang]
         const isActive = itemLang === lang
 
-        return (
-          <span key={itemLang} className="lang-switch-item">
-            {index > 0 ? (
-              <span className="lang-switch-sep" aria-hidden="true">
-                /
-              </span>
-            ) : null}
-            {isActive ? (
-              <span className="lang-switch-option is-active" aria-current="true">
-                {label}
-              </span>
-            ) : (
-              <Link
-                to={path.forLang[itemLang]}
-                replace
-                state={location.state}
-                className="lang-switch-option"
-                lang={itemLang}
-                hrefLang={itemLang}
-              >
-                {label}
-              </Link>
-            )}
+        return isActive ? (
+          <span key={itemLang} className="lang-switch-option is-active" aria-current="true">
+            {label}
           </span>
+        ) : (
+          <Link
+            key={itemLang}
+            to={path.forLang[itemLang]}
+            replace
+            state={location.state}
+            className="lang-switch-option"
+            lang={itemLang}
+            hrefLang={itemLang}
+          >
+            {label}
+          </Link>
         )
       })}
     </div>

@@ -7,6 +7,7 @@ import { HOME_SCROLL_KEY, RESET_SCROLL_STATE, saveScroll } from '../utils/scroll
 import { isHomeCategoriesSectionActive, scrollToCategories } from '../utils/scrollToElement'
 import AddActivityModal from './AddActivityModal'
 import LanguageSwitcher from './LanguageSwitcher'
+import NavSearch from './NavSearch'
 
 const Navbar = () => {
     const [isAddActivityOpen, setIsAddActivityOpen] = useState(false)
@@ -60,7 +61,7 @@ const Navbar = () => {
     }, [location.pathname])
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(min-width: 810px)')
+        const mediaQuery = window.matchMedia('(min-width: 1024px)')
         const closeOnDesktop = () => {
             if (mediaQuery.matches) {
                 setIsMenuOpen(false)
@@ -197,6 +198,7 @@ const Navbar = () => {
                         >
                             {t('nav.about')}
                         </NavLink>
+                        <NavSearch onNavigate={() => setIsMenuOpen(false)} />
                         <LanguageSwitcher className="site-navbar-lang-menu" />
                         <span className="site-navbar-divider" aria-hidden="true" />
                         <button
