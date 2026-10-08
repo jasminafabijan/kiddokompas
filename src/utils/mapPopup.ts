@@ -10,11 +10,12 @@ const escapeHtml = (value: string) =>
     .replace(/"/g, '&quot;')
 
 export const schoolMapHref = (
-  school: { slug: string; categorySlugs: string[] },
+  school: { slug: string },
   lang: Lang,
-  addressIndex?: number
+  addressIndex?: number,
+  categoryId?: string
 ) => {
-  const base = schoolPath(lang, school.slug, school.categorySlugs[0])
+  const base = schoolPath(lang, school.slug, categoryId)
 
   if (addressIndex == null || addressIndex < 0) {
     return base

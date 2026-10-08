@@ -8,7 +8,7 @@ import { attachMarkerOverlapZoom } from '../utils/mapOverlapZoom'
 import { buildSchoolMapPopupHtml, schoolMapHref, schoolMapPopupOptions } from '../utils/mapPopup'
 import { schoolAgeLabel } from '../i18n/helpers'
 import { useI18n } from '../i18n/useI18n'
-import { getSchoolName } from '../data/schools'
+import { categoryIdForSchoolLink, getSchoolName } from '../data/schools'
 import { CITY_MAP_VIEWS } from '../data/cities'
 import { getStreetName } from '../data/streets'
 import { MAP_TILE_OPTIONS, MAP_TILE_URL } from '../utils/mapTiles'
@@ -55,9 +55,16 @@ interface CatalogMapProps {
   selectedLocationId?: string | null
   onSelectLocation?: (locationId: string) => void
   city?: string
+  selectedActivities?: string[]
 }
 
-const CatalogMap = ({ locations, selectedLocationId, onSelectLocation, city }: CatalogMapProps) => {
+const CatalogMap = ({
+  locations,
+  selectedLocationId,
+  onSelectLocation,
+  city,
+  selectedActivities = [],
+}: CatalogMapProps) => {
   const navigate = useNavigate()
   const routeLocation = useLocation()
   const { lang, t } = useI18n()
@@ -102,7 +109,12 @@ const CatalogMap = ({ locations, selectedLocationId, onSelectLocation, city }: C
           uniqueSchools.map(({ school, addressIndex }) => ({
             name: getSchoolName(school, lang),
             ageLabel: schoolAgeLabel(school, lang, true),
-            href: schoolMapHref(school, lang, addressIndex),
+            href: schoolMapHref(
+              school,
+              lang,
+              addressIndex,
+              categoryIdForSchoolLink(school.categorySlugs, selectedActivities)
+            ),
           })),
           t('map.seeDetails')
         ),
@@ -194,7 +206,7 @@ const CatalogMap = ({ locations, selectedLocationId, onSelectLocation, city }: C
       map.remove()
       mapInstanceRef.current = null
     }
-  }, [city, points, lang, t])
+  }, [city, points, lang, t, selectedActivities])
 
   useEffect(() => {
     const map = mapInstanceRef.current

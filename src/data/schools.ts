@@ -359,6 +359,12 @@ export const formatSchoolCategoryNames = (school: School, lang: Lang = 'sr') =>
         .map((slug) => getCategoryNameBySlug(slug, lang))
         .join(', ')
 
+/** Category page only when the filter matches exactly one of this school's activities. */
+export const categoryIdForSchoolLink = (categorySlugs: string[], selectedActivities: string[]) => {
+    const matching = selectedActivities.filter((activity) => categorySlugs.includes(activity))
+    return matching.length === 1 ? matching[0] : undefined
+}
+
 /** Direct `/skola/...` URLs stay reachable. Search, categories and the map use listed schools only. */
 const SCHOOL_SLUG_ALIASES: Record<string, string> = {
     'helen-doron-novi-beograd': 'helen-doron-beograd',

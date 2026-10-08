@@ -350,4 +350,10 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['acting'],
     website: 'https://tkdstudio.rs',
   },
+  {
+    id: 'professional-dance-studio',
+    name: 'Professional Dance Studio',
+    categorySlugs: ['dance'],
+    website: 'https://www.facebook.com/professionaldancestudions/',
+  },
 ]

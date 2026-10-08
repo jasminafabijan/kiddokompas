@@ -7,6 +7,7 @@ import {
   filterSchools,
   formatSchoolCategoryNames,
   forCatalogCards,
+  categoryIdForSchoolLink,
   type School,
   type SchoolFilters,
 } from '../data/schools'
@@ -79,10 +80,7 @@ const SearchResultsPage = () => {
                 key={school.id}
                 school={school}
                 categoryLabel={getSchoolCategoryLabel(school, filters, lang)}
-                categoryContext={
-                  filters.activities.find((activity) => school.categorySlugs.includes(activity)) ??
-                  school.categorySlugs[0]
-                }
+                categoryContext={categoryIdForSchoolLink(school.categorySlugs, filters.activities)}
               />
             ))}
           </div>

@@ -109,6 +109,7 @@ const MapPage = () => {
                   <MapActivityCard
                     location={location}
                     selected={selectedLocationId === location.locationId}
+                    selectedActivities={filters.activities}
                     onSelect={handleSelectLocation}
                   />
                 </div>
@@ -121,6 +122,7 @@ const MapPage = () => {
               selectedLocationId={selectedLocationId}
               onSelectLocation={handleSelectLocationFromMap}
               city={filters.city}
+              selectedActivities={filters.activities}
             />
           </div>
         </div>

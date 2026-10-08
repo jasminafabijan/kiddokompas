@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { getCategoryNameBySlug } from '../data/categories'
 import { getDistrictName } from '../data/districts'
 import { getStreetName } from '../data/streets'
-import { getSchoolName } from '../data/schools'
+import { categoryIdForSchoolLink, formatSchoolCategoryNames, getSchoolName } from '../data/schools'
 import { schoolAgeLabel } from '../i18n/helpers'
 import { schoolMapHref } from '../utils/mapPopup'
 import { getMapCategoryStyle } from '../utils/mapCategoryStyle'
@@ -41,17 +41,20 @@ const getLocationLabel = (item: MapLocation, lang: Lang) => {
 interface MapActivityCardProps {
   location: MapLocation
   selected: boolean
+  selectedActivities: string[]
   onSelect: (locationId: string) => void
 }
 
-const MapActivityCard = ({ location, selected, onSelect }: MapActivityCardProps) => {
+const MapActivityCard = ({ location, selected, selectedActivities, onSelect }: MapActivityCardProps) => {
   const routeLocation = useLocation()
   const { lang, t } = useI18n()
   const { school } = location
-  const categorySlug = school.categorySlugs[0]
-  const categoryName = getCategoryNameBySlug(categorySlug, lang)
-  const { color, svg } = getMapCategoryStyle(categorySlug)
-  const href = schoolMapHref(school, lang, location.addressIndex)
+  const categorySlug = categoryIdForSchoolLink(school.categorySlugs, selectedActivities)
+  const categoryName = categorySlug
+    ? getCategoryNameBySlug(categorySlug, lang)
+    : formatSchoolCategoryNames(school, lang)
+  const { color, svg } = getMapCategoryStyle(categorySlug ?? school.categorySlugs[0])
+  const href = schoolMapHref(school, lang, location.addressIndex, categorySlug)
   const from = `${routeLocation.pathname}${routeLocation.search}${routeLocation.hash}`
 
   return (

@@ -62,9 +62,9 @@ export const musicSchools: School[] = [
         categorySlugs: ['music', 'speech-development'],
         city: 'Beograd',
         district: 'Savski Venac',
-        minAge: 3,
+        minAge: 1,
         maxAge: null,
-        ageLabel: '3+ godina',
+        ageLabel: '1+ godina',
         imageWebp: andjeliJpg,
         imageFallback: andjeliJpg,
         description: {
@@ -74,6 +74,7 @@ export const musicSchools: School[] = [
                 'Program vodi dete od prvih reči ka potpunijoj komunikaciji, uz bogatiji rečnik, jasniju dikciju i više samopouzdanja u nastupu.',
                 'Muzikoterapija podstiče razgovor, koncentraciju, pamćenje i socijalizaciju, a likovna terapija kroz slikanje, crtanje i oblikovanje razvija finu motoriku i izraz.',
                 'Rad je individualan i prati potrebe deteta. Posebnu metodu „Anđeli“ osmislila je osnivačica Anđelka Spencer, spajajući muziku, pokret i igru.',
+                'Radionica je namenjena za decu sa kašnjenjem u razvoju kao i za regularnu decu.',
             ],
             en: [
                 'The offer includes singing, solfeggio, piano and violin lessons, and speech development through music therapy and art therapy.',
@@ -81,6 +82,7 @@ export const musicSchools: School[] = [
                 'The program leads a child from first words toward fuller communication, with a richer vocabulary, clearer diction and more confidence when performing.',
                 'Music therapy encourages conversation, concentration, memory and social connection, while art therapy through painting, drawing and shaping builds fine motor skill and expression.',
                 'The work is one-on-one and follows the child’s needs. Founder Anđelka Spencer developed the Anđeli method, bringing music, movement and play together.',
+                'The workshop is intended for children with a developmental delay as well as for typically developing children.',
             ],
         },
         descriptionsByCategory: {
