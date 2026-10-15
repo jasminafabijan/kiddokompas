@@ -630,13 +630,6 @@ export const languagesSchools: School[] = [
         addresses: [
             {
                 street: '',
-                city: 'Novi Sad',
-                lat: 45.252,
-                lng: 19.842,
-                schoolSlug: 'helen-doron-novi-sad',
-            },
-            {
-                street: '',
                 city: 'Beograd',
                 lat: 44.8176,
                 lng: 20.4569,
@@ -648,6 +641,13 @@ export const languagesSchools: School[] = [
                 lat: 43.8914,
                 lng: 20.3497,
                 schoolSlug: 'helen-doron-cacak',
+            },
+            {
+                street: '',
+                city: 'Novi Sad',
+                lat: 45.252,
+                lng: 19.842,
+                schoolSlug: 'helen-doron-novi-sad',
             },
         ],
         contact: helenDoronContact,

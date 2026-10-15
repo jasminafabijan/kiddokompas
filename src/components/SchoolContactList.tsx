@@ -4,6 +4,7 @@ import {
   formatFacebookLabel,
   formatInstagramLabel,
   formatPhoneHref,
+  formatTikTokLabel,
   formatWebsiteLabel,
   getContactPhones,
 } from '../data/schools'
@@ -95,6 +96,17 @@ const InstagramIcon = () => (
   </svg>
 )
 
+const TikTokIcon = () => (
+  <svg
+    aria-hidden="true"
+    className="school-detail-contact-icon"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M14.2 3.2c.4 2.4 1.7 4.1 4 4.6v2.5c-1.4 0-2.7-.4-3.9-1.2v6.6c0 3.3-2.5 5.7-5.8 5.7S2.7 19 2.7 15.7c0-3.2 2.4-5.6 5.6-5.7v2.6c-1.6.1-2.9 1.4-2.9 3.1 0 1.7 1.4 3.1 3.1 3.1s3.1-1.4 3.1-3.1V3.2h2.6Z" />
+  </svg>
+)
+
 export const LocationPinIcon = () => (
   <svg
     aria-hidden="true"
@@ -165,6 +177,15 @@ export const buildContactLinks = (contact?: SchoolContact): ContactLink[] => {
       label: formatInstagramLabel(contact.instagram),
       href: contact.instagram,
       icon: <InstagramIcon />,
+      external: true,
+    })
+  }
+
+  if (contact.tiktok) {
+    links.push({
+      label: formatTikTokLabel(contact.tiktok),
+      href: contact.tiktok,
+      icon: <TikTokIcon />,
       external: true,
     })
   }

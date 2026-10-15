@@ -178,17 +178,17 @@ export const balletSchools: School[] = [
         addresses: [
             {
                 street: '',
-                city: 'Novi Sad',
-                lat: 45.252,
-                lng: 19.842,
-                schoolSlug: 'ntc-balet-novi-sad',
-            },
-            {
-                street: '',
                 city: 'Beograd',
                 lat: 44.8176,
                 lng: 20.4569,
                 schoolSlug: 'ntc-balet-beograd',
+            },
+            {
+                street: '',
+                city: 'Novi Sad',
+                lat: 45.252,
+                lng: 19.842,
+                schoolSlug: 'ntc-balet-novi-sad',
             },
         ],
     },

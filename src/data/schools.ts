@@ -34,6 +34,7 @@ import { languagesSchools } from './schoolCategories/languages'
 import { musicSchools } from './schoolCategories/music'
 import { programmingSchools } from './schoolCategories/programming'
 import { roboticsSchools } from './schoolCategories/robotics'
+import { scienceSchools } from './schoolCategories/science'
 import type { School, SchoolAddress, SchoolContact, SchoolFilters } from './schoolCategories/types'
 
 export type { School, SchoolAddress, SchoolContact, SchoolFilters } from './schoolCategories/types'
@@ -67,6 +68,7 @@ export const schools: School[] = [
     ...languagesSchools,
     ...programmingSchools,
     ...roboticsSchools,
+    ...scienceSchools,
 ]
 
 const isPubliclyListed = (school: School) =>
@@ -152,7 +154,8 @@ export const hasContactDetails = (contact?: SchoolContact) => {
         Boolean(contact.email) ||
         Boolean(contact.website) ||
         Boolean(contact.facebook) ||
-        Boolean(contact.instagram)
+        Boolean(contact.instagram) ||
+        Boolean(contact.tiktok)
     )
 }
 
@@ -209,6 +212,15 @@ export const formatFacebookLabel = (url: string) => {
 export const formatInstagramLabel = (url: string) => {
     try {
         const username = new URL(url).pathname.replace(/\//g, '')
+        return username ? `@${username}` : url
+    } catch {
+        return url
+    }
+}
+
+export const formatTikTokLabel = (url: string) => {
+    try {
+        const username = new URL(url).pathname.replace(/\//g, '').replace(/^@/, '')
         return username ? `@${username}` : url
     } catch {
         return url

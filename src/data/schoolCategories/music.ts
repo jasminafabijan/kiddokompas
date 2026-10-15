@@ -1,4 +1,5 @@
 import andjeliJpg from '../../assets/images/schools/music/andjeli.jpg'
+import milicevicWebp from '../../assets/images/schools/music/milicevic.webp'
 import odgajanjeSaMuzikomWebp from '../../assets/images/schools/music/odgajanje-sa-muzikom.webp'
 import odgajanjeSaMuzikomPng from '../../assets/images/schools/music/odgajanje-sa-muzikom.png'
 
@@ -133,6 +134,55 @@ export const musicSchools: School[] = [
             facebook: 'https://www.facebook.com/angelsmusicws/',
             instagram: 'https://www.instagram.com/angelsmusicws/',
             facebookLabel: 'Muzička radionica Anđeli',
+        },
+    },
+    {
+        id: 'muzicka-skola-milicevic',
+        slug: 'muzicka-skola-milicevic',
+        name: {
+            sr: 'Muzička škola Milićević',
+            en: 'Milićević Music School',
+        },
+        categorySlugs: ['music'],
+        city: 'Beograd',
+        district: 'Mirijevo',
+        minAge: 6,
+        maxAge: null,
+        ageLabel: '6+ godina',
+        imageWebp: milicevicWebp,
+        imageFallback: milicevicWebp,
+        description: {
+            sr: [
+                'Muzička škola Milićević namenjena je deci, tinejdžerima i odraslima koji žele da nauče da sviraju gitaru ili unaprede svoje postojeće znanje.',
+                'Nastava se odvija kroz grupne i individualne časove, uživo u školi ili online. Grupe se formiraju prema uzrastu i nivou znanja, kako bi svaki polaznik imao dovoljno pažnje i podrške tokom učenja.',
+                'Poseban akcenat stavljamo na praktično sviranje, razvoj muzičkog sluha, ritma i pravilne tehnike. Početnici postepeno savladavaju prve akorde i pesme, dok se program za iskusnije polaznike prilagođava njihovom nivou i ciljevima.',
+                'Naš cilj je da učenje gitare bude zanimljivo, podsticajno i prilagođeno svakom polazniku, uz prijatnu atmosferu, kontinuiran napredak i razvijanje ljubavi prema muzici.',
+            ],
+            en: [
+                'Milićević Music School is for children, teenagers and adults who want to learn to play the guitar or improve the skills they already have.',
+                'Classes run in groups and one-on-one, in person at the school or online. Groups are formed by age and level, so each student gets enough attention and support while learning.',
+                'We put special emphasis on practical playing and on developing musical ear, rhythm and proper technique. Beginners gradually learn their first chords and songs, while the program for more experienced students is adapted to their level and goals.',
+                'Our aim is for learning guitar to be engaging, encouraging and adapted to each student, with a pleasant atmosphere, steady progress and a growing love of music.',
+            ],
+        },
+        addresses: [
+            {
+                street: 'Jovanke Radaković 80b',
+                city: 'Beograd',
+                district: 'Mirijevo',
+                lat: 44.798893,
+                lng: 20.5218793,
+                mapsUrl: 'https://www.google.com/maps?cid=6740222409885807124',
+            },
+        ],
+        contact: {
+            phone: ['061 458 55 58', '061 730 60 43'],
+            email: 'milicevic.muzicka.skola@gmail.com',
+            website: 'https://www.muzickaskolamilicevic.rs/',
+            facebook: 'https://www.facebook.com/msmilicevic/',
+            facebookLabel: 'Muzička škola Milićević',
+            instagram: 'https://www.instagram.com/ms.milicevic/',
+            tiktok: 'https://www.tiktok.com/@ms.milicevic',
         },
     },
 ]

@@ -61,6 +61,20 @@ export const categories: Category[] = [
     },
   },
   {
+    id: 'american-football',
+    name: { sr: 'Američki fudbal', en: 'American football' },
+    slug: 'american-football',
+    slugs: { sr: 'americki-fudbal', en: 'american-football' },
+    subtitle: { sr: 'Klubovi američkog fudbala', en: 'American football clubs' },
+  },
+  {
+    id: 'flag-football',
+    name: { sr: 'Fleg fudbal', en: 'Flag football' },
+    slug: 'flag-football',
+    slugs: { sr: 'fleg-fudbal', en: 'flag-football' },
+    subtitle: { sr: 'Klubovi fleg fudbala', en: 'Flag football clubs' },
+  },
+  {
     id: 'acting',
     name: { sr: 'Gluma', en: 'Acting' },
     nameAccusative: 'glumu',
@@ -423,9 +437,14 @@ export const categories: Category[] = [
   {
     id: 'science',
     name: { sr: 'Nauka', en: 'Science' },
+    nameAccusative: 'nauku',
     slug: 'science',
     slugs: { sr: 'nauka', en: 'science' },
     subtitle: { sr: 'Naučni programi za decu', en: 'Science programs for children' },
+    pageSubtitle: {
+      sr: 'Istražite naučne programe u {city} — za oglede, istraživanje i radoznalost.',
+      en: 'Explore science programs in {city} — for experiments, discovery and curiosity.',
+    },
   },
   {
     id: 'technology',

@@ -296,17 +296,17 @@ export const folkloreSchools: School[] = [
         addresses: [
             {
                 street: '',
-                city: 'Novi Sad',
-                lat: 45.2593572,
-                lng: 19.831467,
-                schoolSlug: 'veliko-kolo-novi-sad',
-            },
-            {
-                street: '',
                 city: 'Beočin',
                 lat: 45.2244724,
                 lng: 19.5352005,
                 schoolSlug: 'veliko-kolo-beocin',
+            },
+            {
+                street: '',
+                city: 'Novi Sad',
+                lat: 45.2593572,
+                lng: 19.831467,
+                schoolSlug: 'veliko-kolo-novi-sad',
             },
         ],
         contact: velikoKoloContact,

@@ -333,12 +333,6 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     website: 'https://prvikoraci.com/teatar/ns-standard-teatar-osnovci',
   },
   {
-    id: 'tinker-labs-zemun',
-    name: 'Tinker Labs Zemun',
-    categorySlugs: ['science'],
-    website: 'https://www.facebook.com/profile.php?id=100092957217781',
-  },
-  {
     id: 'go-swim',
     name: 'Škola plivanja Go Swim',
     categorySlugs: ['swimming'],
@@ -355,5 +349,53 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     name: 'Professional Dance Studio',
     categorySlugs: ['dance'],
     website: 'https://www.facebook.com/professionaldancestudions/',
+  },
+  {
+    id: 'reljatenis',
+    name: 'Reljatenis',
+    categorySlugs: ['tennis'],
+    website: 'https://www.facebook.com/profile.php?id=61592531638567',
+  },
+  {
+    id: 'skolica-sporta-jelena-naumovski',
+    name: 'Školica sporta Jelena Naumovski',
+    categorySlugs: ['kids-sports'],
+    website: 'https://www.facebook.com/SkolicaSportaJelenaNaumovski',
+  },
+  {
+    id: 'wild-dogs',
+    name: 'Wild Dogs Novi Sad',
+    categorySlugs: ['american-football'],
+    website: 'https://www.instagram.com/wilddogs_ns/',
+  },
+  {
+    id: 'raptors-bajmok',
+    name: 'Raptors Bajmok',
+    categorySlugs: ['flag-football'],
+    website: 'https://www.instagram.com/raptorsbajmok/',
+  },
+  {
+    id: 'poletarac',
+    name: 'Školica sporta Poletarac',
+    categorySlugs: ['kids-sports'],
+    website: 'https://www.instagram.com/poletarac_subotica/',
+  },
+  {
+    id: 'lingo-languages',
+    name: 'Lingo Languages',
+    categorySlugs: ['languages'],
+    website: 'https://www.facebook.com/profile.php?id=61594469486277',
+  },
+  {
+    id: 'akz-spartak',
+    name: 'AKŽ Spartak',
+    categorySlugs: ['athletics'],
+    email: 'akzspartak@gmail.com',
+  },
+  {
+    id: 'britannica',
+    name: 'Britannica School of English',
+    categorySlugs: ['languages'],
+    website: 'https://www.facebook.com/Britannicans/',
   },
 ]

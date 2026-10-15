@@ -10,6 +10,7 @@ export const DISTRICT_LABELS: Record<string, LocalizedText> = {
   'Gradski park': { sr: 'Gradski park', en: 'City Park' },
   'Adamovićevo naselje': { sr: 'Adamovićevo naselje', en: 'Adamovićevo naselje' },
   Banatić: { sr: 'Banatić', en: 'Banatić' },
+  'Beli Potok': { sr: 'Beli Potok', en: 'Beli Potok' },
   Detelinara: { sr: 'Detelinara', en: 'Detelinara' },
   Grbavica: { sr: 'Grbavica', en: 'Grbavica' },
   Kamenjar: { sr: 'Kamenjar', en: 'Kamenjar' },
@@ -22,6 +23,7 @@ export const DISTRICT_LABELS: Record<string, LocalizedText> = {
   Petrovaradin: { sr: 'Petrovaradin', en: 'Petrovaradin' },
   'Stari Ledinci': { sr: 'Stari Ledinci', en: 'Stari Ledinci' },
   Podbara: { sr: 'Podbara', en: 'Podbara' },
+  Rakovica: { sr: 'Rakovica', en: 'Rakovica' },
   Rotkvarija: { sr: 'Rotkvarija', en: 'Rotkvarija' },
   Sajmište: { sr: 'Sajmište', en: 'Sajmište' },
   Salajka: { sr: 'Salajka', en: 'Salajka' },
@@ -44,6 +46,7 @@ export const DISTRICT_LABELS: Record<string, LocalizedText> = {
   Zemun: { sr: 'Zemun', en: 'Zemun' },
   'Zemunske kapije': { sr: 'Zemunske kapije', en: 'Zemunske kapije' },
   Zvezdara: { sr: 'Zvezdara', en: 'Zvezdara' },
+  Mirijevo: { sr: 'Mirijevo', en: 'Mirijevo' },
   Šangaj: { sr: 'Šangaj', en: 'Šangaj' },
 }
 

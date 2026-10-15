@@ -61,6 +61,12 @@ const STREET_LABELS: Record<string, string> = {
   'Beograd na vodi, Quartet 1, Luke Ćelovića Trebinjca 13, ulaz B, stan 6':
     'Beograd na vodi, Quartet 1, Luke Ćelovića Trebinjca 13, entrance B, apartment 6',
   'Cara Dušana 145a, stan 5': 'Cara Dušana 145a, apartment 5',
+  'Zmaj od Avale bb (zgrada FK Avala)': 'Zmaj od Avale bb (FK Avala building)',
+  'Partizanske avijacije bb (prekoputa Vodovoda)':
+    'Partizanske avijacije bb (across from Vodovod)',
+  'Šumadijske divizije 8, lokal 1': 'Šumadijske divizije 8, unit 1',
+  'Kosovska 25, lokal 15': 'Kosovska 25, unit 15',
+  'Bulevar Mihaila Pupina 10Z, 2. sprat': 'Bulevar Mihaila Pupina 10Z, 2nd floor',
 }
 
 const SERBIAN_VENUE_PHRASE =
