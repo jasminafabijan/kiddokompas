@@ -527,7 +527,7 @@ export const scienceSchools: School[] = [
             website: tinkerSite('krusevac'),
             facebook: 'https://www.facebook.com/people/Tinker-Labs-Kruševac/61558408106870',
             facebookLabel: 'Tinker Labs Kruševac',
-            instagram: 'https://www.instagram.com/tinkerlabs_krusevac01/',
+            instagram: 'https://www.instagram.com/tinkerlabs_krusevac/',
         }
     ),
     tinkerSingle(

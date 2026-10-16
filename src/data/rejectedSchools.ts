@@ -57,4 +57,10 @@ export const rejectedSchools: RejectedSchool[] = [
     email: 'conkictennis@gmail.com',
     phone: '062 503 364',
   },
+  {
+    id: 'olimpik-subotica',
+    name: 'Olimpik Subotica',
+    categorySlug: 'kids-sports',
+    website: 'https://www.facebook.com/olimpiksubotica/',
+  },
 ]

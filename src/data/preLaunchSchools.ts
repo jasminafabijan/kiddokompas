@@ -398,4 +398,10 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['languages'],
     website: 'https://www.facebook.com/Britannicans/',
   },
+  {
+    id: 'beosportic',
+    name: 'Beosportic',
+    categorySlugs: ['swimming'],
+    website: 'https://www.facebook.com/profile.php?id=61583276139333',
+  },
 ]
