@@ -5,6 +5,7 @@
 export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'academy-centar-stranih-jezika',
   'aikido-ikeda-dojo',
+  'aikido-zemun',
   'arte-dance',
   'beograd-roller-school',
   'bolesnikov',

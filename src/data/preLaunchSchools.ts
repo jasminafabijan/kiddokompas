@@ -285,12 +285,6 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     website: 'https://www.facebook.com/profile.php?id=61579078864189',
   },
   {
-    id: 'aikido-zemun',
-    name: 'Aikido Zemun',
-    categorySlugs: ['aikido'],
-    website: 'https://www.facebook.com/aikido.zemun97',
-  },
-  {
     id: 'pony-kutak',
     name: 'Pony Kutak',
     categorySlugs: ['riding'],

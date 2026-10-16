@@ -1,3 +1,4 @@
+import aikidoZemunWebp from '../../assets/images/schools/aikido/aikido-zemun.webp'
 import ikedaDojoWebp from '../../assets/images/schools/aikido/ikeda-dojo.webp'
 import ikedaDojoJpg from '../../assets/images/schools/aikido/ikeda-dojo.jpg'
 
@@ -49,6 +50,54 @@ export const aikidoSchools: School[] = [
             facebook: 'https://www.facebook.com/aikidoikedadojonovisad/',
             facebookLabel: 'Aikido Ikeda Dojo',
             instagram: 'https://www.instagram.com/aikidoikedadojonovisad/',
+        },
+    },
+    {
+        id: 'aikido-zemun',
+        slug: 'aikido-zemun',
+        name: {
+            sr: 'Aikido klub Zemun',
+            en: 'Aikido Club Zemun',
+        },
+        categorySlugs: ['aikido'],
+        city: 'Beograd',
+        district: 'Zemun',
+        minAge: 4,
+        maxAge: null,
+        ageLabel: '4+ godina',
+        imageWebp: aikidoZemunWebp,
+        imageFallback: aikidoZemunWebp,
+        description: {
+            sr: [
+                'Aikido klub za borilačke veštine i rekreaciju „Zemun“ vodi Dejan Žuža, viši trener aikidoa i nosilac 7. dana.',
+                'Treninzi obuhvataju padove, kretanje, tehnike i samoodbranu. Aikido nije takmičarski sport: članovi napreduju kroz redovan rad i polaganja za pojaseve, uz manji rizik od povreda.',
+                'Program „Aikido kroz igru“ uvodi u veštinu kroz pokretne igre, ravnotežu i osnovne aikido vežbe. Dalji rad ide kroz tehniku, samoodbranu i polaganja.',
+                'Klub je član Srpskog aikido saveza i Internacionalne aikido akademije. Tokom godine organizuje seminare, javne nastupe i prezentacije.',
+            ],
+            en: [
+                'Aikido Club Zemun, a martial arts and recreation club, is led by Dejan Žuža, a senior aikido coach and 7th dan.',
+                'Training covers falls, movement, technique and self-defense. Aikido is not a competitive sport: members progress through regular practice and belt exams, with a lower risk of injury.',
+                'The Aikido Through Play program introduces the art through movement games, balance and basic aikido exercises. Further work continues through technique, self-defense and exams.',
+                'The club belongs to the Serbian Aikido Federation and the International Aikido Academy. Through the year it holds seminars, public performances and presentations.',
+            ],
+        },
+        addresses: [
+            {
+                street: 'Ugrinovačka 104',
+                city: 'Beograd',
+                district: 'Zemun',
+                lat: 44.8490866,
+                lng: 20.3924168,
+                mapsUrl: 'https://www.google.com/maps?cid=2461736600020418836',
+            },
+        ],
+        contact: {
+            phone: '063 55 54 53',
+            email: 'aikidozemun@gmail.com',
+            website: 'https://aikidoklub.com',
+            facebook: 'https://www.facebook.com/aikido.zemun97/',
+            facebookLabel: 'Aikido klub Zemun',
+            instagram: 'https://www.instagram.com/aikido_zemun/',
         },
     },
 ]

@@ -61,4 +61,5 @@ export const CATALOG_ADD_ORDER = [
   'arte-dance',
   'tinker-labs',
   'muzicka-skola-milicevic',
+  'aikido-zemun',
 ] as const
