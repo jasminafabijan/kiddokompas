@@ -2,4 +2,6 @@
 /admin/   /    302
 /robots.txt    /robots.txt    200
 /llms.txt    /llms.txt    200
+# A missing /assets file must 404. Sending index.html makes the browser cache HTML as JavaScript and the site stays blank after deploy.
+/assets/*    /assets/:splat    404
 /*    /index.html   200
