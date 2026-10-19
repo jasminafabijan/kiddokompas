@@ -363,12 +363,6 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     website: 'https://www.instagram.com/wilddogs_ns/',
   },
   {
-    id: 'raptors-bajmok',
-    name: 'Raptors Bajmok',
-    categorySlugs: ['flag-football'],
-    website: 'https://www.instagram.com/raptorsbajmok/',
-  },
-  {
     id: 'poletarac',
     name: 'Školica sporta Poletarac',
     categorySlugs: ['kids-sports'],
@@ -397,5 +391,11 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     name: 'Beosportic',
     categorySlugs: ['swimming'],
     website: 'https://www.facebook.com/profile.php?id=61583276139333',
+  },
+  {
+    id: 'shotokan-021',
+    name: 'Karate team Shotokan 021',
+    categorySlugs: ['karate'],
+    website: 'https://www.instagram.com/shotokan021/',
   },
 ]

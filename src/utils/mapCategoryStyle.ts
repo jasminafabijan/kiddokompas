@@ -12,6 +12,7 @@ const LEARNING = '#BDCBEA'
 
 const GROUP_COLOR: Record<string, string> = {
   football: TEAM_BALL,
+  'flag-football': TEAM_BALL,
   basketball: TEAM_BALL,
   volleyball: TEAM_BALL,
   'mini-sports': TEAM_BALL,
@@ -57,6 +58,9 @@ const SVG_ATTRS =
 const wrap = (inner: string) => `<svg ${SVG_ATTRS} aria-hidden="true">${inner}</svg>`
 
 const ICONS: Record<string, string> = {
+  'flag-football': wrap(
+    '<path d="M5 21.2V3.4"/><path d="M5 4.2h10.2l-2.2 3.2 2.2 3.2H5"/>'
+  ),
   football: wrap(
     '<circle cx="12" cy="12" r="9"/><path d="M12 8.2 14.6 10l-.9 3.2h-3.4L9.4 10z"/><path d="M12 3.2 12 8.2M14.6 10l4.2-2.2M13.7 13.2 16.8 17.4M10.3 13.2 7.2 17.4M9.4 10 5.2 7.8"/>'
   ),

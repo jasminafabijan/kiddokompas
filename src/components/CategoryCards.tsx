@@ -17,6 +17,7 @@ import aikidoIcon from '../assets/icons/aikido.svg'
 import chessIcon from '../assets/icons/chess.svg'
 import bowlingIcon from '../assets/icons/nine-pin-bowling.svg'
 import footballIcon from '../assets/icons/football.svg'
+import flagFootballIcon from '../assets/icons/flag-football.svg'
 import jazzDanceIcon from '../assets/icons/jazz-dance.svg'
 import karateIcon from '../assets/icons/karate.svg'
 import ridingIcon from '../assets/icons/riding.svg'
@@ -48,6 +49,7 @@ interface CategoryDisplay {
 
 const categoryDisplay: CategoryDisplay[] = [
   { id: 'football', iconBg: 'mint', iconSrc: footballIcon, iconSizeAdjustPx: -12 },
+  { id: 'flag-football', iconBg: 'peach', iconSrc: flagFootballIcon, iconSizeAdjustPx: -8 },
   { id: 'basketball', iconBg: 'mint', iconSrc: basketballIcon, iconSizeAdjustPx: -4 },
   { id: 'volleyball', iconBg: 'peach', iconSrc: volleyballIcon, iconSizeAdjustPx: -10 },
   { id: 'tennis', iconBg: 'peach', iconSrc: tennisIcon },

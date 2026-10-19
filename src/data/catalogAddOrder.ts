@@ -62,4 +62,6 @@ export const CATALOG_ADD_ORDER = [
   'tinker-labs',
   'muzicka-skola-milicevic',
   'aikido-zemun',
+  'raptors-bajmok',
+  'pk-vojvodina',
 ] as const

@@ -70,9 +70,14 @@ export const categories: Category[] = [
   {
     id: 'flag-football',
     name: { sr: 'Fleg fudbal', en: 'Flag football' },
+    nameAccusative: 'fleg fudbal',
     slug: 'flag-football',
     slugs: { sr: 'fleg-fudbal', en: 'flag-football' },
     subtitle: { sr: 'Klubovi fleg fudbala', en: 'Flag football clubs' },
+    pageSubtitle: {
+      sr: 'Istražite klubove fleg fudbala u {city} — za brzinu, timski duh i igru bez obaranja.',
+      en: 'Explore flag football clubs in {city} — for speed, teamwork and play without tackling.',
+    },
   },
   {
     id: 'acting',

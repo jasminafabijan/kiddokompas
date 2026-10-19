@@ -9,6 +9,7 @@ import type { Lang } from '../i18n/types'
 import { balletSchools } from './schoolCategories/ballet'
 import { jazzBalletSchools } from './schoolCategories/jazz-ballet'
 import { footballSchools } from './schoolCategories/football'
+import { flagFootballSchools } from './schoolCategories/flag-football'
 import { actingSchools } from './schoolCategories/acting'
 import { tennisSchools } from './schoolCategories/tennis'
 import { tableTennisSchools } from './schoolCategories/table-tennis'
@@ -44,6 +45,7 @@ export const schools: School[] = [
     ...jazzBalletSchools,
     ...danceSportSchools,
     ...footballSchools,
+    ...flagFootballSchools,
     ...actingSchools,
     ...tennisSchools,
     ...tableTennisSchools,

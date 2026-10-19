@@ -83,13 +83,13 @@ export const swimmingSchools: School[] = [
                 'Plivački klub „Vojvodina”, sa tradicijom dugom više od 90 godina, generacijama dece pruža priliku da savladaju veštine plivanja i razviju ljubav prema ovom sportu.',
                 'Program obuke neplivača, škola tehnika plivanja, predtakmičarske i takmičarske grupe, kao i rekreativno plivanje realizuje se kroz organizovan rad u grupama, uz stručno vođstvo trenera i pristup prilagođen uzrastu i plivačkom znanju polaznika.',
                 'Treninzi se realizuju na bazenima SPENS-a i bazenima SAJMIŠTE.',
-                'Sve informacije o programima, uslovima i načinu upisa u Klub, zainteresovani mogu dobiti putem kontakt telefona ili lično u kancelariji kluba.',
+                'Sve informacije o programima, uslovima i načinu upisa u Klub, zainteresovani mogu dobiti putem kontakt telefona ili lično u kancelariji kluba, koja se nalazi na Spensu.',
             ],
             en: [
                 'Vojvodina Swimming Club, with a tradition of more than 90 years, gives generations of children the chance to learn to swim and develop a love of the sport.',
                 'The learn-to-swim program, stroke school, pre-competitive and competitive groups, and recreational swimming run in organized groups, with qualified coaches and an approach adapted to each participant’s age and swimming ability.',
                 'Training takes place at the SPENS pools and the Sajmište pools.',
-                'Information about the programs, terms and how to enroll is available by phone or in person at the club office.',
+                'Information about the programs, terms and how to enroll is available by phone or in person at the club office, which is at SPENS.',
             ],
         },
         addresses: [

@@ -28,6 +28,10 @@ const STREET_LABELS: Record<string, string> = {
     'Bistrica Community Center, Braće Dronjak 11',
   'Bazeni SPENS-a, Sutjeska 2': 'SPENS pools, Sutjeska 2',
   'Bazeni Sajmište, Novosadskog sajma 37': 'Sajmište pools, Novosadskog sajma 37',
+  'Pomoćni teren FK Radnički 1905, Gajeva bb':
+    'FK Radnički 1905 auxiliary pitch, Gajeva bb',
+  'Pored pomoćnih terena FK Spartak, Izvorska':
+    'Beside the FK Spartak auxiliary pitches, Izvorska',
   'Kuglana SPENS-a, Sutjeska 2': 'SPENS bowling alley, Sutjeska 2',
   'Tehnička škola „Mileva Marić Anštajn”, Gagarinova 1':
     'Technical School “Mileva Marić Anštajn”, Gagarinova 1',
