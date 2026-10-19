@@ -102,7 +102,7 @@ export const swimmingSchools: School[] = [
                 mapsUrl: 'https://www.google.com/maps?cid=5659167617721317525',
             },
             {
-                street: 'Bazeni Sajmišta, Novosadskog sajma 37',
+                street: 'Bazeni Sajmište, Novosadskog sajma 37',
                 city: 'Novi Sad',
                 district: 'Sajmište',
                 lat: 45.252195,

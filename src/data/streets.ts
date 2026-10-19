@@ -27,7 +27,7 @@ const STREET_LABELS: Record<string, string> = {
   'Mesna zajednica Bistrica, Braće Dronjak 11':
     'Bistrica Community Center, Braće Dronjak 11',
   'Bazeni SPENS-a, Sutjeska 2': 'SPENS pools, Sutjeska 2',
-  'Bazeni Sajmišta, Novosadskog sajma 37': 'Sajmište pools, Novosadskog sajma 37',
+  'Bazeni Sajmište, Novosadskog sajma 37': 'Sajmište pools, Novosadskog sajma 37',
   'Kuglana SPENS-a, Sutjeska 2': 'SPENS bowling alley, Sutjeska 2',
   'Tehnička škola „Mileva Marić Anštajn”, Gagarinova 1':
     'Technical School “Mileva Marić Anštajn”, Gagarinova 1',
