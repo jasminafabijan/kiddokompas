@@ -20,6 +20,7 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'helen-doron-novi-sad',
   'kapuera-akademija-ns',
   'karate-klub-mawashi',
+  'karate-klub-nokaci',
   'karate-klub-novi-sad',
   'karate-klub-soko',
   'kk-danubius',

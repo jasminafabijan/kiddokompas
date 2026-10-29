@@ -27,6 +27,8 @@ const STREET_LABELS: Record<string, string> = {
   'Mesna zajednica Bistrica, Braće Dronjak 11':
     'Bistrica Community Center, Braće Dronjak 11',
   'Bazeni SPENS-a, Sutjeska 2': 'SPENS pools, Sutjeska 2',
+  'Atomsko sklonište „Trka Frka”, Ive Andrića 1':
+    'Atomic shelter “Trka Frka”, Ive Andrića 1',
   'Bazeni Sajmište, Novosadskog sajma 37': 'Sajmište pools, Novosadskog sajma 37',
   'Pomoćni teren FK Radnički 1905, Gajeva bb':
     'FK Radnički 1905 auxiliary pitch, Gajeva bb',

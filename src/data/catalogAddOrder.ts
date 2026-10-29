@@ -64,4 +64,5 @@ export const CATALOG_ADD_ORDER = [
   'aikido-zemun',
   'raptors-bajmok',
   'pk-vojvodina',
+  'karate-klub-nokaci',
 ] as const

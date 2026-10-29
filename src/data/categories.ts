@@ -213,11 +213,25 @@ export const categories: Category[] = [
     },
   },
   {
+    id: 'sambo',
+    name: { sr: 'Sambo', en: 'Sambo' },
+    slug: 'sambo',
+    slugs: { sr: 'sambo', en: 'sambo' },
+    subtitle: { sr: 'Klubovi samboa', en: 'Sambo clubs' },
+  },
+  {
     id: 'taekwondo',
     name: { sr: 'Tekvondo', en: 'Taekwondo' },
     slug: 'taekwondo',
     slugs: { sr: 'tekvondo', en: 'taekwondo' },
     subtitle: { sr: 'Škole tekvondoa', en: 'Taekwondo schools' },
+  },
+  {
+    id: 'wrestling',
+    name: { sr: 'Rvanje', en: 'Wrestling' },
+    slug: 'wrestling',
+    slugs: { sr: 'rvanje', en: 'wrestling' },
+    subtitle: { sr: 'Klubovi rvanja', en: 'Wrestling clubs' },
   },
   {
     id: 'bowling',
