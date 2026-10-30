@@ -417,12 +417,6 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     website: 'https://gitros.taekwondo.co.rs',
   },
   {
-    id: 'industrija-boksa',
-    name: 'Industrija Boksa',
-    categorySlugs: ['boxing'],
-    website: 'https://www.facebook.com/profile.php?id=61570666471818',
-  },
-  {
     id: 'plesni-studio-five',
     name: 'Plesni studio Five',
     categorySlugs: ['dance'],
@@ -457,5 +451,23 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     name: 'Dance Studio Boombox',
     categorySlugs: ['dance'],
     website: 'https://www.facebook.com/boombox024',
+  },
+  {
+    id: 'sah-art',
+    name: 'Šahovska škola „Šah Art”',
+    categorySlugs: ['chess'],
+    website: 'https://www.facebook.com/SahArtSkolaSaha',
+  },
+  {
+    id: 'plesni-studio-larisa',
+    name: 'Plesni studio „Larisa”',
+    categorySlugs: ['dance'],
+    website: 'https://www.facebook.com/plesnistudiolarisa',
+  },
+  {
+    id: 'baletska-skola-raicevic',
+    name: 'Osnovna baletska škola „Raičević”',
+    categorySlugs: ['ballet'],
+    website: 'https://www.facebook.com/baletraicevic',
   },
 ]

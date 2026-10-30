@@ -196,6 +196,8 @@ export const karateSchools: School[] = [
             facebook: 'https://www.facebook.com/karateklubnokaci',
             facebookLabel: 'Karate klub Nokači',
             instagram: 'https://www.instagram.com/karateklubnokaci/',
+            tiktok: 'https://www.tiktok.com/@karateklubnokaci02',
+            youtube: 'https://www.youtube.com/@KarateNOKACI/featured',
         },
     },
 ]

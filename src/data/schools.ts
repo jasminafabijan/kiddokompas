@@ -157,7 +157,8 @@ export const hasContactDetails = (contact?: SchoolContact) => {
         Boolean(contact.website) ||
         Boolean(contact.facebook) ||
         Boolean(contact.instagram) ||
-        Boolean(contact.tiktok)
+        Boolean(contact.tiktok) ||
+        Boolean(contact.youtube)
     )
 }
 
@@ -224,6 +225,15 @@ export const formatTikTokLabel = (url: string) => {
     try {
         const username = new URL(url).pathname.replace(/\//g, '').replace(/^@/, '')
         return username ? `@${username}` : url
+    } catch {
+        return url
+    }
+}
+
+export const formatYouTubeLabel = (url: string) => {
+    try {
+        const handle = new URL(url).pathname.split('/').find((part) => part.startsWith('@'))
+        return handle ?? url
     } catch {
         return url
     }

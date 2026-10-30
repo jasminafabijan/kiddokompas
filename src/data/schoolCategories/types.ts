@@ -15,6 +15,7 @@ export type SchoolContact = {
     facebookLabel?: string
     instagram?: string
     tiktok?: string
+    youtube?: string
 }
 
 export type SchoolAddress = {

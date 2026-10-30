@@ -57,7 +57,7 @@ const categoryDisplay: CategoryDisplay[] = [
   { id: 'athletics', iconBg: 'peach', iconSrc: athleticsIcon },
   { id: 'roller-skating', iconBg: 'mint', iconSrc: rollerSkatingIcon },
   { id: 'karate', iconBg: 'mint', iconSrc: karateIcon },
-  { id: 'boxing', iconBg: 'peach', iconSrc: boxingIcon, iconSizeAdjustPx: -6 },
+  { id: 'boxing', iconBg: 'peach', iconSrc: boxingIcon, iconSizeAdjustPx: -10 },
   { id: 'capoeira', iconBg: 'mint', iconSrc: capoeiraIcon, iconSizeAdjustPx: 4 },
   { id: 'aikido', iconBg: 'peach', iconSrc: aikidoIcon },
   { id: 'chess', iconBg: 'mint', iconSrc: chessIcon, iconSizeAdjustPx: -10 },

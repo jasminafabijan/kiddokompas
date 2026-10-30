@@ -210,6 +210,14 @@ export const balletSchools: School[] = [
                 lat: 45.2592145,
                 lng: 19.847808,
             },
+            {
+                street: 'Sime Matavulja 17',
+                city: 'Novi Sad',
+                district: 'Južni Telep',
+                lat: 45.2342602,
+                lng: 19.8243768,
+                mapsUrl: 'https://www.google.com/maps?cid=10814120426773232227',
+            },
         ],
     },
     {

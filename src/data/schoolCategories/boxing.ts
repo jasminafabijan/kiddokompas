@@ -2,6 +2,7 @@ import mementoMoriWebp from '../../assets/images/schools/boxing/memento-mori.web
 import mementoMoriJpg from '../../assets/images/schools/boxing/memento-mori.jpg'
 import bkVojvodinaWebp from '../../assets/images/schools/boxing/bk-vojvodina.webp'
 import bkVojvodinaJpg from '../../assets/images/schools/boxing/bk-vojvodina.jpg'
+import industrijaBoksaJpeg from '../../assets/images/schools/boxing/industrija-boksa.jpeg'
 
 import type { School } from './types'
 
@@ -98,6 +99,52 @@ export const boxingSchools: School[] = [
             facebook: 'https://www.facebook.com/boksvojvodina',
             facebookLabel: 'BK Vojvodina',
             instagram: 'https://www.instagram.com/boks.vojvodina/',
+        },
+    },
+    {
+        id: 'industrija-boksa',
+        slug: 'industrija-boksa',
+        name: {
+            sr: 'Industrija boksa',
+            en: 'Industrija Boksa',
+        },
+        categorySlugs: ['boxing'],
+        city: 'Novi Sad',
+        district: 'Liman 1',
+        minAge: 3,
+        maxAge: null,
+        ageLabel: '3+ godina',
+        imageWebp: industrijaBoksaJpeg,
+        imageFallback: industrijaBoksaJpeg,
+        description: {
+            sr: [
+                'Industrija boksa je Centar za rekreativni boks u Novom Sadu. Pored programa za odrasle rekreativce, nudimo i programe za decu svih uzrasta i to:',
+                'Deca do 7 godina — program školice sporta u kombinaciji sa treningom boksa za mlađe uzraste. Ovaj program usmeren je podjednako na celokupan motorički razvoj deteta kao i na savladavanje veštine boksa.',
+                'Deca od 7 do 15 godina — program učenja boksa, savladavanja tehnika i veštine. Učenje u kontrolisanim i bezbednim uslovima usmereno na disciplinu, dinamiku i fokus. Podstiče izbacivanje viška energije kao i samopouzdanje kod dece.',
+            ],
+            en: [
+                'Industrija Boksa is a recreational boxing center in Novi Sad. Alongside programs for adult recreational boxers, it also offers programs for children of all ages:',
+                'Children up to age 7 follow a kids’ sports program combined with boxing training for younger ages. The program focuses equally on overall motor development and on learning boxing.',
+                'Children from 7 to 15 follow a program for learning boxing, technique and skill. Training in controlled, safe conditions is aimed at discipline, drive and focus. It helps children use extra energy and build confidence.',
+            ],
+        },
+        addresses: [
+            {
+                street: 'Bulevar oslobođenja 133',
+                city: 'Novi Sad',
+                district: 'Liman 1',
+                lat: 45.2423067,
+                lng: 19.8431985,
+                mapsUrl: 'https://www.google.com/maps?cid=16252062829963774638',
+            },
+        ],
+        contact: {
+            phone: '061 506 60 77',
+            email: 'info@industrijaboksa.com',
+            website: 'https://industrijaboksa.com',
+            facebook: 'https://www.facebook.com/profile.php?id=61570666471818',
+            facebookLabel: 'Industrija boksa',
+            instagram: 'https://www.instagram.com/industrija.boksa/',
         },
     },
 ]
