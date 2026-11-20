@@ -37,6 +37,7 @@ const STREET_LABELS: Record<string, string> = {
   'Kuglana SPENS-a, Sutjeska 2': 'SPENS bowling alley, Sutjeska 2',
   'Tehnička škola „Mileva Marić Anštajn”, Gagarinova 1':
     'Technical School “Mileva Marić Anštajn”, Gagarinova 1',
+  'Stankom centar, Stevana Brakusa 4': 'Stankom Center, Stevana Brakusa 4',
   'TC Pariski magazin, Kralja Aleksandra 12':
     'Shopping Center Pariski magazin, Kralja Aleksandra 12',
   'Kod autoputa A1': 'Near the A1 motorway',

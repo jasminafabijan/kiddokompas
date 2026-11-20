@@ -49,6 +49,10 @@ export type School = {
     minAge: number
     maxAge: number | null
     ageLabel: string
+    /** Age shown when the school is opened from a specific category. */
+    agesByCategory?: Partial<
+        Record<string, { minAge: number; maxAge: number | null; ageLabel: string }>
+    >
     imageWebp: string
     imageFallback: string
     description?: LocalizedParagraphs

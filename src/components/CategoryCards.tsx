@@ -4,6 +4,7 @@ import { getActivityOptions } from '../data/schools'
 import { CATEGORIES_SECTION_ID } from '../i18n/routes'
 import { useI18n } from '../i18n/useI18n'
 import actingIcon from '../assets/icons/acting.svg'
+import artIcon from '../assets/icons/art.webp'
 import creativeWritingIcon from '../assets/icons/creative-writing.svg'
 import languagesIcon from '../assets/icons/languages.svg'
 import programmingIcon from '../assets/icons/programming.svg'
@@ -74,6 +75,7 @@ const categoryDisplay: CategoryDisplay[] = [
   { id: 'folklore', iconBg: 'mint', iconSrc: folkloreIcon, iconSizeAdjustPx: 2 },
   { id: 'music', iconBg: 'peach', iconSrc: musicIcon },
   { id: 'acting', iconBg: 'peach', iconSrc: actingIcon, iconSizeAdjustPx: -6 },
+  { id: 'art', iconBg: 'mint', iconSrc: artIcon },
   { id: 'creative-writing', iconBg: 'mint', iconSrc: creativeWritingIcon },
   { id: 'languages', iconBg: 'mint', iconSrc: languagesIcon, iconSizeAdjustPx: -6 },
   { id: 'programming', iconBg: 'peach', iconSrc: programmingIcon, iconSizeAdjustPx: -18 },

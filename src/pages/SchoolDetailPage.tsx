@@ -93,12 +93,17 @@ const DescriptionParagraph = ({ text }: { text: string }) => (
 
 type DescriptionBlock =
   | { type: 'p'; text: string }
+  | { type: 'heading'; text: string }
   | { type: 'list'; heading?: string; items: string[] }
+
+const isSectionLabel = (paragraph: string) =>
+  paragraph.endsWith(':') && paragraph.length <= 40 && !paragraph.includes('.')
 
 const groupDescriptionParagraphs = (paragraphs: string[]): DescriptionBlock[] => {
   const blocks: DescriptionBlock[] = []
 
-  for (const paragraph of paragraphs) {
+  for (let index = 0; index < paragraphs.length; index += 1) {
+    const paragraph = paragraphs[index]
     if (paragraph.startsWith('- ')) {
       const item = paragraph.slice(2)
       const last = blocks[blocks.length - 1]
@@ -118,6 +123,12 @@ const groupDescriptionParagraphs = (paragraphs: string[]): DescriptionBlock[] =>
       }
 
       blocks.push({ type: 'list', items: [item] })
+      continue
+    }
+
+    const next = paragraphs[index + 1]
+    if (isSectionLabel(paragraph) && !next?.startsWith('- ')) {
+      blocks.push({ type: 'heading', text: paragraph.slice(0, -1) })
       continue
     }
 
@@ -263,7 +274,7 @@ const SchoolDetailPage = () => {
               <div className="school-detail-tags">
                 <span className="school-detail-tag school-detail-tag--age">
                   <UsersIcon />
-                  {schoolAgeLabel(school, lang)}
+                  {schoolAgeLabel(school, lang, false, activeCategorySlug)}
                 </span>
               </div>
             ) : null}
@@ -313,6 +324,10 @@ const SchoolDetailPage = () => {
                               ))}
                             </ul>
                           </div>
+                        ) : block.type === 'heading' ? (
+                          <p key={block.text} className="school-detail-description-heading">
+                            {block.text}
+                          </p>
                         ) : (
                           <DescriptionParagraph key={block.text} text={block.text} />
                         )

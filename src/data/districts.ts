@@ -7,6 +7,7 @@ export const DISTRICT_LABELS: Record<string, LocalizedText> = {
   'Blok 28': { sr: 'Blok 28', en: 'Blok 28' },
   'Blok 61': { sr: 'Blok 61', en: 'Blok 61' },
   Čukarica: { sr: 'Čukarica', en: 'Čukarica' },
+  'Banovo brdo': { sr: 'Banovo brdo', en: 'Banovo brdo' },
   'Gradski park': { sr: 'Gradski park', en: 'City Park' },
   'Adamovićevo naselje': { sr: 'Adamovićevo naselje', en: 'Adamovićevo naselje' },
   Banatić: { sr: 'Banatić', en: 'Banatić' },

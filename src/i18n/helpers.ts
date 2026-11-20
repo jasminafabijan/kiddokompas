@@ -132,23 +132,41 @@ export const formatPopupAge = (minAge: number, maxAge: number | null, lang: Lang
     : label.replace(/\s*godina|\s*godine/g, ' god.').replace(/\s+/g, ' ').trim()
 }
 
+export type SchoolAgeRange = {
+  minAge: number
+  maxAge: number | null
+  ageLabel: string
+  agesByCategory?: Partial<Record<string, { minAge: number; maxAge: number | null; ageLabel: string }>>
+}
+
+/** Category override when the school is opened from one activity; otherwise the school range. */
+export const resolveSchoolAge = (school: SchoolAgeRange, categoryId?: string) =>
+  (categoryId && school.agesByCategory?.[categoryId]) || {
+    minAge: school.minAge,
+    maxAge: school.maxAge,
+    ageLabel: school.ageLabel,
+  }
+
 /** Serbian keeps stored `ageLabel`; English is generated from min/max. */
 export const schoolAgeLabel = (
-  school: { minAge: number; maxAge: number | null; ageLabel: string },
+  school: SchoolAgeRange,
   lang: Lang,
-  compact = false
+  compact = false,
+  categoryId?: string
 ): string => {
+  const range = resolveSchoolAge(school, categoryId)
+
   if (lang === 'en') {
     return compact
-      ? formatPopupAge(school.minAge, school.maxAge, lang)
-      : formatAgeLabel(school.minAge, school.maxAge, lang)
+      ? formatPopupAge(range.minAge, range.maxAge, lang)
+      : formatAgeLabel(range.minAge, range.maxAge, lang)
   }
 
   if (!compact) {
-    return school.ageLabel
+    return range.ageLabel
   }
 
-  return school.ageLabel.replace(/\s*godina|\s*godine/g, ' god.').replace(/\s+/g, ' ').trim()
+  return range.ageLabel.replace(/\s*godina|\s*godine/g, ' god.').replace(/\s+/g, ' ').trim()
 }
 
 export const warnMissingTranslation = (key: string, lang: Lang) => {

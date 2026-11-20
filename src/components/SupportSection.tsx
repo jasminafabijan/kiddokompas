@@ -3,6 +3,7 @@ import { getCategoryNameBySlug } from '../data/categories'
 import { getActivityOptions } from '../data/schools'
 import { useI18n } from '../i18n/useI18n'
 import learningSupportIcon from '../assets/icons/learning-support.svg'
+import psychomotorExercisesIcon from '../assets/icons/psychomotor-exercises.svg'
 import speechDevelopmentIcon from '../assets/icons/speech-development.svg'
 
 const CATEGORY_ICON_BASE_SIZE_PX = 64
@@ -10,6 +11,7 @@ const CATEGORY_ICON_BASE_SIZE_PX = 64
 const supportCategories = [
   { id: 'learning-support', iconSrc: learningSupportIcon, iconSizeAdjustPx: -4 },
   { id: 'speech-development', iconSrc: speechDevelopmentIcon },
+  { id: 'psychomotor-exercises', iconSrc: psychomotorExercisesIcon, iconSizeAdjustPx: 6 },
 ]
 
 const SupportSection = () => {

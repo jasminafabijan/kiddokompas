@@ -4,13 +4,20 @@ import { getDistrictName, DISTRICT_LABELS } from './districts'
 import { CATALOG_ADD_ORDER } from './catalogAddOrder'
 import { VERIFIED_SCHOOL_IDS } from './verifiedSchoolIds'
 import { getStreetName } from './streets'
-import { formatAgeLabel, formatAgeOptionLabel, getLocalizedText, warnMissingEnglish } from '../i18n/helpers'
+import {
+    formatAgeLabel,
+    formatAgeOptionLabel,
+    getLocalizedText,
+    resolveSchoolAge,
+    warnMissingEnglish,
+} from '../i18n/helpers'
 import type { Lang } from '../i18n/types'
 import { balletSchools } from './schoolCategories/ballet'
 import { jazzBalletSchools } from './schoolCategories/jazz-ballet'
 import { footballSchools } from './schoolCategories/football'
 import { flagFootballSchools } from './schoolCategories/flag-football'
 import { actingSchools } from './schoolCategories/acting'
+import { artSchools } from './schoolCategories/art'
 import { tennisSchools } from './schoolCategories/tennis'
 import { tableTennisSchools } from './schoolCategories/table-tennis'
 import { basketballSchools } from './schoolCategories/basketball'
@@ -47,6 +54,7 @@ export const schools: School[] = [
     ...footballSchools,
     ...flagFootballSchools,
     ...actingSchools,
+    ...artSchools,
     ...tennisSchools,
     ...tableTennisSchools,
     ...basketballSchools,
@@ -634,11 +642,24 @@ export const filterSchools = (filters: SchoolFilters) =>
             return false
         }
 
-        if (
-            filters.age != null &&
-            (filters.age < school.minAge || (school.maxAge != null && filters.age > school.maxAge))
-        ) {
-            return false
+        if (filters.age != null) {
+            const matchingActivities = filters.activities.filter((activity) =>
+                school.categorySlugs.includes(activity)
+            )
+            const ranges =
+                matchingActivities.length > 0
+                    ? matchingActivities.map((activity) => resolveSchoolAge(school, activity))
+                    : [resolveSchoolAge(school)]
+            const ageFits = ranges.some(
+                (range) =>
+                    filters.age != null &&
+                    filters.age >= range.minAge &&
+                    (range.maxAge == null || filters.age <= range.maxAge)
+            )
+
+            if (!ageFits) {
+                return false
+            }
         }
 
         if (filters.partsOfCity.length > 0) {

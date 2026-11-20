@@ -384,9 +384,14 @@ export const categories: Category[] = [
   {
     id: 'art',
     name: { sr: 'Umetnost', en: 'Art' },
+    nameAccusative: 'umetnost',
     slug: 'art',
     slugs: { sr: 'umetnost', en: 'art' },
     subtitle: { sr: 'Umetničke škole', en: 'Art schools' },
+    pageSubtitle: {
+      sr: 'Istražite umetničke škole i ateljee u {city} — za crtanje, slikanje i rad sa bojom i oblikom.',
+      en: 'Explore art schools and studios in {city} — for drawing, painting and work with color and form.',
+    },
   },
   {
     id: 'creative-writing',
@@ -434,6 +439,18 @@ export const categories: Category[] = [
     pageSubtitle: {
       sr: 'Istražite programe za razvoj govora u {city} — podsticaj za jasnije izražavanje i sigurniju komunikaciju.',
       en: 'Explore speech development programs in {city} — encouragement for clearer expression and more confident communication.',
+    },
+  },
+  {
+    id: 'psychomotor-exercises',
+    name: { sr: 'Psihomotorne vežbe', en: 'Psychomotor exercises' },
+    nameAccusative: 'psihomotorne vežbe',
+    slug: 'psychomotor-exercises',
+    slugs: { sr: 'psihomotorne-vezbe', en: 'psychomotor-exercises' },
+    subtitle: { sr: 'Psihomotorne vežbe', en: 'Psychomotor exercises' },
+    pageSubtitle: {
+      sr: 'Istražite psihomotorne vežbe u {city} — individualan rad na motorici, ravnoteži i sigurnosti u pokretu.',
+      en: 'Explore psychomotor exercises in {city} — individual work on motor skill, balance and confidence in movement.',
     },
   },
   {

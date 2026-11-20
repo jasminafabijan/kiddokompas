@@ -41,22 +41,30 @@ const UsersIcon = () => (
 interface SchoolCardProps {
   school: School
   categoryLabel?: string
+  categoryLabels?: string[]
   categoryContext?: string
 }
 
-const SchoolCard = ({ school, categoryLabel, categoryContext }: SchoolCardProps) => {
+const SchoolCard = ({ school, categoryLabel, categoryLabels, categoryContext }: SchoolCardProps) => {
   const location = useLocation()
   const { lang, path } = useI18n()
   const schoolHref = path.school(school.slug, categoryContext)
   const from = `${location.pathname}${location.search}${location.hash}`
 
   const locationLabel = formatSchoolLocationLabel(school, lang)
+  const labels = categoryLabels ?? (categoryLabel ? [categoryLabel] : [])
 
   return (
     <Link to={schoolHref} state={{ from }} className="school-card">
       <div className="school-card-image-wrap">
-        {categoryLabel && (
-          <span className="school-card-category-tag">{categoryLabel}</span>
+        {labels.length > 0 && (
+          <span className="school-card-category-tags">
+            {labels.map((label) => (
+              <span key={label} className="school-card-category-tag">
+                {label}
+              </span>
+            ))}
+          </span>
         )}
         <picture>
           {isWebpSrc(school.imageWebp) && (
@@ -84,7 +92,7 @@ const SchoolCard = ({ school, categoryLabel, categoryContext }: SchoolCardProps)
           </li>
           <li className="school-card-meta-item">
             <UsersIcon />
-            <span>{schoolAgeLabel(school, lang)}</span>
+            <span>{schoolAgeLabel(school, lang, false, categoryContext)}</span>
           </li>
         </ul>
       </div>

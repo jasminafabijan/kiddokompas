@@ -1,7 +1,5 @@
-import {
-  formatSchoolCategoryNames,
-  getRecentlyAddedSchools,
-} from '../data/schools'
+import { getCategoryNameBySlug } from '../data/categories'
+import { getRecentlyAddedSchools } from '../data/schools'
 import { useI18n } from '../i18n/useI18n'
 import SchoolCard from './SchoolCard'
 
@@ -33,7 +31,7 @@ const RecentlyAddedSection = () => {
           <SchoolCard
             key={school.id}
             school={school}
-            categoryLabel={formatSchoolCategoryNames(school, lang)}
+            categoryLabels={school.categorySlugs.map((slug) => getCategoryNameBySlug(slug, lang))}
           />
         ))}
       </div>

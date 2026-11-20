@@ -108,7 +108,12 @@ const CatalogMap = ({
           getStreetName(point.locations[0].address.street, lang),
           uniqueSchools.map(({ school, addressIndex }) => ({
             name: getSchoolName(school, lang),
-            ageLabel: schoolAgeLabel(school, lang, true),
+            ageLabel: schoolAgeLabel(
+              school,
+              lang,
+              true,
+              categoryIdForSchoolLink(school.categorySlugs, selectedActivities)
+            ),
             href: schoolMapHref(
               school,
               lang,

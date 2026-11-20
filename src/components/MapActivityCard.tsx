@@ -70,7 +70,7 @@ const MapActivityCard = ({ location, selected, selectedActivities, onSelect }: M
         <span className="map-activity-card-copy">
           <span className="map-activity-card-title">{getSchoolName(school, lang)}</span>
           <span className="map-activity-card-meta">
-            {categoryName} · {schoolAgeLabel(school, lang, true)}
+            {categoryName} · {schoolAgeLabel(school, lang, true, categorySlug)}
           </span>
         </span>
       </button>

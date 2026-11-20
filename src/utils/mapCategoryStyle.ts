@@ -46,6 +46,7 @@ const GROUP_COLOR: Record<string, string> = {
   languages: LEARNING,
   'learning-support': LEARNING,
   'speech-development': LEARNING,
+  'psychomotor-exercises': LEARNING,
   programming: LEARNING,
   robotics: LEARNING,
   science: LEARNING,
@@ -147,6 +148,9 @@ const ICONS: Record<string, string> = {
   ),
   'speech-development': wrap(
     '<circle cx="9" cy="10" r="4"/><path d="M5.6 19.4c.7-2.6 2.1-4 3.4-4s2.7 1.4 3.4 4"/><path d="M15.2 8.4c1.1 1 1.6 2 1.6 3.2s-.5 2.2-1.6 3.2M17.4 6.4c1.7 1.5 2.6 3.2 2.6 5.2s-.9 3.7-2.6 5.2"/>'
+  ),
+  'psychomotor-exercises': wrap(
+    '<circle cx="12" cy="4.8" r="2"/><path d="M12 7.2v5.2M6.4 10.6h11.2M12 12.4 7.6 20.4M12 12.4l4.6 3.4"/><path d="M4.8 21.2h7.2"/>'
   ),
   programming: wrap(
     '<path d="M8.2 6.8 3.8 12l4.4 5.2M15.8 6.8 20.2 12l-4.4 5.2M10.4 18.6 13.6 5.4"/>'

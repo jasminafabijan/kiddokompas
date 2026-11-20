@@ -67,4 +67,6 @@ export const CATALOG_ADD_ORDER = [
   'karate-klub-nokaci',
   'industrija-boksa',
   'ntc-nauka',
+  'deciji-atelje',
+  'sportska-druzina',
 ] as const
