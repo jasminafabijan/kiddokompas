@@ -1,4 +1,5 @@
 import tinkerLabsWebp from '../../assets/images/schools/science/tinker-labs.webp'
+import ntcNaukaWebp from '../../assets/images/schools/science/ntc-nauka.webp'
 
 import type { LocalizedText } from '../../i18n/types'
 import type { School, SchoolAddress, SchoolContact } from './types'
@@ -77,6 +78,84 @@ const tinkerCityLink = (city: string, slug: string, lat: number, lng: number): S
     lat,
     lng,
     schoolSlug: slug,
+})
+
+const ntcNaukaName = {
+    sr: 'NTC nauka',
+    en: 'NTC Science',
+}
+
+const ntcNaukaDescription = {
+    sr: [
+        'NTC nauka uvodi decu u osnove naučnog razmišljanja kroz igru, eksperimente i istraživanje.',
+        'Na radionicama se upoznaju osnovni principi i pojmovi iz fizike i hemije: atom, molekul, hemijska veza, fizičke veličine i jedinice mere. NTC tehnike pomažu da se apstraktne definicije i formule razumeju, a ne uče napamet.',
+        'Deca izvode eksperimente, razgovaraju o pojavama i izvlače zaključke. Kroz društvene igre vežbaju planiranje, rad u timu i međusobno uvažavanje.',
+        'Radionice traju 90 minuta, jednom sedmično tokom školske godine. Početno znanje iz fizike i hemije nije potrebno.',
+    ],
+    en: [
+        'NTC Science introduces children to the basics of scientific thinking through play, experiments and exploration.',
+        'Workshops cover basic principles and terms from physics and chemistry: the atom, the molecule, the chemical bond, physical quantities and units of measure. NTC techniques help children understand abstract definitions and formulas instead of memorizing them.',
+        'Children run experiments, talk about phenomena and draw conclusions. Through board games they practice planning, teamwork and respect for one another.',
+        'Workshops last 90 minutes, once a week throughout the school year. No prior knowledge of physics or chemistry is required.',
+    ],
+}
+
+const ntcNaukaPage = {
+    categorySlugs: ['science'],
+    minAge: 10,
+    maxAge: 12,
+    ageLabel: '10–12 godina',
+    imageWebp: ntcNaukaWebp,
+    imageFallback: ntcNaukaWebp,
+    description: ntcNaukaDescription,
+}
+
+const ntcNaukaContact = (phone: string, email: string): SchoolContact => ({
+    phone,
+    email,
+    website: 'https://ntcucenje.com/ntc-nauka/',
+})
+
+const ntcNaukaHall = (
+    street: string,
+    city: string,
+    district: string,
+    lat: number,
+    lng: number,
+    cid: string
+): SchoolAddress => ({
+    street,
+    city,
+    district,
+    lat,
+    lng,
+    mapsUrl: `https://www.google.com/maps?cid=${cid}`,
+})
+
+const ntcNaukaCityLink = (city: string, slug: string, lat: number, lng: number): SchoolAddress => ({
+    street: '',
+    city,
+    lat,
+    lng,
+    schoolSlug: slug,
+})
+
+const ntcNaukaBranch = (
+    id: string,
+    city: string,
+    district: string,
+    addresses: SchoolAddress[],
+    contact: SchoolContact
+): School => ({
+    id,
+    slug: id,
+    name: ntcNaukaName,
+    ...ntcNaukaPage,
+    brandSchoolId: 'ntc-nauka',
+    city,
+    district,
+    addresses,
+    contact,
 })
 
 const tinkerSingle = (
@@ -642,4 +721,154 @@ export const scienceSchools: School[] = [
             instagram: 'https://www.instagram.com/tinkerlabs_vrsac/',
         }
     ),
+    {
+        id: 'ntc-nauka',
+        slug: 'ntc-nauka',
+        name: ntcNaukaName,
+        ...ntcNaukaPage,
+        brandOverview: true,
+        city: 'Novi Sad',
+        district: '',
+        addresses: [
+            ntcNaukaCityLink('Aleksandrovac', 'ntc-nauka-aleksandrovac', 43.459, 21.051),
+            ntcNaukaCityLink('Beograd', 'ntc-nauka-beograd', 44.805, 20.45),
+            ntcNaukaCityLink('Kragujevac', 'ntc-nauka-kragujevac', 44.012, 20.911),
+            ntcNaukaCityLink('Novi Kneževac', 'ntc-nauka-novi-knezevac', 46.048, 20.09),
+            ntcNaukaCityLink('Novi Sad', 'ntc-nauka-novi-sad', 45.252, 19.842),
+            ntcNaukaCityLink('Pančevo', 'ntc-nauka-pancevo', 44.871, 20.64),
+            ntcNaukaCityLink('Velika Plana', 'ntc-nauka-velika-plana', 44.332, 21.074),
+        ],
+        contact: {
+            website: 'https://ntcucenje.com/ntc-nauka/',
+            facebook: 'https://www.facebook.com/ntcsistemucenja',
+            instagram: 'https://www.instagram.com/ntcucenje/',
+        },
+    },
+    ntcNaukaBranch('ntc-nauka-aleksandrovac', 'Aleksandrovac', '', [
+        ntcNaukaHall(
+            'OŠ „Aca Aleksić”, Jaše Petrovića 6',
+            'Aleksandrovac',
+            '',
+            43.4590798,
+            21.0513037,
+            '4282615521639855731'
+        ),
+    ], {
+        ...ntcNaukaContact('060 055 42 71', 'aleksandrovac@ntcucenje.com'),
+        facebook: 'https://www.facebook.com/p/NTC-centar-Aleksandrovac-61557005803666/',
+        facebookLabel: 'NTC centar Aleksandrovac',
+        instagram: 'https://www.instagram.com/ntc_aleksandrovac/',
+    }),
+    ntcNaukaBranch('ntc-nauka-beograd', 'Beograd', 'Novi Beograd', [
+        ntcNaukaHall(
+            'NTC centar Novi Beograd, Bulevar Mihajla Pupina 133',
+            'Beograd',
+            'Novi Beograd',
+            44.8198857,
+            20.4207071,
+            '5472286717256382276'
+        ),
+        ntcNaukaHall(
+            'NTC centar Vračar, Mileševska 40',
+            'Beograd',
+            'Vračar',
+            44.7989604,
+            20.481521,
+            '17429321796003737004'
+        ),
+        ntcNaukaHall(
+            'Muzej Jovana Cvijića, Jelene Ćetković 5',
+            'Beograd',
+            'Stari Grad',
+            44.8157095,
+            20.4686738,
+            '13674782597934804491'
+        ),
+    ], {
+        ...ntcNaukaContact('065 345 14 05', 'bg.radionice@ntcucenje.com'),
+        facebook: 'https://www.facebook.com/ntcsistemucenja',
+        instagram: 'https://www.instagram.com/ntc_beograd/',
+    }),
+    ntcNaukaBranch('ntc-nauka-kragujevac', 'Kragujevac', '', [
+        ntcNaukaHall(
+            'OŠ „Stanislav Sremčević”, Laze Marinkovića 54',
+            'Kragujevac',
+            '',
+            44.0109558,
+            20.8954162,
+            '6129087888600487309'
+        ),
+    ], {
+        ...ntcNaukaContact('063 702 18 17', 'kragujevac@ntcucenje.com'),
+        facebook: 'https://www.facebook.com/profile.php?id=61557346446183',
+        facebookLabel: 'NTC centar Kragujevac',
+        instagram: 'https://www.instagram.com/ntckragujevac/',
+    }),
+    ntcNaukaBranch('ntc-nauka-novi-knezevac', 'Novi Kneževac', '', [
+        ntcNaukaHall(
+            'OŠ „Jovan Jovanović Zmaj”, Kralja Petra I Karađorđevića 13',
+            'Novi Kneževac',
+            '',
+            46.0475196,
+            20.0905838,
+            '2102450450763342393'
+        ),
+    ], {
+        ...ntcNaukaContact('064 659 33 71', 'novi.knezevac@ntcucenje.com'),
+        facebook: 'https://www.facebook.com/p/NTC-Novi-Kneževac-Senta-61573125931801/',
+        facebookLabel: 'NTC Novi Kneževac-Senta',
+        instagram: 'https://www.instagram.com/ntc_noviknezevac_senta/',
+    }),
+    ntcNaukaBranch('ntc-nauka-novi-sad', 'Novi Sad', 'Liman 1', [
+        ntcNaukaHall(
+            'Tehnološki fakultet, Bulevar cara Lazara 1',
+            'Novi Sad',
+            'Liman 1',
+            45.2478191,
+            19.8510075,
+            '11287317485198013787'
+        ),
+        ntcNaukaHall(
+            'Edukativni centar NTC, Sime Matavulja 17',
+            'Novi Sad',
+            'Južni Telep',
+            45.2342602,
+            19.8243768,
+            '10814120426773232227'
+        ),
+    ], {
+        ...ntcNaukaContact('064 126 36 53', 'ns.radionice@ntcucenje.com'),
+        facebook: 'https://www.facebook.com/ntc.novisad/',
+        instagram: 'https://www.instagram.com/ntc.novisad/',
+    }),
+    ntcNaukaBranch('ntc-nauka-pancevo', 'Pančevo', '', [
+        ntcNaukaHall(
+            'Dom omladine, Svetog Save 10',
+            'Pančevo',
+            '',
+            44.8732988,
+            20.6466206,
+            '4936925432588328338'
+        ),
+    ], {
+        ...ntcNaukaContact('062 120 62 12', 'pancevo@ntcucenje.com'),
+        facebook: 'https://www.facebook.com/p/NTC-Pančevo-61557699040613/',
+        facebookLabel: 'NTC Pančevo',
+        instagram: 'https://www.instagram.com/ntc_pancevo/',
+    }),
+    ntcNaukaBranch('ntc-nauka-velika-plana', 'Velika Plana', '', [
+        ntcNaukaHall(
+            'Edukativno kreativni centar „Košnica”, Nikole Pašića 6',
+            'Velika Plana',
+            '',
+            44.3317161,
+            21.0743891,
+            '1340258606055582874'
+        ),
+    ], {
+        ...ntcNaukaContact('063 753 49 04', 'velika.plana@ntcucenje.com'),
+        facebook: 'https://www.facebook.com/p/NTC-Velika-Plana-61557060285099/',
+        facebookLabel: 'NTC Velika Plana',
+        instagram: 'https://www.instagram.com/ntc_velikaplana/',
+    }),
 ]

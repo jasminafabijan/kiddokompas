@@ -24,6 +24,9 @@ export const cities: City[] = [
     { name: 'Subotica', locative: 'Subotici' },
     { name: 'Šabac', locative: 'Šapcu' },
     { name: 'Vršac', locative: 'Vršcu' },
+    { name: 'Aleksandrovac', locative: 'Aleksandrovcu' },
+    { name: 'Novi Kneževac', locative: 'Novom Kneževcu' },
+    { name: 'Velika Plana', locative: 'Velikoj Plani' },
 ]
 
 export const getCityLocative = (cityName: string) => {
@@ -61,4 +64,7 @@ export const CITY_MAP_VIEWS: Record<string, { center: [number, number]; zoom: nu
     Subotica: { center: [46.1, 19.667], zoom: 13 },
     Šabac: { center: [44.755, 19.69], zoom: 14 },
     Vršac: { center: [45.116, 21.303], zoom: 14 },
+    Aleksandrovac: { center: [43.459, 21.051], zoom: 14 },
+    'Novi Kneževac': { center: [46.048, 20.09], zoom: 14 },
+    'Velika Plana': { center: [44.332, 21.074], zoom: 14 },
 }

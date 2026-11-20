@@ -58,6 +58,23 @@ const STREET_LABELS: Record<string, string> = {
   'Mesna zajednica, Janošikova 1a': 'Community Center, Janošikova 1a',
   'OŠ „Branko Radičević”, Futoška 5':
     'Primary School “Branko Radičević”, Futoška 5',
+  'OŠ „Aca Aleksić”, Jaše Petrovića 6':
+    'Primary School “Aca Aleksić”, Jaše Petrovića 6',
+  'NTC centar Novi Beograd, Bulevar Mihajla Pupina 133':
+    'NTC Center Novi Beograd, Bulevar Mihajla Pupina 133',
+  'NTC centar Vračar, Mileševska 40': 'NTC Center Vračar, Mileševska 40',
+  'Muzej Jovana Cvijića, Jelene Ćetković 5': 'Jovan Cvijić Museum, Jelene Ćetković 5',
+  'OŠ „Stanislav Sremčević”, Laze Marinkovića 54':
+    'Primary School “Stanislav Sremčević”, Laze Marinkovića 54',
+  'OŠ „Jovan Jovanović Zmaj”, Kralja Petra I Karađorđevića 13':
+    'Primary School “Jovan Jovanović Zmaj”, Kralja Petra I Karađorđevića 13',
+  'Tehnološki fakultet, Bulevar cara Lazara 1':
+    'Faculty of Technology, Bulevar cara Lazara 1',
+  'Edukativni centar NTC, Sime Matavulja 17':
+    'NTC Education Center, Sime Matavulja 17',
+  'Dom omladine, Svetog Save 10': 'Youth Center, Svetog Save 10',
+  'Edukativno kreativni centar „Košnica”, Nikole Pašića 6':
+    'Košnica Educational and Creative Center, Nikole Pašića 6',
   'OŠ „Jovan Jovanović Zmaj”, Školska 3':
     'Primary School “Jovan Jovanović Zmaj”, Školska 3',
   'Mesna zajednica, Vuka Karadžića 289':

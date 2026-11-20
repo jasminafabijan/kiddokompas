@@ -322,6 +322,13 @@ export const categories: Category[] = [
     },
   },
   {
+    id: 'rhythmic-gymnastics',
+    name: { sr: 'Ritmička gimnastika', en: 'Rhythmic gymnastics' },
+    slug: 'rhythmic-gymnastics',
+    slugs: { sr: 'ritmicka-gimnastika', en: 'rhythmic-gymnastics' },
+    subtitle: { sr: 'Klubovi ritmičke gimnastike', en: 'Rhythmic gymnastics clubs' },
+  },
+  {
     id: 'teen-workout',
     name: { sr: 'Fitnes za tinejdžere', en: 'Teen workout' },
     nameAccusative: 'fitnes za tinejdžere',

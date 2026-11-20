@@ -465,9 +465,33 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     website: 'https://www.facebook.com/plesnistudiolarisa',
   },
   {
-    id: 'baletska-skola-raicevic',
-    name: 'Osnovna baletska škola „Raičević”',
-    categorySlugs: ['ballet'],
-    website: 'https://www.facebook.com/baletraicevic',
+    id: 'skola-sporta-suteam',
+    name: 'Škola sporta SuTeam',
+    categorySlugs: ['kids-sports'],
+    website: 'https://www.facebook.com/suteam.skola.sporta',
+  },
+  {
+    id: 'skola-plivanja-slobodan-stil',
+    name: 'Škola plivanja „Slobodan stil”',
+    categorySlugs: ['swimming'],
+    website: 'https://www.facebook.com/slobodanstil2014',
+  },
+  {
+    id: 'dzudo-klub-mija-zorka',
+    name: 'Džudo klub „Mija&Zorka”',
+    categorySlugs: ['judo'],
+    website: 'https://www.facebook.com/MijaZorka',
+  },
+  {
+    id: 'ritmika',
+    name: 'Klub ritmičke gimnastike Ritmika',
+    categorySlugs: ['rhythmic-gymnastics'],
+    website: 'https://www.instagram.com/ritmika.ns/',
+  },
+  {
+    id: 'dzudo-klub-spartak',
+    name: 'Džudo klub „Spartak” Subotica',
+    categorySlugs: ['judo'],
+    email: 'judo.klub.spartak.subotica@gmail.com',
   },
 ]

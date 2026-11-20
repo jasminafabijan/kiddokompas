@@ -63,4 +63,10 @@ export const rejectedSchools: RejectedSchool[] = [
     categorySlug: 'kids-sports',
     website: 'https://www.facebook.com/olimpiksubotica/',
   },
+  {
+    id: 'baletska-skola-raicevic',
+    name: 'Osnovna baletska škola „Raičević”',
+    categorySlug: 'ballet',
+    website: 'https://www.facebook.com/baletraicevic',
+  },
 ]
