@@ -1,6 +1,6 @@
 import granicarWebp from '../../assets/images/schools/riding/granicar.webp'
 import granicarJpg from '../../assets/images/schools/riding/granicar.jpg'
-import sumskaStalaWebp from '../../assets/images/schools/riding/sumska-stala-card.webp'
+import sumskaStalaWebp from '../../assets/images/schools/riding/sumska-stala.webp'
 import sumskaStalaJpg from '../../assets/images/schools/riding/sumska-stala.jpg'
 
 import type { School } from './types'

@@ -65,6 +65,27 @@ const handleJsonIdListPost = (
   })
 }
 
+/** Beacon rejects http://localhost:5173. The live origin is allowed, so production HTML stays as written. */
+const omitAnalyticsInDev = (): Plugin => ({
+  name: 'omit-analytics-in-dev',
+  transformIndexHtml: {
+    order: 'pre',
+    handler(html, ctx) {
+      if (!ctx.server) {
+        return html
+      }
+
+      return html
+        .replace(/\n\s*<link rel="preconnect" href="https:\/\/cloudflareinsights\.com" \/>/, '')
+        .replace(/\n\s*<link rel="preconnect" href="https:\/\/static\.cloudflareinsights\.com" \/>/, '')
+        .replace(
+          /\n\s*<!-- Cloudflare Web Analytics -->[\s\S]*?<!-- End Cloudflare Web Analytics -->/,
+          ''
+        )
+    },
+  },
+})
+
 const adminSchoolIdsDevApi = (): Plugin => ({
   name: 'admin-school-ids-dev-api',
   configureServer(server) {
@@ -108,5 +129,5 @@ const adminSchoolIdsDevApi = (): Plugin => ({
 })
 
 export default defineConfig({
-  plugins: [react(), adminSchoolIdsDevApi()],
+  plugins: [react(), omitAnalyticsInDev(), adminSchoolIdsDevApi()],
 })

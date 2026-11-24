@@ -69,4 +69,5 @@ export const CATALOG_ADD_ORDER = [
   'ntc-nauka',
   'deciji-atelje',
   'sportska-druzina',
+  'dzudo-klub-partizan',
 ] as const

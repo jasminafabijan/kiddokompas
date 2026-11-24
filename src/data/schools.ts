@@ -24,6 +24,7 @@ import { basketballSchools } from './schoolCategories/basketball'
 import { karateSchools } from './schoolCategories/karate'
 import { boxingSchools } from './schoolCategories/boxing'
 import { aikidoSchools } from './schoolCategories/aikido'
+import { judoSchools } from './schoolCategories/judo'
 import { chessSchools } from './schoolCategories/chess'
 import { bowlingSchools } from './schoolCategories/bowling'
 import { ridingSchools } from './schoolCategories/riding'
@@ -62,6 +63,7 @@ export const schools: School[] = [
     ...karateSchools,
     ...boxingSchools,
     ...aikidoSchools,
+    ...judoSchools,
     ...capoeiraSchools,
     ...chessSchools,
     ...bowlingSchools,

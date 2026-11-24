@@ -495,12 +495,6 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     email: 'judo.klub.spartak.subotica@gmail.com',
   },
   {
-    id: 'dzudo-klub-partizan',
-    name: 'Džudo klub Partizan Novi Sad',
-    categorySlugs: ['judo'],
-    website: 'https://www.facebook.com/JkPartizanNS/',
-  },
-  {
     id: 'konjicki-klub-saint-george',
     name: 'Konjički klub „Saint George”',
     categorySlugs: ['riding'],

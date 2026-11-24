@@ -90,6 +90,9 @@ const ICONS: Record<string, string> = {
     '<path d="M6.8 16.2h7.6V21H6.8z"/><path d="M6.8 18.6h7.6"/><path d="M8.8 16.2C8.2 14.6 6.4 14 5.8 12.6 5.2 11.2 6.4 9.6 8 9.6c.8 0 1.4.6 1.6 1.4C10 8.4 12.6 6.4 15.8 6.6 19 6.8 20.8 9.4 20.6 12.6 20.4 15.6 18 17.4 14.4 16.4"/>'
   ),
   aikido: `<svg viewBox="0 0 24 24" fill="#0b1a3b" stroke="#0b1a3b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15" cy="4.8" r="2.15" stroke="none"/><path fill="none" d="M13.6 7.2 11.2 14.1M13.4 7.9 21.3 7.3M13.1 8.2 7.6 6.5 11.3 11.3M11.2 14.1 16.7 16.5 15.4 21.5M11.2 14.1 4.5 21.3"/></svg>`,
+  judo: wrap(
+    '<circle cx="8.2" cy="15.6" r="1.7"/><path d="M8.8 14 11.2 11.2"/><path d="M11.2 11.2 7.2 8.4"/><path d="M8.6 17.2 6.2 21.2"/><path d="M9.4 17.2 12.6 21.2"/><circle cx="16.6" cy="4.8" r="1.7"/><path d="M15.4 6.2C13.2 8 11.6 9.6 12.2 11.6"/><path d="M12.2 11.6 15.4 13.6"/>'
+  ),
   capoeira: `<svg viewBox="0 0 24 24" fill="#0b1a3b" stroke="#0b1a3b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16.2" cy="15.6" r="2.1" stroke="none"/><path fill="none" d="M9.8 21.4 12.2 13.2M12.2 13.2 6.8 14.8M12.2 13.2 12.8 7.4M12.8 7.4 6.2 2.8M12.8 7.4 20.8 3.2"/></svg>`,
   chess: wrap(
     '<path d="M12 3.2v3.2M10.4 4.8h3.2"/><path d="M8.4 7.4h7.2v2H8.4z"/><path d="M9.2 9.4 8.2 17.8h7.6L14.8 9.4"/><path d="M6.8 17.8h10.4v2.4H6.8z"/>'

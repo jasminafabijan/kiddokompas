@@ -12,6 +12,7 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'daske-i-maske',
   'deciji-atelje',
   'dexters',
+  'dzudo-klub-partizan',
   'fiesta',
   'fk-bistrica-05',
   'folklorika',

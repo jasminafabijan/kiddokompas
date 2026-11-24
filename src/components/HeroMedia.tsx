@@ -20,8 +20,10 @@ const HeroImage = ({ webp, fallback, alt, className, fetchPriority }: HeroImageP
             src={fallback}
             alt={alt}
             decoding="async"
-            fetchPriority={fetchPriority}
             className={className}
+            {...(fetchPriority
+                ? ({ fetchpriority: fetchPriority } as { fetchpriority: 'high' | 'low' | 'auto' })
+                : {})}
         />
     </picture>
 )
