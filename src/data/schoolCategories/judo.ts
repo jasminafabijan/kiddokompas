@@ -21,12 +21,12 @@ export const judoSchools: School[] = [
         imageFallback: jkPartizanNsJpeg,
         description: {
             sr: [
-                'Džudo je borilačka veština bacanja, držanja i padova, u kojoj se radi u paru. Naglasak je na ravnoteži, kontroli pokreta i poštovanju protivnika.',
-                'Klub prima nove članove. Partizan je jedan od najstarijih džudo klubova u zemlji.',
+                'Džudo klub Partizan osnovan je 1961. godine i predstavlja jedan od sportskih kolektiva sa dugom tradicijom u Novom Sadu. Klub se nalazi na Telepu i posvećen je razvoju i popularizaciji džudo sporta, posebno među decom i mladima.',
+                'Kroz redovne treninge članovi razvijaju fizičku spremnost, disciplinu, samopouzdanje i međusobno poštovanje. Posebna pažnja posvećuje se pravilnom razvoju mladih sportista i njihovoj pripremi za takmičenja. Klub svojim radom promoviše zdrave životne navike, sportski duh i fer-plej, doprinoseći razvoju džudoa i sporta u Novom Sadu.',
             ],
             en: [
-                'Judo is a martial art of throws, holds and falls, practiced with a partner. The emphasis is on balance, control of movement and respect for the opponent.',
-                'The club is enrolling new members. Partizan is one of the oldest judo clubs in the country.',
+                'Judo Club Partizan was founded in 1961 and is one of the sports clubs with a long tradition in Novi Sad. The club is on Telep and is dedicated to developing and popularizing the sport of judo, especially among children and young people.',
+                'Through regular training, members develop physical fitness, discipline, confidence and mutual respect. Particular attention goes to the proper development of young athletes and their preparation for competition. Through its work, the club promotes healthy habits, sporting spirit and fair play, contributing to the development of judo and sport in Novi Sad.',
             ],
         },
         addresses: [
