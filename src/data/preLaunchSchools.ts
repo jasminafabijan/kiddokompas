@@ -494,4 +494,22 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['judo'],
     email: 'judo.klub.spartak.subotica@gmail.com',
   },
+  {
+    id: 'dzudo-klub-partizan',
+    name: 'Džudo klub Partizan Novi Sad',
+    categorySlugs: ['judo'],
+    website: 'https://www.facebook.com/JkPartizanNS/',
+  },
+  {
+    id: 'konjicki-klub-saint-george',
+    name: 'Konjički klub „Saint George”',
+    categorySlugs: ['riding'],
+    website: 'https://www.facebook.com/kkstgeorge/',
+  },
+  {
+    id: 'studio-de',
+    name: 'Škola nemačkog jezika STUDIO.DE',
+    categorySlugs: ['languages'],
+    website: 'https://www.facebook.com/nemacki.studio.de/',
+  },
 ]
