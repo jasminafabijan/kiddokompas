@@ -41,6 +41,7 @@ export const judoSchools: School[] = [
         ],
         contact: {
             phone: '066 545 32 12',
+            email: 'jkpartizan@gmail.com',
             facebook: 'https://www.facebook.com/JkPartizanNS/',
             facebookLabel: 'Džudo klub Partizan Novi Sad',
             instagram: 'https://www.instagram.com/jk_partizan_ns/',
