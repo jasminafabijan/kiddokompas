@@ -4,4 +4,7 @@ export const addActivityFormUrl = {
 } as const
 
 export const CONTACT_EMAIL = 'info@kiddokompas.rs'
+
+/** Production origin for canonical URLs. */
+export const SITE_ORIGIN = 'https://kiddokompas.rs'
 export const VIBER_PHONE = '38163590020'
