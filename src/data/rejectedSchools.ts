@@ -69,4 +69,10 @@ export const rejectedSchools: RejectedSchool[] = [
     categorySlug: 'ballet',
     website: 'https://www.facebook.com/baletraicevic',
   },
+  {
+    id: 'leo-school',
+    name: 'Leo School',
+    categorySlug: 'tennis',
+    website: 'https://www.instagram.com/leoschool.tennis/',
+  },
 ]

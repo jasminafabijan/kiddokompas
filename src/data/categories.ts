@@ -208,8 +208,8 @@ export const categories: Category[] = [
     slugs: { sr: 'dzudo', en: 'judo' },
     subtitle: { sr: 'Škole džudoa', en: 'Judo schools' },
     pageSubtitle: {
-      sr: 'Istražite škole džudoa u {city} — za disciplinu, ravnotežu i poštovanje.',
-      en: 'Explore judo schools in {city} — for discipline, balance and respect.',
+      sr: 'Istražite škole džudoa u {city} — za disciplinu, ravnotežu i samokontrolu.',
+      en: 'Explore judo schools in {city} — for discipline, balance and self-control.',
     },
   },
   {

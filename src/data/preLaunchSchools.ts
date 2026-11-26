@@ -506,4 +506,22 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['languages'],
     website: 'https://www.facebook.com/nemacki.studio.de/',
   },
+  {
+    id: 'akademija-fudbala-suteam',
+    name: 'Akademija fudbala SuTeam',
+    categorySlugs: ['football'],
+    website: 'https://www.facebook.com/afsuteam',
+  },
+  {
+    id: 'realni-aikido',
+    name: 'Realni aikido',
+    categorySlugs: ['aikido'],
+    website: 'https://www.facebook.com/realniaikido.markodivjak/',
+  },
+  {
+    id: 'skola-gitare-starcevic',
+    name: 'Škola gitare Starčević',
+    categorySlugs: ['music'],
+    website: 'https://www.instagram.com/skolastarcevic/',
+  },
 ]
