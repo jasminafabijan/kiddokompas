@@ -502,16 +502,24 @@ export const searchSchoolsByWords = (query: string, lang: Lang, limit = 8) => {
         .map(({ school }) => school)
 }
 
-/** Direct `/skola/...` URLs stay reachable. Search, categories and the map use listed schools only. */
+/** Old school slugs that still open the current school page. */
 const SCHOOL_SLUG_ALIASES: Record<string, string> = {
     'helen-doron-novi-beograd': 'helen-doron-beograd',
     'helen-doron-zemun': 'helen-doron-beograd',
 }
 
+/**
+ * School for a direct `/skola/...` URL. On kiddokompas.rs only listed schools open (verified and not hidden),
+ * so unverified schools cannot be reached or indexed. `npm run dev` still opens unverified schools for preview.
+ */
 export const getSchoolBySlug = (slug: string) => {
     const canonical = SCHOOL_SLUG_ALIASES[slug] ?? slug
 
-    return schools.find((school) => !school.hidden && school.slug === canonical)
+    return schools.find(
+        (school) =>
+            school.slug === canonical &&
+            (import.meta.env.DEV ? !school.hidden : isPubliclyListed(school))
+    )
 }
 
 export const getSchoolDistricts = (school: School) => {
