@@ -61,6 +61,7 @@ export const VERIFIED_SCHOOL_IDS = new Set<string>([
   'sinisa-mihajlovic',
   'sk-bubamara',
   'sk-korifej',
+  'skola-gitare-starcevic',
   'sportisimo',
   'sportisimo-atletika',
   'sportisimo-jazz-balet',

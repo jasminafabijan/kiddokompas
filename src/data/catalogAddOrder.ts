@@ -70,4 +70,5 @@ export const CATALOG_ADD_ORDER = [
   'deciji-atelje',
   'sportska-druzina',
   'dzudo-klub-partizan',
+  'skola-gitare-starcevic',
 ] as const

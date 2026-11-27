@@ -187,9 +187,12 @@ export const getMapCategoryStyle = (slug?: string) => ({
 
 const pinCache = new Map<string, L.DivIcon>()
 
-export const getCatalogMapPin = (slug?: string) => {
+export const getCatalogMapPin = (slug?: string, offset?: { x: number; y: number }) => {
   const { color, svg } = getMapCategoryStyle(slug)
-  const key = `${slug ?? 'default'}:${svg}`
+  const x = offset?.x ?? 0
+  const y = offset?.y ?? 0
+  const key =
+    x === 0 && y === 0 ? `${slug ?? 'default'}:${svg}` : `${slug ?? 'default'}:${x}:${y}:${svg}`
   const cached = pinCache.get(key)
 
   if (cached) {
@@ -200,8 +203,8 @@ export const getCatalogMapPin = (slug?: string) => {
     className: 'catalog-map-pin-wrap',
     html: `<span class="catalog-map-pin" style="background:${color}">${svg}</span>`,
     iconSize: [36, 36],
-    iconAnchor: [18, 18],
-    popupAnchor: [0, -18],
+    iconAnchor: [18 - x, 18 - y],
+    popupAnchor: [x, y - 18],
   })
 
   pinCache.set(key, icon)

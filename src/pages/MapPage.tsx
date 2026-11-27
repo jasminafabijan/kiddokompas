@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar'
 import { filterSchools, forCatalogMap, getSchoolName, venueBelongsToCity } from '../data/schools'
 import { formatEmptyFilterMessage, formatMapCountLabel } from '../i18n/formatters'
 import { useI18n } from '../i18n/useI18n'
-import { getMapLocations } from '../utils/mapLocation'
+import { expandLocationsForSelectedActivities, getMapLocations } from '../utils/mapLocation'
 import { filtersToSearchParams, getFiltersFromSearchParams } from '../utils/searchFilters'
 
 const scrollMapCardIntoView = (card: HTMLElement) => {
@@ -42,10 +42,12 @@ const MapPage = () => {
       .filter((school) => school.addresses?.some((address) => address.lat != null && address.lng != null))
       .sort((a, b) => getSchoolName(a, lang).localeCompare(getSchoolName(b, lang), lang === 'en' ? 'en' : 'sr'))
 
-    return getMapLocations(schools).filter((location) =>
+    const locations = getMapLocations(schools).filter((location) =>
       venueBelongsToCity(location.school, location.address, filters.city)
     )
-  }, [filters.city, lang, visibleSchools])
+
+    return expandLocationsForSelectedActivities(locations, filters.activities)
+  }, [filters.activities, filters.city, lang, visibleSchools])
 
   const handleFilterChange = useCallback(
     (next: FilterValues) => {

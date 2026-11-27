@@ -1,5 +1,6 @@
 import andjeliJpg from '../../assets/images/schools/music/andjeli.jpg'
 import milicevicWebp from '../../assets/images/schools/music/milicevic.webp'
+import starcevicWebp from '../../assets/images/schools/music/starcevic.webp'
 import odgajanjeSaMuzikomWebp from '../../assets/images/schools/music/odgajanje-sa-muzikom.webp'
 import odgajanjeSaMuzikomPng from '../../assets/images/schools/music/odgajanje-sa-muzikom.png'
 
@@ -183,6 +184,83 @@ export const musicSchools: School[] = [
             facebookLabel: 'Muzička škola Milićević',
             instagram: 'https://www.instagram.com/ms.milicevic/',
             tiktok: 'https://www.tiktok.com/@ms.milicevic',
+        },
+    },
+    {
+        id: 'skola-gitare-starcevic',
+        slug: 'skola-gitare-starcevic',
+        name: {
+            sr: 'Škola gitare Starčević',
+            en: 'Starčević Guitar School',
+        },
+        categorySlugs: ['music'],
+        city: 'Beograd',
+        district: 'Vračar',
+        minAge: 5,
+        maxAge: null,
+        ageLabel: '5+ godina',
+        imageWebp: starcevicWebp,
+        imageFallback: starcevicWebp,
+        description: {
+            sr: [
+                'Škola gitare Starčević radi od 2016. Program je osmislio Nikola Starčević, gitarista i kompozitor, koji i vodi nastavu.',
+                'Časovi su grupni i individualni, na akustičnoj, klasičnoj i električnoj gitari. Uče se klasična tehnika, fingerstyle i sviranje trzalicom, kroz klasiku, pop, rok i etno. Radi se i po tabovima i po notnom zapisu.',
+                'Dva puta godišnje su ispiti škole, uz diplomu za završeni nivo. Ko želi, sprema se i za Rockschool ispit. Tokom godine su nastupi, a leti gitarski kamp.',
+            ],
+            en: [
+                'Starčević Guitar School has been running since 2016. The program was designed by Nikola Starčević, a guitarist and composer, who also teaches.',
+                'Classes are in groups and one-on-one, on acoustic, classical and electric guitar. Students learn classical technique, fingerstyle and playing with a pick, through classical music, pop, rock and ethno. Work uses tablature and standard notation.',
+                'The school holds exams twice a year, with a diploma for each completed level. Students who want to can also prepare for the Rockschool exam. There are performances during the year, and a guitar camp in the summer.',
+            ],
+        },
+        addresses: [
+            {
+                street: 'Njegoševa 19a',
+                city: 'Beograd',
+                district: 'Vračar',
+                lat: 44.8043792,
+                lng: 20.4679825,
+                mapsUrl: 'https://www.google.com/maps?cid=4936861594476771452',
+                areaLabel: { sr: 'Slavija — Njegoševa', en: 'Slavija — Njegoševa' },
+            },
+            {
+                street: 'UMUS, Terazije 26',
+                city: 'Beograd',
+                district: 'Stari Grad',
+                lat: 44.8124727,
+                lng: 20.4609394,
+                mapsUrl: 'https://www.google.com/maps?cid=10969391762296757830',
+                areaLabel: { sr: 'Terazije — UMUS', en: 'Terazije — UMUS' },
+            },
+            {
+                street: 'Muzički studio, Kestenova 6',
+                city: 'Beograd',
+                district: 'Cerak',
+                lat: 44.74802,
+                lng: 20.423811,
+                mapsUrl: 'https://www.google.com/maps?cid=4236942517828200640',
+                areaLabel: { sr: 'Cerak — Kestenova', en: 'Cerak — Kestenova' },
+            },
+            {
+                street: 'OŠ „Milan Rakić”, Vojvođanska 62',
+                city: 'Beograd',
+                district: 'Novi Beograd',
+                lat: 44.8083096,
+                lng: 20.3751064,
+                mapsUrl: 'https://www.google.com/maps?cid=1747560073801865996',
+                areaLabel: {
+                    sr: 'Novi Beograd — OŠ Milan Rakić',
+                    en: 'Novi Beograd — Primary School Milan Rakić',
+                },
+            },
+        ],
+        contact: {
+            phone: '064 212 97 65',
+            email: 'starcevic@skolagitare.rs',
+            website: 'https://www.skolagitare.rs',
+            facebook: 'https://www.facebook.com/SkolaGitareStarcevic/',
+            facebookLabel: 'Škola gitare Starčević',
+            instagram: 'https://www.instagram.com/skolastarcevic/',
         },
     },
 ]

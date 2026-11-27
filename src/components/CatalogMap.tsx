@@ -14,7 +14,11 @@ import { getStreetName } from '../data/streets'
 import { MAP_TILE_OPTIONS, MAP_TILE_URL } from '../utils/mapTiles'
 import 'leaflet/dist/leaflet.css'
 
-type MarkerWithLocations = L.Marker & { __locationIds?: string[] }
+type MarkerWithLocations = L.Marker & {
+  __locationIds?: string[]
+  __pinCategory?: string
+  __visualOffset?: boolean
+}
 
 type MapPoint = {
   lat: number
@@ -32,7 +36,7 @@ const getMapPoints = (locations: MapLocation[]): MapPoint[] => {
       continue
     }
 
-    const key = `${lat.toFixed(5)}|${lng.toFixed(5)}`
+    const key = `${lat.toFixed(5)}|${lng.toFixed(5)}|${location.pinCategory ?? ''}`
     const existing = groups.get(key)
 
     if (existing) {
@@ -48,6 +52,43 @@ const getMapPoints = (locations: MapLocation[]): MapPoint[] => {
   }
 
   return [...groups.values()]
+}
+
+/** Same building, different activity icons: nudge each pin so both stay visible. */
+const spreadCoincidentPins = (markers: MarkerWithLocations[]) => {
+  const groups = new Map<string, MarkerWithLocations[]>()
+
+  for (const marker of markers) {
+    const { lat, lng } = marker.getLatLng()
+    const key = `${lat.toFixed(5)}|${lng.toFixed(5)}`
+    const group = groups.get(key)
+
+    if (group) {
+      group.push(marker)
+      continue
+    }
+
+    groups.set(key, [marker])
+  }
+
+  for (const group of groups.values()) {
+    if (group.length < 2) {
+      continue
+    }
+
+    const radius = 22
+
+    group.forEach((marker, index) => {
+      const angle = (2 * Math.PI * index) / group.length
+      marker.setIcon(
+        getCatalogMapPin(marker.__pinCategory, {
+          x: Math.round(radius * Math.cos(angle)),
+          y: Math.round(radius * Math.sin(angle)),
+        })
+      )
+      marker.__visualOffset = true
+    })
+  }
 }
 
 interface CatalogMapProps {
@@ -99,28 +140,27 @@ const CatalogMap = ({
       const uniqueSchools = point.locations.filter(
         (item, index, list) => list.findIndex((other) => other.school.id === item.school.id) === index
       )
+      const pinCategory =
+        point.locations[0]?.pinCategory ?? point.locations[0]?.school.categorySlugs[0]
       const marker = L.marker([point.lat, point.lng], {
-        icon: getCatalogMapPin(point.locations[0]?.school.categorySlugs[0]),
+        icon: getCatalogMapPin(pinCategory),
       }) as MarkerWithLocations
       marker.__locationIds = point.locations.map((item) => item.locationId)
+      marker.__pinCategory = pinCategory
       marker.bindPopup(
         buildSchoolMapPopupHtml(
           getStreetName(point.locations[0].address.street, lang),
-          uniqueSchools.map(({ school, addressIndex }) => ({
-            name: getSchoolName(school, lang),
-            ageLabel: schoolAgeLabel(
-              school,
-              lang,
-              true,
+          uniqueSchools.map(({ school, addressIndex, pinCategory: schoolPinCategory }) => {
+            const categoryId =
+              schoolPinCategory ??
               categoryIdForSchoolLink(school.categorySlugs, selectedActivities)
-            ),
-            href: schoolMapHref(
-              school,
-              lang,
-              addressIndex,
-              categoryIdForSchoolLink(school.categorySlugs, selectedActivities)
-            ),
-          })),
+
+            return {
+              name: getSchoolName(school, lang),
+              ageLabel: schoolAgeLabel(school, lang, true, categoryId),
+              href: schoolMapHref(school, lang, addressIndex, categoryId),
+            }
+          }),
           t('map.seeDetails')
         ),
         schoolMapPopupOptions
@@ -129,9 +169,15 @@ const CatalogMap = ({
       return marker
     })
 
+    spreadCoincidentPins(markers)
+
     markersRef.current = markers
 
-    const detachOverlapZoom = attachMarkerOverlapZoom(map, markers, { overlapPx: 40 })
+    const detachOverlapZoom = attachMarkerOverlapZoom(
+      map,
+      markers.filter((marker) => !marker.__visualOffset),
+      { overlapPx: 40 }
+    )
     const detachActivePin = attachActivePinState(map)
 
     const onPopupOpen = (event: L.PopupEvent) => {

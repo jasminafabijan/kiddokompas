@@ -49,7 +49,8 @@ const MapActivityCard = ({ location, selected, selectedActivities, onSelect }: M
   const routeLocation = useLocation()
   const { lang, t } = useI18n()
   const { school } = location
-  const categorySlug = categoryIdForSchoolLink(school.categorySlugs, selectedActivities)
+  const categorySlug =
+    location.pinCategory ?? categoryIdForSchoolLink(school.categorySlugs, selectedActivities)
   const categoryName = categorySlug
     ? getCategoryNameBySlug(categorySlug, lang)
     : formatSchoolCategoryNames(school, lang)

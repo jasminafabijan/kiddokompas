@@ -92,6 +92,9 @@ const STREET_LABELS: Record<string, string> = {
   'Šumadijske divizije 8, lokal 1': 'Šumadijske divizije 8, unit 1',
   'Kosovska 25, lokal 15': 'Kosovska 25, unit 15',
   'Bulevar Mihaila Pupina 10Z, 2. sprat': 'Bulevar Mihaila Pupina 10Z, 2nd floor',
+  'Muzički studio, Kestenova 6': 'Music Studio, Kestenova 6',
+  'OŠ „Milan Rakić”, Vojvođanska 62':
+    'Primary School “Milan Rakić”, Vojvođanska 62',
 }
 
 const SERBIAN_VENUE_PHRASE =

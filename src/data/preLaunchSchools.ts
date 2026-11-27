@@ -518,10 +518,4 @@ export const preLaunchSchools: PreLaunchSchool[] = [
     categorySlugs: ['aikido'],
     website: 'https://www.facebook.com/realniaikido.markodivjak/',
   },
-  {
-    id: 'skola-gitare-starcevic',
-    name: 'Škola gitare Starčević',
-    categorySlugs: ['music'],
-    website: 'https://www.instagram.com/skolastarcevic/',
-  },
 ]
